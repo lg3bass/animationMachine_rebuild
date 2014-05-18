@@ -39,12 +39,12 @@
 		7ED71B6619290A2200BAC72B /* aLights.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7ED71B5E19290A2200BAC72B /* aLights.cpp */; };
 		7ED71B6719290A2200BAC72B /* aTrack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7ED71B6019290A2200BAC72B /* aTrack.cpp */; };
 		7ED71B6819290A2200BAC72B /* aTrackGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7ED71B6219290A2200BAC72B /* aTrackGui.cpp */; };
-		7ED71B6A19290C8900BAC72B /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED71B6919290C8900BAC72B /* CoreMIDI.framework */; };
 		83D9F930112E0944444124EE /* ofxMidiOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F77E5C73A62E2E77C78EC6 /* ofxMidiOut.cpp */; };
 		879A251454401BC0B6E4F238 /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9BFFBBF4CC43DEE890B3C3E /* OscTypes.cpp */; };
 		8F5205AEF8861EF234F0651A /* ofxOscSender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81967292BFC87A0144BD32C6 /* ofxOscSender.cpp */; };
 		933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B40EDA85BEB63E46785BC29 /* tinyxml.cpp */; };
 		9D44DC88EF9E7991B4A09951 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 832BDC407620CDBA568B713D /* tinyxmlerror.cpp */; };
+		9F5FBB9419291BE4002A791B /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81AC32CCCB56FAABA3E1BDE0 /* CoreMIDI.framework */; };
 		A29D8C96AE042ECEAA1BD4F3 /* NetworkingUtilsWin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A5B1FAD3F30C8065C396ACB /* NetworkingUtilsWin.cpp */; };
 		ADE367465D2A8EBAD4C7A8D9 /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD194746185E2DA11468377 /* IpEndpointName.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
@@ -294,7 +294,6 @@
 		7ED71B6119290A2200BAC72B /* aTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aTrack.h; sourceTree = "<group>"; };
 		7ED71B6219290A2200BAC72B /* aTrackGui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aTrackGui.cpp; sourceTree = "<group>"; };
 		7ED71B6319290A2200BAC72B /* aTrackGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aTrackGui.h; sourceTree = "<group>"; };
-		7ED71B6919290C8900BAC72B /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 		7F194478E266268E40876C0D /* CompoundPropertyWriter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = CompoundPropertyWriter.h; path = ../../../addons/ofxAlembic/libs/alembic/include/Alembic/AbcCoreAbstract/CompoundPropertyWriter.h; sourceTree = SOURCE_ROOT; };
 		7F6680A728AFA77AA2F46EDC /* TypedPropertyTraits.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = TypedPropertyTraits.h; path = ../../../addons/ofxAlembic/libs/alembic/include/Alembic/Abc/TypedPropertyTraits.h; sourceTree = SOURCE_ROOT; };
 		7FB06429ED91763029ED73BA /* H5DSpublic.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = H5DSpublic.h; path = ../../../addons/ofxAlembic/libs/alembic/include/H5DSpublic.h; sourceTree = SOURCE_ROOT; };
@@ -521,7 +520,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7ED71B6A19290C8900BAC72B /* CoreMIDI.framework in Frameworks */,
 				E7F985F815E0DEA3003869B5 /* Accelerate.framework in Frameworks */,
 				E7E077E815D3B6510020DFD4 /* QTKit.framework in Frameworks */,
 				7ED71B3F1929090900BAC72B /* Syphon.framework in Frameworks */,
@@ -539,6 +537,7 @@
 				E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */,
 				E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */,
 				E7E077E515D3B63C0020DFD4 /* CoreVideo.framework in Frameworks */,
+				9F5FBB9419291BE4002A791B /* CoreMIDI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1273,7 +1272,6 @@
 		E4B69B4A0A3A1720003C02F2 = {
 			isa = PBXGroup;
 			children = (
-				7ED71B6919290C8900BAC72B /* CoreMIDI.framework */,
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
 				E4B69E1C0A3A1BDC003C02F2 /* src */,
