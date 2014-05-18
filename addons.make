@@ -1,0 +1,7 @@
+ofxOsc
+ofxXmlSettings
+ofxAlembic
+ofxCameraMove
+ofxMidi
+ofxTweener
+ofxUI
