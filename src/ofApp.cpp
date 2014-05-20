@@ -1197,7 +1197,10 @@ void ofApp::keyPressed(int key){
                     cout << "Left Apple Pressed" << endl;
                     modkey = true;
                     break;
-                    
+                case OF_KEY_RIGHT_SUPER:
+                    cout << "Right Apple Pressed" << endl;
+                    modkey = true;
+                    break;
             }
 		}
 	}else{
@@ -1205,11 +1208,11 @@ void ofApp::keyPressed(int key){
             case ' ':
                 myGui->wModActive = true;
                 cout << "space out" << endl;
-                
+                //move this somewhere else.
                 resetAnimation(numOfABC);
                 break;
             case 'a':
-                myGui->showAxis = true;
+                if(modkey) myGui->showAxis = true;
                 break;
             case '1':
                 if(modkey) loadScene(1);
@@ -1269,11 +1272,9 @@ void ofApp::keyPressed(int key){
                     
                 }
                 break;
-            case 'm':
+            case 'm'://CTRL+M is minimize
                 //midi port
-                
                 toggleMidiPort();
-                
                 break;
             case 't':
                 //gui screens
@@ -1304,39 +1305,41 @@ void ofApp::keyPressed(int key){
                 }
                 
                 break;
-                //saveCam
-            case ',':
-                saveCam.prevView(4.0);
+            
+            case '[':
+                if(modkey) saveCam.prevView(4.0);
                 break;
-            case '.':
-                saveCam.nextView(4.0);
+            case ']':
+                if(modkey) saveCam.nextView(4.0);
                 break;
             case 's':
-                saveCam.updateView(-1);//-1= current view
+                if(modkey) saveCam.updateView(-1);//-1= current view
                 break;
             case 'n':
-                saveCam.newView();
+                if(modkey) saveCam.newView();
                 break;
-            case 'h':
+            case 'h'://CTRL+h is hide
+                
                 addMessage("+===========HELP===========+");
                 addMessage("SPACE - resetAnimation()");
-                addMessage("a - show axis");
+                addMessage("CTRL+a - show axis");
                 addMessage("CTRL+l - loader menu");
                 addMessage("CTRL+g - material/lights");
                 addMessage("m - cycle MIDI port");
-                addMessage("CTRL+t - track menu(TO COME)");
+                addMessage("CTRL+t - track menu(TOCOME)");
                 addMessage("CTRL+o - cycle load scene");
-                addMessage("[1-6] - load select scene");
-                addMessage("[,/.] - prev/next camera");
-                addMessage("s - save Camera");
-                addMessage("n - new Camera View");
+                addMessage("CTRL+1-6 - load select scene");
+                addMessage("CTRL+[] - prev/next camera");
+                addMessage("CTRL+s - save Camera");
+                addMessage("CTRL+n - new Camera View");
                 addMessage("h - help");
                 addMessage("");
                 addMessage("");
-                addMessage("");
-                addMessage("CTRL+H - Hide App");
+                addMessage("CTRL+m - Minimize App");
+                addMessage("CTRL+h - Hide App");
                 addMessage("CTRL+Q/ESC - Quit App");
                 addMessage("+===========++++===========+");
+                
                 break;
             default:
                 break;
@@ -1355,6 +1358,10 @@ void ofApp::keyReleased(int key){
             switch(key){
                 case OF_KEY_LEFT_SUPER:
                     cout << "Left Apple Released" << endl;
+                    modkey = false;
+                    break;
+                case OF_KEY_RIGHT_SUPER:
+                    cout << "Right Apple Released" << endl;
                     modkey = false;
                     break;
             }
