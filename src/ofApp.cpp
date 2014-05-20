@@ -182,7 +182,7 @@ void ofApp::update(){
     
     
     
-    ofSetWindowTitle("size:"+ofToString(ofGetWidth())+","+ofToString(ofGetHeight())+", port: "+ofToString(midiIn.getPort())+", fps: "+ofToString(ofGetFrameRate()));
+    ofSetWindowTitle("size:"+ofToString(ofGetWidth())+","+ofToString(ofGetHeight())+", port: "+ofToString(midiIn.getPortName(midiIn.getPort()))+", fps: "+ofToString(ofGetFrameRate())+", cam: "+ofToString(saveCam.currentIdx));
     
     
     //Messaging(OSC,MIDI)
@@ -362,7 +362,7 @@ void ofApp::draw(){
 	mainOutputSyphonServer.publishScreen();
     
     
-    saveCam.information();
+    //saveCam.information();
     
     //OSC
     //This just draws the osc messages to the screen. Totally unnecessary.
@@ -537,6 +537,8 @@ void ofApp::setParamsInABCloaders(int num) {
         ofxUISlider *trackSlider = (ofxUISlider *)gui_loader->getWidget(ofToString(i)+"_TRK_SPD");
         trackSlider->setLabelVisible(false);
         
+        //cout << "slider:"+ofToString(trackSlider->getValue()) << endl;
+        
         //track speed
         ofxUINumberDialer *trackDialer = (ofxUINumberDialer *)gui_loader->getWidget(ofToString(i)+"_TRK_SPEED");
         abcModels[i].clipSpeedMod = trackDialer->getValue();
@@ -648,8 +650,17 @@ void ofApp::resetAnimation(int num){
 //--------------------------------------------------------------
 void ofApp::setupMidi(int input) {
 	// print input ports to console
-	midiIn.listPorts(); // via instance
-	//ofxMidiIn::listPorts(); // via static as well
+	// since I escalated the debug level. this is not going to work
+    midiIn.listPorts(); // via instance
+	
+    
+    //print out the avail midi ports.
+    addMessage("Midi ports:");
+    for(int i=0;i<midiIn.getPortList().size();i++){
+       addMessage(midiIn.getPortList()[i]);
+    }
+    
+    
 	
 	// open port by number (you may need to change this)
 	midiIn.openPort(input);
@@ -680,13 +691,16 @@ void ofApp::toggleMidiPort() {
         //close the existing port
         midiIn.closePort();
         
-        //open the new port
-        if (port == 0){
-            midiIn.openPort(1);
-            addMessage(midiIn.getPortName(1));
+        //cycle through and display
+        if (port == midiIn.getNumPorts()-1){
+            port = 0;
+            midiIn.openPort(port);
+            addMessage(midiIn.getPortName(port));
         } else {
-            midiIn.openPort(0);
-            addMessage(midiIn.getPortName(0));
+            port++;
+            midiIn.openPort(port);
+            addMessage(midiIn.getPortName(port));
+            
         }
     }
 }
@@ -985,9 +999,24 @@ void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
             }
             
             cout << ofToString(row) << "_TRK_PLAY" << ":ofxUIImageToggle (Play Button Toggle) >" << playBut->getValue() << endl;
+        } else if(ofIsStringInString(name, "TRK_SPD")){
+            ofxUISlider *trackSlider = (ofxUISlider *)gui_loader->getWidget(ofToString(row)+"_TRK_SPD");
+            
+            //set the text dialer.
+            float sldr_val = ofMap(trackSlider->getValue(), 0, 1.0, 0.02, 0.12);
+            abcModels[row].clipSpeedMod = sldr_val;//abcModel.cpp
+            
+            ofxUINumberDialer *trackDialer = (ofxUINumberDialer *)gui_loader->getWidget(ofToString(row)+"_TRK_SPEED");
+            trackDialer->setValue(sldr_val);
+            
+            cout << ofToString(row) << "_TRK_SPD" << ":ofxUISlider (Clip speed modifier) >" << ofToString(sldr_val) << endl;
+         
         } else if (ofIsStringInString(name, "TRK_SPEED")){
             ofxUINumberDialer *trackDialer = (ofxUINumberDialer *)gui_loader->getWidget(ofToString(row)+"_TRK_SPEED");
             abcModels[row].clipSpeedMod = trackDialer->getValue();//abcModel.cpp
+            //set the slider too
+            ofxUISlider *trackSlider = (ofxUISlider *)gui_loader->getWidget(ofToString(row)+"_TRK_SPD");
+            trackSlider->setValue(trackDialer->getValue());
             
             cout << ofToString(row) << "_TRK_SPEED" << ":ofxUINumberDialer (Clip speed modifier) >" << trackDialer->getValue() << endl;
             
@@ -1109,7 +1138,7 @@ void ofApp::setGUI_loader(int num){
         //gui_loader->addWidgetRight(new ofxUILabelButton(50,false,"LOAD",OFX_UI_FONT_SMALL));
         gui_loader->addWidgetRight(new ofxUITextInput(300, ofToString(i)+"_TRK_READER", "empty", OFX_UI_FONT_SMALL));
         
-        gui_loader->addWidgetRight(new ofxUISlider(ofToString(i)+"_TRK_SPD", 0.01f, 0.12f, 0.05, 100, 18));
+        gui_loader->addWidgetRight(new ofxUISlider(ofToString(i)+"_TRK_SPD", 0.01f, 0.10f, 0.05, 100, 18));
         
         gui_loader->addWidgetRight(new ofxUINumberDialer(0, 0.2, 0.0, 2, ofToString(i)+"_TRK_SPEED", OFX_UI_FONT_SMALL));
         gui_loader->addWidgetRight(new ofxUINumberDialer(1, 10, 10, 0, ofToString(i)+"_TRK_MIDI", OFX_UI_FONT_SMALL));
@@ -1288,7 +1317,27 @@ void ofApp::keyPressed(int key){
             case 'n':
                 saveCam.newView();
                 break;
-                
+            case 'h':
+                addMessage("+===========HELP===========+");
+                addMessage("SPACE - resetAnimation()");
+                addMessage("a - show axis");
+                addMessage("CTRL+l - loader menu");
+                addMessage("CTRL+g - material/lights");
+                addMessage("m - cycle MIDI port");
+                addMessage("CTRL+t - track menu(TO COME)");
+                addMessage("CTRL+o - cycle load scene");
+                addMessage("[1-6] - load select scene");
+                addMessage("[,/.] - prev/next camera");
+                addMessage("s - save Camera");
+                addMessage("n - new Camera View");
+                addMessage("h - help");
+                addMessage("");
+                addMessage("");
+                addMessage("");
+                addMessage("CTRL+H - Hide App");
+                addMessage("CTRL+Q/ESC - Quit App");
+                addMessage("+===========++++===========+");
+                break;
             default:
                 break;
         }
@@ -1372,7 +1421,7 @@ void ofApp::gotMessage(ofMessage msg){
 //--------------------------------------------------------------
 void ofApp::drawMessages() {
     for(int i = 0; i < NUM_MSG_STRINGS; i++){
-		ofDrawBitmapString(msg_strings[i], 1100, 22 + 15 * i);
+		ofDrawBitmapString(msg_strings[i], 1050, 22 + 15 * i);
 	}
 }
 
@@ -1388,6 +1437,11 @@ void ofApp::eraseMessages() {
 
 //--------------------------------------------------------------
 void ofApp::addMessage(string msg) {
+    
+    if(msg == "+===========HELP===========+"){
+        current_msg_string = 0;//print at the top.
+    }
+    
     msg_strings[current_msg_string] = msg;
     timers[current_msg_string] = ofGetElapsedTimef() + 5.0f;
     current_msg_string = (current_msg_string + 1) % NUM_MSG_STRINGS;

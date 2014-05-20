@@ -1,6 +1,11 @@
 Animation Machine (rebuild)
 ==================
-Latest Update: 2014-05-18
+Latest Update: 2014-05-20
+* Fixed UI overlap
+* Added Help (h)
+* Started ofxUISlider implementation to control speed(buggy) 
+
+Update: 2014-05-18
 * Updated to ofApp
 * add code to raise the ofLogLevel. 
 
