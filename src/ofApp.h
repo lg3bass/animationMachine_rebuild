@@ -11,6 +11,7 @@
 #include "aTrack.h"
 #include "aTrackGui.h"
 #include "ofxOsc.h"
+#include "util.h"
 
 
 // listen on port 12345

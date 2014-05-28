@@ -6,8 +6,8 @@
 //
 //
 
-#ifndef __lights_camera_alembic__abcModel__
-#define __lights_camera_alembic__abcModel__
+#ifndef __animationMachine__abcModel__
+#define __animationMachine__abcModel__
 
 
 #include <iostream>
@@ -76,4 +76,4 @@ public:
 
 
 
-#endif /* defined(__lights_camera_alembic__abcModel__) */
+#endif /* defined(__animationMachine__abcModel__) */

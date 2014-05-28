@@ -480,7 +480,7 @@ void ofApp::createTracks(int num){
         }
         
         //behavior
-        ofxUIRadio *butType = (ofxUIRadio *)gui_loader->getWidget(ofToString(i)+"_TRK_TYPE");
+        ofxUIRadio *butType = (ofxUIRadio *)gui_loader->getWidget(util::dDigiter(i)+"_TRK_TYPE");
         vector<ofxUIToggle*> toggles = butType->getToggles();
         for(int j = 0; j < toggles.size(); j++) {
             if(toggles[j]->getValue() == 0) {
@@ -553,7 +553,7 @@ void ofApp::setParamsInABCloaders(int num) {
         abcModels[i].midiNote = noteDialer->getValue();
         
         //track type
-        ofxUIRadio *butType = (ofxUIRadio *)gui_loader->getWidget(ofToString(i)+"_TRK_TYPE");
+        ofxUIRadio *butType = (ofxUIRadio *)gui_loader->getWidget(util::dDigiter(i)+"_TRK_TYPE");
         vector<ofxUIToggle*> type_toggles = butType->getToggles();
         if(type_toggles[0]->getValue()) {
             abcModels[i].ldrType = 0;//reporting[1,0] then set "random:0"
@@ -611,8 +611,8 @@ void ofApp::clearParamsInABCloaders(int num) {
         noteDialer->setValue(0);
         
         //track type
-        ofxUIRadio *butType = (ofxUIRadio *)gui_loader->getWidget(ofToString(i)+"_TRK_TYPE");
-        butType->activateToggle(ofToString(i)+"_random");
+        ofxUIRadio *butType = (ofxUIRadio *)gui_loader->getWidget(util::dDigiter(i)+"_TRK_TYPE");
+        butType->activateToggle(util::dDigiter(i)+"_random");
         
         
         //track mode
@@ -989,7 +989,7 @@ void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
                 
             }
         } else if (ofIsStringInString(name, "TRK_PLAY")){
-            ofxUIImageToggle *playBut = (ofxUIImageToggle *)gui_loader->getWidget(ofToString(row)+"_TRK_PLAY");
+            ofxUIImageToggle *playBut = (ofxUIImageToggle *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_PLAY");
             
             if(playBut->getValue() == 1){
                 abcModels[row].isDemo = true;
@@ -998,7 +998,7 @@ void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
                 abcModels[row].isDemo = false;
             }
             
-            cout << ofToString(row) << "_TRK_PLAY" << ":ofxUIImageToggle (Play Button Toggle) >" << playBut->getValue() << endl;
+            cout << util::dDigiter(row) << "_TRK_PLAY" << ":ofxUIImageToggle (Play Button Toggle) >" << playBut->getValue() << endl;
         } else if(ofIsStringInString(name, "TRK_SPD")){
             ofxUISlider *trackSlider = (ofxUISlider *)gui_loader->getWidget(ofToString(row)+"_TRK_SPD");
             
@@ -1037,9 +1037,9 @@ void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
             cout << ofToString(row) << "_TRK_NOTE" << ":ofxUINumberDialer (Midi Note Number) >" << noteDialer->getValue() << endl;
             
         } else if (ofIsStringInString(name, "random")){
-            ofxUIRadio *butType = (ofxUIRadio *)gui_loader->getWidget(ofToString(row)+"_TRK_TYPE");
+            ofxUIRadio *butType = (ofxUIRadio *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_TYPE");
             vector<ofxUIToggle*> toggles = butType->getToggles();
-            cout << ofToString(row) << "_TRK_TYPE" << ":UIRadio (Random On) >" << "[";
+            cout << util::dDigiter(row) << "_TRK_TYPE" << ":UIRadio (Random On) >" << "[";
             for(int i = 0; i < toggles.size(); i++) {
                 cout << toggles[i]->getValue() << (i<toggles.size()-1?",":"]");
                 if(toggles[i]->getValue()) {
@@ -1052,9 +1052,9 @@ void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
             cout << endl;
             //cout << "Random Button : " << result[0] << "-" << butRandom->getValue() << endl;
         } else if (ofIsStringInString(name, "seq")){
-            ofxUIRadio *butType = (ofxUIRadio *)gui_loader->getWidget(ofToString(row)+"_TRK_TYPE");
+            ofxUIRadio *butType = (ofxUIRadio *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_TYPE");
             vector<ofxUIToggle*> toggles = butType->getToggles();
-            cout << ofToString(row) << "_TRK_TYPE" << ":UIRadio (Sequence On) >"  << "[";
+            cout << util::dDigiter(row) << "_TRK_TYPE" << ":UIRadio (Sequence On) >"  << "[";
             for(int i = 0; i < toggles.size(); i++) {
                 cout << toggles[i]->getValue() << (i<toggles.size()-1?",":"]");
                 if(toggles[i]->getValue()) {
@@ -1132,10 +1132,10 @@ void ofApp::setGUI_loader(int num){
     
     for(int i = 0; i < num; i++)
     {
-        string counter = ofToString(i);
+        string counter = util::dDigiter(i);
         
-        gui_loader->addWidgetDown(new ofxUIImageToggle(20,20,false,"GUI/play.png",ofToString(i)+"_TRK_PLAY"));
-        //gui_loader->addWidgetRight(new ofxUILabelButton(50,false,"LOAD",OFX_UI_FONT_SMALL));
+        
+        gui_loader->addWidgetDown(new ofxUIImageToggle(20,20,false,"GUI/play.png",util::dDigiter(i)+"_TRK_PLAY"));
         gui_loader->addWidgetRight(new ofxUITextInput(300, ofToString(i)+"_TRK_READER", "empty", OFX_UI_FONT_SMALL));
         
         gui_loader->addWidgetRight(new ofxUISlider(ofToString(i)+"_TRK_SPD", 0.01f, 0.10f, 0.05, 100, 18));
@@ -1143,11 +1143,11 @@ void ofApp::setGUI_loader(int num){
         gui_loader->addWidgetRight(new ofxUINumberDialer(0, 0.2, 0.0, 2, ofToString(i)+"_TRK_SPEED", OFX_UI_FONT_SMALL));
         gui_loader->addWidgetRight(new ofxUINumberDialer(1, 10, 10, 0, ofToString(i)+"_TRK_MIDI", OFX_UI_FONT_SMALL));
         gui_loader->addWidgetRight(new ofxUINumberDialer(0, 88, 0.0, 0, ofToString(i)+"_TRK_NOTE", OFX_UI_FONT_SMALL));
-        vector<string> htype; htype.push_back(ofToString(i)+"_random"); htype.push_back(ofToString(i)+"_seq");
-        gui_loader->addWidgetRight(new ofxUIRadio(ofToString(i)+"_TRK_TYPE", htype,OFX_UI_ORIENTATION_HORIZONTAL,20,20));
+        vector<string> htype; htype.push_back(util::dDigiter(i)+"_random"); htype.push_back(util::dDigiter(i)+"_seq");
+        gui_loader->addWidgetRight(new ofxUIRadio(util::dDigiter(i)+"_TRK_TYPE", htype,OFX_UI_ORIENTATION_HORIZONTAL,20,20));
         
         
-        vector<string> hmode; hmode.push_back(ofToString(i)+"_note_On"); hmode.push_back(ofToString(i)+"_note_Off");
+        vector<string> hmode; hmode.push_back(util::dDigiter(i)+"_note_On"); hmode.push_back(util::dDigiter(i)+"_note_Off");
         gui_loader->addWidgetRight(new ofxUIRadio(ofToString(i)+"_TRK_MODE", hmode,OFX_UI_ORIENTATION_HORIZONTAL,20,20));
         gui_loader->addWidgetRight(new ofxUINumberDialer(1, 50, 1.0, 0,ofToString(i)+ "_TRK_SEGMENTS", OFX_UI_FONT_SMALL));
         gui_loader->addWidgetRight(new ofxUINumberDialer(0, 600, 30, 0,ofToString(i)+ "_TRK_SEGLN", OFX_UI_FONT_SMALL));
@@ -1164,7 +1164,7 @@ void ofApp::setGUI_loader(int num){
     gui_loader->addWidgetNorthOf(new ofxUISpacer(30,2,"note_spacer"),"0_TRK_NOTE");
     gui_loader->addWidgetNorthOf(new ofxUILabel("NOTE",OFX_UI_FONT_SMALL),"note_spacer");
     
-    gui_loader->addWidgetNorthOf(new ofxUISpacer(130,2,"type_spacer"),"0_TRK_TYPE");
+    gui_loader->addWidgetNorthOf(new ofxUISpacer(130,2,"type_spacer"),"00_TRK_TYPE");
     gui_loader->addWidgetNorthOf(new ofxUILabel("TYPE",OFX_UI_FONT_SMALL),"type_spacer");
     
     gui_loader->addWidgetNorthOf(new ofxUISpacer(120,2,"mode_spacer"),"0_TRK_MODE");

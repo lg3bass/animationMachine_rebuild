@@ -28,6 +28,7 @@
 		6B14C8EB193E1E460A736C71 /* ofxCameraMove.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F85AA6DD0C84D2A79EBFBE1 /* ofxCameraMove.cpp */; };
 		6F7F2BBDC3266D263C42FB90 /* ofxAlembicUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE7D9F5B188B6FD8CBBA9B98 /* ofxAlembicUtil.cpp */; };
 		72A929D3561B8232A182ABFC /* ofxOscBundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65EEFA3DA3526E9CDD9C21F9 /* ofxOscBundle.cpp */; };
+		7E5D3FAB19363BBB00026C80 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E5D3FA919363BBA00026C80 /* util.cpp */; };
 		7ED71B3F1929090900BAC72B /* Syphon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED71B2E1929090900BAC72B /* Syphon.framework */; };
 		7ED71B401929090900BAC72B /* SyphonNameboundClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED71B311929090900BAC72B /* SyphonNameboundClient.m */; };
 		7ED71B411929090900BAC72B /* ofxSyphonClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7ED71B361929090900BAC72B /* ofxSyphonClient.mm */; };
@@ -274,6 +275,8 @@
 		7B8D7C3EF7DCCC49D7873F74 /* Exception.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Exception.h; path = ../../../addons/ofxAlembic/libs/alembic/include/Alembic/Util/Exception.h; sourceTree = SOURCE_ROOT; };
 		7B8DFF2DE221E55FDB10E9BA /* ArchiveBounds.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ArchiveBounds.h; path = ../../../addons/ofxAlembic/libs/alembic/include/Alembic/AbcGeom/ArchiveBounds.h; sourceTree = SOURCE_ROOT; };
 		7BC6846FD0788ECDE70FAA8C /* ISchemaObject.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ISchemaObject.h; path = ../../../addons/ofxAlembic/libs/alembic/include/Alembic/Abc/ISchemaObject.h; sourceTree = SOURCE_ROOT; };
+		7E5D3FA919363BBA00026C80 /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util.cpp; sourceTree = "<group>"; };
+		7E5D3FAA19363BBB00026C80 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
 		7ED71B2E1929090900BAC72B /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Syphon.framework; sourceTree = "<group>"; };
 		7ED71B301929090900BAC72B /* SyphonNameboundClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyphonNameboundClient.h; sourceTree = "<group>"; };
 		7ED71B311929090900BAC72B /* SyphonNameboundClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyphonNameboundClient.m; sourceTree = "<group>"; };
@@ -1298,6 +1301,8 @@
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
+				7E5D3FA919363BBA00026C80 /* util.cpp */,
+				7E5D3FAA19363BBB00026C80 /* util.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -1524,6 +1529,7 @@
 				1A86B7721CAEBC6F1C572C45 /* ofxBaseMidi.cpp in Sources */,
 				7ED71B421929090900BAC72B /* ofxSyphonServer.mm in Sources */,
 				63F9FE1D90234FA6DE6F509E /* ofxMidi.cpp in Sources */,
+				7E5D3FAB19363BBB00026C80 /* util.cpp in Sources */,
 				0BFC9C20FD7E3C8D5873AA97 /* ofxMidiIn.cpp in Sources */,
 				C6FE64F74F1EA1D98C8F9847 /* ofxMidiMessage.cpp in Sources */,
 				83D9F930112E0944444124EE /* ofxMidiOut.cpp in Sources */,

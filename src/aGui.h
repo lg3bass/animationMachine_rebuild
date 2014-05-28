@@ -6,8 +6,8 @@
 //
 //
 
-#ifndef __lights_camera_alembic__aGui__
-#define __lights_camera_alembic__aGui__
+#ifndef __animationMachine__aGui__
+#define __animationMachine__aGui__
 
 #include <iostream>
 #include "ofMain.h"
@@ -97,4 +97,4 @@ private:
 };
 
 
-#endif /* defined(__lights_camera_alembic__aGui__) */
+#endif /* defined(__animationMachine__aGui__) */

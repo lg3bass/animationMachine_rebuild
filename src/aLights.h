@@ -6,8 +6,8 @@
 //
 //
 
-#ifndef __lights_camera_alembic__aLights__
-#define __lights_camera_alembic__aLights__
+#ifndef __animationMachine__aLights__
+#define __animationMachine__aLights__
 
 #include <iostream>
 #include "ofMain.h"
@@ -50,4 +50,4 @@ private:
     
 };
 
-#endif /* defined(__lights_camera_alembic__aLights__) */
+#endif /* defined(__animationMachine__aLights__) */

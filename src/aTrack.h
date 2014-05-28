@@ -6,13 +6,13 @@
 //
 //
 
-#ifndef __lights_camera_alembic__aTrack__
-#define __lights_camera_alembic__aTrack__
+#ifndef __animationMachine__aTrack__
+#define __animationMachine__aTrack__
 
 #include <iostream>
 #include "ofMain.h"
 
-#endif /* defined(__lights_camera_alembic__aTrack__) */
+#endif /* defined(__animationMachine__aTrack__) */
 
 
 class aTrack  {

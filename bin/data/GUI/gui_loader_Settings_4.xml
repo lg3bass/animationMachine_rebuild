@@ -36,17 +36,17 @@
 <Widget>
     <Kind>12</Kind>
     <Name>0_TRK_READER</Name>
-    <Value>abc/2_ODDITY/full_s3_g1.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>0_TRK_SPD</Name>
-    <Value>0.049999997</Value>
+    <Value>0.039999999</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>0_TRK_SPEED</Name>
-    <Value>0.039999999</Value>
+    <Value>0.070000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -61,32 +61,32 @@
 <Widget>
     <Kind>2</Kind>
     <Name>0_random</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>0_seq</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>0_note_On</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>0_note_Off</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>0_TRK_SEGMENTS</Name>
-    <Value>8.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>0_TRK_SEGLN</Name>
-    <Value>80.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -96,22 +96,22 @@
 <Widget>
     <Kind>12</Kind>
     <Name>1_TRK_READER</Name>
-    <Value>abc/2_ODDITY/full_s3_g2.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>1_TRK_SPD</Name>
-    <Value>0.049999997</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>1_TRK_SPEED</Name>
     <Value>0.040000007</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
+    <Name>1_TRK_SPEED</Name>
+    <Value>0.070000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
     <Name>1_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -121,32 +121,32 @@
 <Widget>
     <Kind>2</Kind>
     <Name>1_random</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>1_seq</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>1_note_On</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>1_note_Off</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>1_TRK_SEGMENTS</Name>
-    <Value>11.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>1_TRK_SEGLN</Name>
-    <Value>110.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -156,22 +156,22 @@
 <Widget>
     <Kind>12</Kind>
     <Name>2_TRK_READER</Name>
-    <Value>abc/2_ODDITY/full_s3_g3.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>2_TRK_SPD</Name>
-    <Value>0.049999997</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>2_TRK_SPEED</Name>
     <Value>0.039999999</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
+    <Name>2_TRK_SPEED</Name>
+    <Value>0.070000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
     <Name>2_TRK_MIDI</Name>
-    <Value>3.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -181,32 +181,32 @@
 <Widget>
     <Kind>2</Kind>
     <Name>2_random</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>2_seq</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>2_note_On</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>2_note_Off</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>2_TRK_SEGMENTS</Name>
-    <Value>5.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>2_TRK_SEGLN</Name>
-    <Value>50.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -221,7 +221,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>3_TRK_SPD</Name>
-    <Value>0.049999997</Value>
+    <Value>0.070000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -231,7 +231,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>3_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -266,7 +266,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>3_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -281,7 +281,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>4_TRK_SPD</Name>
-    <Value>0.049999997</Value>
+    <Value>0.070000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -291,7 +291,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>4_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -326,7 +326,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>4_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -341,7 +341,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>5_TRK_SPD</Name>
-    <Value>0.049999997</Value>
+    <Value>0.070000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -351,7 +351,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>5_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -386,7 +386,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>5_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -401,7 +401,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>6_TRK_SPD</Name>
-    <Value>0.049999997</Value>
+    <Value>0.070000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -411,7 +411,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>6_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -446,7 +446,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>6_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -461,7 +461,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>7_TRK_SPD</Name>
-    <Value>0.049999997</Value>
+    <Value>0.070000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -471,7 +471,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>7_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -506,7 +506,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>7_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -521,7 +521,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>8_TRK_SPD</Name>
-    <Value>0.049999997</Value>
+    <Value>0.070000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -531,7 +531,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>8_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -566,7 +566,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>8_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -581,7 +581,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>9_TRK_SPD</Name>
-    <Value>0.049999997</Value>
+    <Value>0.070000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -591,7 +591,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>9_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -626,7 +626,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>9_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -641,7 +641,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>10_TRK_SPD</Name>
-    <Value>0.049999997</Value>
+    <Value>0.070000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -651,7 +651,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>10_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -686,7 +686,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>10_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -701,7 +701,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>11_TRK_SPD</Name>
-    <Value>0.049999997</Value>
+    <Value>0.070000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -711,7 +711,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>11_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -746,7 +746,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>11_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -761,7 +761,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>12_TRK_SPD</Name>
-    <Value>0.049999997</Value>
+    <Value>0.070000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -771,7 +771,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>12_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -806,7 +806,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>12_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -821,7 +821,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>13_TRK_SPD</Name>
-    <Value>0.049999997</Value>
+    <Value>0.070000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -831,7 +831,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>13_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -866,7 +866,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>13_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -881,7 +881,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>14_TRK_SPD</Name>
-    <Value>0.049999997</Value>
+    <Value>0.070000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -891,7 +891,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>14_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -926,7 +926,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>14_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -941,7 +941,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>15_TRK_SPD</Name>
-    <Value>0.049999997</Value>
+    <Value>0.070000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -951,7 +951,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>15_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -986,7 +986,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>15_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1001,7 +1001,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>16_TRK_SPD</Name>
-    <Value>0.049999997</Value>
+    <Value>0.070000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1011,7 +1011,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>16_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1046,7 +1046,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>16_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1061,7 +1061,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>17_TRK_SPD</Name>
-    <Value>0.049999997</Value>
+    <Value>0.070000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1071,7 +1071,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>17_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1106,7 +1106,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>17_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1121,7 +1121,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>18_TRK_SPD</Name>
-    <Value>0.049999997</Value>
+    <Value>0.070000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1131,7 +1131,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>18_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1166,7 +1166,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>18_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1181,7 +1181,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>19_TRK_SPD</Name>
-    <Value>0.049999997</Value>
+    <Value>0.070000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1191,7 +1191,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>19_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1226,7 +1226,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>19_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1241,7 +1241,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>20_TRK_SPD</Name>
-    <Value>0.049999997</Value>
+    <Value>0.070000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1251,7 +1251,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>20_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1286,7 +1286,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>20_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1301,7 +1301,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>21_TRK_SPD</Name>
-    <Value>0.049999997</Value>
+    <Value>0.070000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1311,7 +1311,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>21_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1346,7 +1346,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>21_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1361,7 +1361,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>22_TRK_SPD</Name>
-    <Value>0.049999997</Value>
+    <Value>0.070000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1371,7 +1371,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>22_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1406,7 +1406,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>22_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1421,7 +1421,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>23_TRK_SPD</Name>
-    <Value>0.049999997</Value>
+    <Value>0.070000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1431,7 +1431,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>23_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1466,7 +1466,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>23_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1481,17 +1481,17 @@
 <Widget>
     <Kind>4</Kind>
     <Name>24_TRK_SPD</Name>
-    <Value>0.049999997</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>24_TRK_SPEED</Name>
     <Value>0.069999985</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
+    <Name>24_TRK_SPEED</Name>
+    <Value>0.070000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
     <Name>24_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1526,7 +1526,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>24_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1541,17 +1541,17 @@
 <Widget>
     <Kind>4</Kind>
     <Name>25_TRK_SPD</Name>
-    <Value>0.049999997</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>25_TRK_SPEED</Name>
     <Value>0.070000008</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
+    <Name>25_TRK_SPEED</Name>
+    <Value>0.070000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
     <Name>25_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1586,7 +1586,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>25_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1601,17 +1601,17 @@
 <Widget>
     <Kind>4</Kind>
     <Name>26_TRK_SPD</Name>
-    <Value>0.049999997</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>26_TRK_SPEED</Name>
     <Value>0.069999993</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
+    <Name>26_TRK_SPEED</Name>
+    <Value>0.070000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
     <Name>26_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1646,7 +1646,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>26_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1661,17 +1661,17 @@
 <Widget>
     <Kind>4</Kind>
     <Name>27_TRK_SPD</Name>
-    <Value>0.049999997</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>27_TRK_SPEED</Name>
     <Value>0.069999985</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
+    <Name>27_TRK_SPEED</Name>
+    <Value>0.070000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
     <Name>27_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1706,5 +1706,5 @@
 <Widget>
     <Kind>8</Kind>
     <Name>27_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
