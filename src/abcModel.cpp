@@ -82,7 +82,11 @@ void abcModel::init(std::string file, float divisions, ofxAlembic::Reader r) {
         isActive = true;
         //open the file if active
         aReader.open(path);
+        abcDurration = aReader.getMaxTime();
     }
+    
+    abcName = path;
+    
     // show all drawable names
 	r.dumpNames();
     
@@ -150,8 +154,9 @@ void abcModel::setClipMarkers(int _currentSegment){
 void abcModel::calcTime(float t){
     //set the position in this Alembic model
     if(isDemo){
-        //fed from slider
-        aReader.setTime(t);
+        //map the .abc durration from 0.0 - 1.0
+        float scaledTime = ofMap(t,0.0,1.0,0.0,aReader.getMaxTime());
+        aReader.setTime(scaledTime);//animTime
     } else {    
         if(isAnimating) {
                 if(trackMode == 1){
@@ -276,15 +281,17 @@ void abcModel::report() {
 
 void abcModel::INFOlaunchingToPlay() {
     cout    << "----->LDR (index:" << this_id    
+            << ",name:" << abcName
             << ",speed:" << clipSpeedMod
             << ",ch:" << midiChannel
             << ",note:" << midiNote
             << ",type:" << ldrType
             << ",mode:" << trackMode
             << ",segments:" << segments
-            << ",segment Length:" << segLength
+            << ",frames:" << segLength
             << ",currentSegment:" << currentSegment
             << ",TIME:" << clipTime << "-" << midTime << "-" << endTime
+            << ",DURRATION:" << abcDurration
             << ")" << endl;
 }
 

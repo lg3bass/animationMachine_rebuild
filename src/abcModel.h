@@ -45,6 +45,7 @@ public:
     int this_id;  // dont think this is public.
     
     //public
+    float abcDurration;
     float segments;
     float clipSpeedMod;
     float midiChannel;
@@ -53,6 +54,7 @@ public:
     int trackMode; // 0=noteOn, 1=noteOn/noteOff
     float segLength;
     int currentSegment;
+    string abcName;
     
     float half_unit;
     float full_unit;

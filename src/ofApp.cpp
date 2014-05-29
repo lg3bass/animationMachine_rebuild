@@ -984,7 +984,7 @@ void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
             ofxUISlider *trackSlider = (ofxUISlider *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_SPD");
             
             //set the text dialer.
-            float sldr_val = ofMap(trackSlider->getValue(), 0, 1.0, 0.02, 0.12);
+            float sldr_val = ofMap(trackSlider->getValue(), 0.0, 1.0, 0.00, 0.12);
             abcModels[row].clipSpeedMod = sldr_val;//abcModel.cpp
             
             ofxUINumberDialer *trackDialer = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_SPEED");
@@ -1098,7 +1098,7 @@ void ofApp::setGUI_loader(int num){
     
     gui_loader = new ofxUICanvas(0, 0, w + xInit * 2, ofGetHeight());
     gui_loader->setFont("GUI/HelveticaNeueLTStd-Bd.otf");
-    gui_loader->setFontSize(OFX_UI_FONT_SMALL, 6);
+    gui_loader->setFontSize(OFX_UI_FONT_SMALL, 5);
     
     
     gui_loader->addWidgetRight(new ofxUILabelButton(50,false,"CLEAR",OFX_UI_FONT_SMALL));
@@ -1119,9 +1119,9 @@ void ofApp::setGUI_loader(int num){
         gui_loader->addWidgetDown(new ofxUIImageToggle(20,20,false,"GUI/play.png",util::dDigiter(i)+"_TRK_PLAY"));
         gui_loader->addWidgetRight(new ofxUITextInput(310, util::dDigiter(i)+"_TRK_READER", "empty", OFX_UI_FONT_SMALL));
         
-        gui_loader->addWidgetRight(new ofxUISlider(util::dDigiter(i)+"_TRK_SPD", 0.01f, 0.10f, 0.05, 100, 18));
+        gui_loader->addWidgetRight(new ofxUISlider(util::dDigiter(i)+"_TRK_SPD", 0.00f, 0.12f, 0.05, 100, 18));
         
-        gui_loader->addWidgetRight(new ofxUINumberDialer(0, 0.2, 0.0, 3, util::dDigiter(i)+"_TRK_SPEED", OFX_UI_FONT_SMALL));
+        gui_loader->addWidgetRight(new ofxUINumberDialer(0, 0.12, 0.0, 3, util::dDigiter(i)+"_TRK_SPEED", OFX_UI_FONT_SMALL));
         gui_loader->addWidgetRight(new ofxUINumberDialer(1, 10, 10, 0, util::dDigiter(i)+"_TRK_MIDI", OFX_UI_FONT_SMALL));
         gui_loader->addWidgetRight(new ofxUINumberDialer(0, 88, 0.0, 0, util::dDigiter(i)+"_TRK_NOTE", OFX_UI_FONT_SMALL));
         vector<string> htype; htype.push_back(util::dDigiter(i)+"_random"); htype.push_back(util::dDigiter(i)+"_seq");
