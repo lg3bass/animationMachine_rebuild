@@ -1,9 +1,9 @@
 <camera>
-    <angle>52.700080872</angle>
-    <x>0.621345580</x>
-    <y>0.219241813</y>
-    <z>-0.752238393</z>
-    <getGlobalPositionX>9.799107552</getGlobalPositionX>
-    <getGlobalPositionY>-120.008544922</getGlobalPositionY>
-    <getGlobalPositionZ>208.176681519</getGlobalPositionZ>
+    <angle>0.000000000</angle>
+    <x>0.000000000</x>
+    <y>0.000000000</y>
+    <z>1.000000000</z>
+    <getGlobalPositionX>0.000000000</getGlobalPositionX>
+    <getGlobalPositionY>0.000000000</getGlobalPositionY>
+    <getGlobalPositionZ>623.538208008</getGlobalPositionZ>
 </camera>

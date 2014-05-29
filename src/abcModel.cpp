@@ -94,7 +94,7 @@ void abcModel::init(std::string file, float divisions, ofxAlembic::Reader r) {
 
 
 void abcModel::load() {
-    //ofxUINumberDialer *trackDialer = (ofxUINumberDialer *)myGuiRef->gui_loader->getWidget(ofToString(this_id)+"_TRK_SPEED");
+    //ofxUINumberDialer *trackDialer = (ofxUINumberDialer *)myGuiRef->gui_loader->getWidget(util::dDigiter(this_id)+"_TRK_SPEED");
     //clipSpeedMod = trackDialer->getValue();
 }
 
