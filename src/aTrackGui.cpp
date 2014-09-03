@@ -25,6 +25,8 @@ aTrackGui::aTrackGui() {
 void aTrackGui::setup(){
     //TO-DO
     //-- populate the matieral vector with content.
+    
+    
 }
 
 
@@ -32,9 +34,8 @@ void aTrackGui::reset() {
     
     setGUI();
     
-    gui->loadSettings("GUI/gui_Track.xml");
-    
-    gui->setVisible(false);
+    TRK_gui_1->loadSettings("GUI/gui_Track.xml");
+    TRK_gui_1->setVisible(false);
     
     guiAlloc = true;
     doReset = false;
@@ -50,8 +51,8 @@ void aTrackGui::draw() {
 }
 
 void aTrackGui::exit() {
-    gui->saveSettings("GUI/gui_Track.xml");
-    delete gui;
+    TRK_gui_1->saveSettings("GUI/gui_Track.xml");
+    delete TRK_gui_1;
 }
 
 void aTrackGui::guiEvent(ofxUIEventArgs &e) {
@@ -157,54 +158,88 @@ void aTrackGui::setGUI() {
     float xInit = OFX_UI_GLOBAL_WIDGET_SPACING;
     float w = 1000 - xInit * 2;
     float vertH = 40;
-    float h = 8;
+    float h = 15;
     
     
     if (guiAlloc) {
-        ofRemoveListener(gui->newGUIEvent, this, &aTrackGui::guiEvent);
-        
-        //will need to add the sliders.
-        
-        delete gui;
+        ofRemoveListener(TRK_gui_1->newGUIEvent, this, &aTrackGui::guiEvent);
+        delete TRK_gui_1;
     }
     
     
-    gui = new ofxUICanvas(0, 0, w + xInit * 2, ofGetHeight());
-    gui->setFont("GUI/HelveticaNeueLTStd-Bd.otf");
-    gui->setFontSize(OFX_UI_FONT_SMALL, 6);
-    /*
-    gui->addWidgetRight(new ofxUILabelButton(50,false,"LOAD",OFX_UI_FONT_SMALL));
-    gui->addWidgetRight(new ofxUILabelButton(50,false,"SAVE",OFX_UI_FONT_SMALL));
-    */
+    TRK_gui_1 = new ofxUICanvas(0, 0, w + xInit * 2, ofGetHeight());
+    TRK_gui_1->setFont("GUI/HelveticaNeueLTStd-Bd.otf");
+    TRK_gui_1->setFontSize(OFX_UI_FONT_SMALL, 6);
 
-    gui->addWidgetDown(new ofxUILabel("Material 1", OFX_UI_FONT_MEDIUM));
-    gui->addSlider("MAT SHINE 1", 0, 128, 255, 230, h);
+    TRK_gui_1->addWidgetDown(new ofxUILabel("Material 1", OFX_UI_FONT_MEDIUM));
+    TRK_gui_1->addSlider("Mat 1 Shine", 0, 128, 255, 230, 10);
     
-    gui->addSpacer(230,15);
+    TRK_gui_1->addSpacer(230,15);
+        
+    matDiffSlider.push_back(TRK_gui_1->addSlider("dr1", 0, 255, 100, h, vertH));
+    TRK_gui_1->setWidgetPosition(OFX_UI_WIDGET_POSITION_RIGHT);
+    matDiffSlider.push_back(TRK_gui_1->addSlider("dg1", 0, 255, 100, h, vertH));
+    matDiffSlider.push_back(TRK_gui_1->addSlider("db1", 0, 255, 100, h, vertH));
+    
+    TRK_gui_1->addSpacer(2, vertH+10);
+    
+    matEmSlider.push_back(TRK_gui_1->addSlider("er1", 0, 255, 100, h, vertH));
+    matEmSlider.push_back(TRK_gui_1->addSlider("eg1", 0, 255, 100, h, vertH));
+    matEmSlider.push_back(TRK_gui_1->addSlider("eb1", 0, 255, 100, h, vertH));
+    
+    TRK_gui_1->addSpacer(2, vertH+10);
+    
+    matSpecSlider.push_back(TRK_gui_1->addSlider("sr1", 0, 255, 100, h, vertH));
+    matSpecSlider.push_back(TRK_gui_1->addSlider("sg1", 0, 255, 100, h, vertH));
+    matSpecSlider.push_back(TRK_gui_1->addSlider("sb1", 0, 255, 100, h, vertH));
+    
+    TRK_gui_1->setWidgetPosition(OFX_UI_WIDGET_POSITION_DOWN);
     
     
-    matDiffSlider.push_back(gui->addSlider("DR", 0, 255, 100, h, vertH));
-    gui->setWidgetPosition(OFX_UI_WIDGET_POSITION_RIGHT);
-    matDiffSlider.push_back(gui->addSlider("DG", 0, 255, 100, h, vertH));
-    matDiffSlider.push_back(gui->addSlider("DB", 0, 255, 100, h, vertH));
+    TRK_gui_1->addLabel("Material 2", OFX_UI_FONT_MEDIUM);
+    TRK_gui_1->addSlider("Mat 2 Shine", 0, 128, 255, 230, 10);
     
-    gui->addSpacer(2, vertH+10);
     
-    matEmSlider.push_back(gui->addSlider("ER", 0, 255, 100, h, vertH));
-    gui->setWidgetPosition(OFX_UI_WIDGET_POSITION_RIGHT);
-    matEmSlider.push_back(gui->addSlider("EG", 0, 255, 100, h, vertH));
-    matEmSlider.push_back(gui->addSlider("EB", 0, 255, 100, h, vertH));
     
-    gui->addSpacer(2, vertH+10);
     
-    matSpecSlider.push_back(gui->addSlider("SR", 0, 255, 100, h, vertH));
-    matSpecSlider.push_back(gui->addSlider("SG", 0, 255, 100, h, vertH));
-    matSpecSlider.push_back(gui->addSlider("SB", 0, 255, 100, h, vertH));
+    TRK_gui_1->addWidgetNorthOf(new ofxUILabel("Diffuse",OFX_UI_FONT_SMALL),"dr1");
+    TRK_gui_1->addWidgetNorthOf(new ofxUILabel("Emissive",OFX_UI_FONT_SMALL),"er1");
+    TRK_gui_1->addWidgetNorthOf(new ofxUILabel("Specular",OFX_UI_FONT_SMALL),"sr1");
     
-    gui->addWidgetNorthOf(new ofxUILabel("Diffuse",OFX_UI_FONT_SMALL),"DR");
-    gui->addWidgetNorthOf(new ofxUILabel("Emissive",OFX_UI_FONT_SMALL),"ER");
-    gui->addWidgetNorthOf(new ofxUILabel("Specular",OFX_UI_FONT_SMALL),"SR");
     
+// END LOOP
+    
+    
+    
+    /*
+
+    
+    TRK_gui_1->addSpacer(230,15);
+    
+    matDiffSlider.push_back(TRK_gui_1->addSlider("DR", 0, 255, 100, h, vertH));
+    TRK_gui_1->setWidgetPosition(OFX_UI_WIDGET_POSITION_RIGHT);
+    matDiffSlider.push_back(TRK_gui_1->addSlider("DG", 0, 255, 100, h, vertH));
+    matDiffSlider.push_back(TRK_gui_1->addSlider("DB", 0, 255, 100, h, vertH));
+    
+    TRK_gui_1->addSpacer(2, vertH+10);
+    
+    matEmSlider.push_back(TRK_gui_1->addSlider("ER", 0, 255, 100, h, vertH));
+    TRK_gui_1->setWidgetPosition(OFX_UI_WIDGET_POSITION_RIGHT);
+    matEmSlider.push_back(TRK_gui_1->addSlider("EG", 0, 255, 100, h, vertH));
+    matEmSlider.push_back(TRK_gui_1->addSlider("EB", 0, 255, 100, h, vertH));
+    
+    TRK_gui_1->addSpacer(2, vertH+10);
+    
+    matSpecSlider.push_back(TRK_gui_1->addSlider("SR", 0, 255, 100, h, vertH));
+    matSpecSlider.push_back(TRK_gui_1->addSlider("SG", 0, 255, 100, h, vertH));
+    matSpecSlider.push_back(TRK_gui_1->addSlider("SB", 0, 255, 100, h, vertH));
+    
+    TRK_gui_1->addWidgetNorthOf(new ofxUILabel("Diffuse",OFX_UI_FONT_SMALL),"DR");
+    TRK_gui_1->addWidgetNorthOf(new ofxUILabel("Emissive",OFX_UI_FONT_SMALL),"ER");
+    TRK_gui_1->addWidgetNorthOf(new ofxUILabel("Specular",OFX_UI_FONT_SMALL),"SR");
+
+ 
+ 
     //TO-DO
     //ADD THE MATIERIAL.
     //--need to put in a loop.
@@ -242,9 +277,9 @@ void aTrackGui::setGUI() {
      
      */
     
-    gui->setWidgetColor(OFX_UI_WIDGET_COLOR_BACK, ofColor(120,200));
+    TRK_gui_1->setWidgetColor(OFX_UI_WIDGET_COLOR_BACK, ofColor(120,200));
     
-    ofAddListener(gui->newGUIEvent, this, &aTrackGui::guiEvent);
+    ofAddListener(TRK_gui_1->newGUIEvent, this, &aTrackGui::guiEvent);
     
 }
 
@@ -257,3 +292,21 @@ void aTrackGui::setWSlider(vector<ofxUISlider *>sliders, ofColor &c, float v){
     }
     
 }
+
+void aTrackGui::toggleVisibility(bool _view){
+    if(_view == false){
+        TRK_gui_1->setVisible(false);
+        //TRK_gui_2->setVisible(false);
+        //TRK_gui_3->setVisible(false);
+        //TRK_gui_4->setVisible(false);
+        //TRK_gui_5->setVisible(false);
+    } else {
+        TRK_gui_1->toggleVisible();
+        //TRK_gui_2->toggleVisible();
+        //TRK_gui_3->toggleVisible();
+        //TRK_gui_4->toggleVisible();
+        //TRK_gui_5->toggleVisible();
+    }
+}
+
+

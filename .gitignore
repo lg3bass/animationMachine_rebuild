@@ -3,14 +3,26 @@
 *.xcuserstate
 *.sublime-workspace
 
+# .abc files
 /bin/data/abc/1_ODDITY/
 /bin/data/abc/block/
 /bin/data/abc/COG/
-/bin/data/GUI/OLD/
 /bin/kapow_data/
 /bin/data/abc/2013-05-13_oddity/
 /bin/data/abc/2014-02-03_inclined/
 /bin/data/abc/20140528_medallion/
+/bin/data/abc/scalop_19/
+
+# xml gui files
+/bin/data/GUI/OLD/
+
+# xml loader files - on git they're blank
+/bin/data/GUI/gui_loader_Settings_1.xml
+/bin/data/GUI/gui_loader_Settings_2.xml
+/bin/data/GUI/gui_loader_Settings_3.xml
+/bin/data/GUI/gui_loader_Settings_4.xml
+/bin/data/GUI/gui_loader_Settings_5.xml
+/bin/data/GUI/gui_loader_Settings_6.xml
 
 # Xcode
 .DS_Store

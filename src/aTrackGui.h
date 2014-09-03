@@ -19,6 +19,14 @@ class aTrackGui{
     public:
     
         static aTrackGui* Instance();//pointer to oneself.
+
+        ofxUICanvas *TRK_gui_1;
+        ofxUICanvas *TRK_gui_2;
+        ofxUICanvas *TRK_gui_3;
+        ofxUICanvas *TRK_gui_4;
+        ofxUICanvas *TRK_gui_5;
+    
+    
     
         void setup();
         void reset();
@@ -30,14 +38,17 @@ class aTrackGui{
         void guiEvent(ofxUIEventArgs &);
         void setGUI();//sets gui and gui2
         void setWSlider(vector<ofxUISlider *>sliders, ofColor &c, float v);
- 
-        ofxUICanvas *gui;
+        void toggleVisibility(bool _view = true);
+
+    
+    
+    
     
         bool guiAlloc;
         bool wModActive;
         bool doReset;
     
-        vector<ofMaterial> materials;
+        ofMaterial materials[10];
     
         vector<ofxUISlider *> matDiffSlider;
         vector<ofxUISlider *> matSpecSlider;

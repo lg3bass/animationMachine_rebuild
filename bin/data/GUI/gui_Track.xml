@@ -1,50 +1,55 @@
 <Widget>
     <Kind>4</Kind>
-    <Name>MAT SHINE 1</Name>
-    <Value>128.000000000</Value>
+    <Name>Mat 1 Shine</Name>
+    <Value>97.391304016</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
-    <Name>DR</Name>
-    <Value>242.250000000</Value>
-</Widget>
-<Widget>
-    <Kind>5</Kind>
-    <Name>DG</Name>
+    <Name>dr1</Name>
     <Value>100.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
-    <Name>DB</Name>
-    <Value>95.625000000</Value>
+    <Name>dg1</Name>
+    <Value>100.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
-    <Name>ER</Name>
-    <Value>133.875000000</Value>
+    <Name>db1</Name>
+    <Value>100.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
-    <Name>EG</Name>
-    <Value>210.375000000</Value>
+    <Name>er1</Name>
+    <Value>100.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
-    <Name>EB</Name>
-    <Value>184.875000000</Value>
+    <Name>eg1</Name>
+    <Value>100.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
-    <Name>SR</Name>
-    <Value>191.250000000</Value>
+    <Name>eb1</Name>
+    <Value>100.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
-    <Name>SG</Name>
-    <Value>153.000000000</Value>
+    <Name>sr1</Name>
+    <Value>100.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
-    <Name>SB</Name>
-    <Value>140.250000000</Value>
+    <Name>sg1</Name>
+    <Value>100.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sb1</Name>
+    <Value>100.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Mat 2 Shine</Name>
+    <Value>113.530433655</Value>
 </Widget>

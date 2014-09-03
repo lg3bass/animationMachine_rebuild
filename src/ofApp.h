@@ -60,7 +60,7 @@ public:
     //TRACKS
     void createTracks(int num);
     void setParamsInABCloaders(int num);
-    void clearParamsInABCloaders(int num);
+    void clearParamsInABCloaders(int start, int end);
     vector<aTrack> tracks;
     int pickRandomLoader(int ch);
     

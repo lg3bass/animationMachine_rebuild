@@ -118,7 +118,8 @@ void ofApp::reset()
     myGui->gui->setVisible(false);
     myGui->gui2->setVisible(false);
     gui_loader->setVisible(false);
-    myTrackGui->gui->setVisible(false);
+    //myTrackGui->TRK_gui_1->setVisible(false);
+    myTrackGui->toggleVisibility(false);
 }
 
 void ofApp::loadScene(int sceneIndex){
@@ -138,7 +139,7 @@ void ofApp::loadScene(int sceneIndex){
 }
 
 void ofApp::clearScene(int sceneIndex){
-    clearParamsInABCloaders(numOfABC);
+    clearParamsInABCloaders(0,numOfABC);
 }
 
 
@@ -569,11 +570,11 @@ void ofApp::setParamsInABCloaders(int num) {
 }
 
 //--------------------------------------------------------------
-void ofApp::clearParamsInABCloaders(int num) {
+void ofApp::clearParamsInABCloaders(int start, int end) {
     
     
     // loop through the loaders and clear the params.
-    for(int i = 0; i < num; i++){
+    for(int i = start; i < end; i++){
         
         ofxUITextInput *uitrack = (ofxUITextInput *)gui_loader->getWidget(util::dDigiter(i)+"_TRK_READER");
         uitrack->setTextString("empty");
@@ -837,6 +838,10 @@ void ofApp::newOscMessage(){
             saveCam.nextView(4.0);
             addMessage(">saveCam.nextView(4.0)");
 		}
+        if(m.getAddress() == "/zeroview"){
+            saveCam.zeroView(4.0);
+            addMessage(">saveCam.zeroView(4.0)");
+        }
 		// Reset animation.
 		else if(m.getAddress() == "/resetOF"){
             resetAnimation(numOfABC);
@@ -980,6 +985,17 @@ void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
             }
             
             cout << util::dDigiter(row) << "_TRK_PLAY" << ":ofxUIImageToggle (Play Button Toggle) >" << playBut->getValue() << endl;
+        } else if (ofIsStringInString(name, "TRK_CLR")){
+           
+            ofxUIImageButton *clearBut = (ofxUIImageButton *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_CLR");
+            if(clearBut->getValue()){
+                cout << util::dDigiter(row) << "_TRK_CLR" << clearBut->getValue() << endl;
+                clearParamsInABCloaders(row,row+1);
+            
+            }
+            
+            
+        
         } else if(ofIsStringInString(name, "TRK_SPD")){
             ofxUISlider *trackSlider = (ofxUISlider *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_SPD");
             
@@ -1117,6 +1133,7 @@ void ofApp::setGUI_loader(int num){
         
         
         gui_loader->addWidgetDown(new ofxUIImageToggle(20,20,false,"GUI/play.png",util::dDigiter(i)+"_TRK_PLAY"));
+        gui_loader->addWidgetRight(new ofxUIImageButton(20,20,false,"GUI/clear.png",util::dDigiter(i)+"_TRK_CLR"));
         gui_loader->addWidgetRight(new ofxUITextInput(310, util::dDigiter(i)+"_TRK_READER", "empty", OFX_UI_FONT_SMALL));
         
         gui_loader->addWidgetRight(new ofxUISlider(util::dDigiter(i)+"_TRK_SPD", 0.00f, 0.12f, 0.05, 100, 18));
@@ -1230,7 +1247,8 @@ void ofApp::keyPressed(int key){
                         showLights = false;
                     }
                     if(showTrack) {
-                        myTrackGui->gui->toggleVisible();
+                        //myTrackGui->TRK_gui_1->toggleVisible();
+                        myTrackGui->toggleVisibility();
                         showTrack = false;
                     }
                 }
@@ -1246,7 +1264,8 @@ void ofApp::keyPressed(int key){
                         showLdr = false;
                     }
                     if(showTrack){
-                        myTrackGui->gui->toggleVisible();
+                        //myTrackGui->TRK_gui_1->toggleVisible();
+                        myTrackGui->toggleVisibility();
                         showTrack = false;
                     }
                     
@@ -1259,7 +1278,8 @@ void ofApp::keyPressed(int key){
             case 't':
                 //gui screens
                 if(modkey){
-                    myTrackGui->gui->toggleVisible();
+                    //myTrackGui->TRK_gui_1->toggleVisible();
+                    myTrackGui->toggleVisibility();
                     showTrack = !showTrack;
                     if(showLdr) {
                         gui_loader->toggleVisible();
@@ -1298,6 +1318,9 @@ void ofApp::keyPressed(int key){
             case 'n':
                 if(modkey) saveCam.newView();
                 break;
+            case 'z':
+                if(modkey) saveCam.zeroView();
+                break;
             case 'h'://CTRL+h is hide
                 
                 addMessage("+===========HELP===========+");
@@ -1312,8 +1335,9 @@ void ofApp::keyPressed(int key){
                 addMessage("CTRL+[] - prev/next camera");
                 addMessage("CTRL+s - save Camera");
                 addMessage("CTRL+n - new Camera View");
+                addMessage("CTRL+z - ZERO Camera View");
                 addMessage("h - help");
-                addMessage("");
+                
                 addMessage("");
                 addMessage("CTRL+m - Minimize App");
                 addMessage("CTRL+h - Hide App");
@@ -1383,7 +1407,7 @@ void ofApp::mousePressed(int x, int y, int button){
     if (gui_loader->isHit(x,y)) {
         cam.disableMouseInput();
     }
-    if (myTrackGui->gui->isHit(x,y)) {
+    if (myTrackGui->TRK_gui_1->isHit(x,y)) {
         cam.disableMouseInput();
     }
     
