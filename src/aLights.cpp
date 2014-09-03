@@ -67,6 +67,8 @@ void aLights::reset() {
     setLightOri(dir, dir_rot);
     
     amb.setAmbientColor(ofColor(20.0, 20.0, 20.0, 20.0));
+
+    
     //*************MOVING TO aTrackGui
     material1.setShininess(128);
     

@@ -20,6 +20,7 @@ class aTrackGui{
     
         static aTrackGui* Instance();//pointer to oneself.
 
+        //setting up multiple gui's.  Right now I got one.
         ofxUICanvas *TRK_gui_1;
         ofxUICanvas *TRK_gui_2;
         ofxUICanvas *TRK_gui_3;

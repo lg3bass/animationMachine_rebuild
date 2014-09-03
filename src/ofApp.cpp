@@ -93,6 +93,7 @@ void ofApp::setup(){
 
 void ofApp::reset()
 {
+    //pass through the reset commands.
     myLights->reset();
     myGui->reset();
     myTrackGui->reset();

@@ -39,6 +39,17 @@ void aTrackGui::reset() {
     
     guiAlloc = true;
     doReset = false;
+
+    //initialize the materials
+    for(int i=0; i<10; i++){
+    
+    materials[i].setShininess(128);
+    materials[i].setSpecularColor(ofColor(255, 255, 255, 255));
+    materials[i].setEmissiveColor(ofColor(0, 0, 0, 255));
+    materials[i].setDiffuseColor(ofColor(255, 255, 255, 255));
+    materials[i].setAmbientColor(ofColor(255, 255, 255, 255));
+    }
+
     
 }
 
@@ -62,44 +73,43 @@ void aTrackGui::guiEvent(ofxUIEventArgs &e) {
     //TO-DO
     //--setup all the listeners for the matierial sliders.
     //--need to set this up in a loop. too many.
-    
-    /*
 
-     //Material 1
-} else if (name == "MAT SHINE 1") {
+ //Material 1
+if (name == "Mat 1 Shine") {
     ofxUISlider *slider = (ofxUISlider *)e.widget;
-    myLights2->material1.setShininess(slider->getScaledValue());
+    materials[0].setShininess(slider->getScaledValue());
     
-    //material diffuse/ambient colour
-} else if (name == "MDR1") {
-    ofColor c = myLights2->material1.getDiffuseColor();
+//material diffuse
+} else if (name == "dr1") {
+    ofColor c = materials[0].getDiffuseColor();
     ofxUISlider *slider = (ofxUISlider *)e.widget;
     c.r = slider->getScaledValue();
     setWSlider(matDiffSlider, c, slider->getScaledValue());
-    myLights2->material1.setDiffuseColor(c);
-    myLights2->material1.setAmbientColor(c);
-} else if (name == "MDG1") {
-    ofColor c = myLights2->material1.getDiffuseColor();
+    materials[0].setDiffuseColor(c);
+    materials[0].setAmbientColor(c);
+} else if (name == "dg1") {
+    ofColor c = materials[0].getDiffuseColor();
     ofxUISlider *slider = (ofxUISlider *)e.widget;
     c.g = slider->getScaledValue();
     setWSlider(matDiffSlider, c, slider->getScaledValue());
-    myLights2->material1.setDiffuseColor(c);
-    myLights2->material1.setAmbientColor(c);
-} else if (name == "MDB1") {
-    ofColor c = myLights2->material1.getDiffuseColor();
+    materials[0].setDiffuseColor(c);
+    materials[0].setAmbientColor(c);
+} else if (name == "db1") {
+    ofColor c = materials[0].getDiffuseColor();
     ofxUISlider *slider = (ofxUISlider *)e.widget;
     c.b = slider->getScaledValue();
     setWSlider(matDiffSlider, c, slider->getScaledValue());
-    myLights2->material1.setDiffuseColor(c);
-    myLights2->material1.setAmbientColor(c);
-} else if (name == "MDA1") {
-    ofColor c = myLights2->material1.getDiffuseColor();
+    materials[0].setDiffuseColor(c);
+    materials[0].setAmbientColor(c);
+} else if (name == "da1") {
+    ofColor c = materials[0].getDiffuseColor();
     ofxUISlider *slider = (ofxUISlider *)e.widget;
     c.a = slider->getScaledValue();
-    myLights2->material1.setDiffuseColor(c);
-    myLights2->material1.setAmbientColor(c);
-    
-    //material emissive colour
+    materials[0].setDiffuseColor(c);
+    materials[0].setAmbientColor(c);
+}
+ /*
+//material emissive colour
 } else if (name == "MER1") {
     ofColor c = myLights2->material1.getEmissiveColor();
     ofxUISlider *slider = (ofxUISlider *)e.widget;
@@ -158,7 +168,7 @@ void aTrackGui::setGUI() {
     float xInit = OFX_UI_GLOBAL_WIDGET_SPACING;
     float w = 1000 - xInit * 2;
     float vertH = 40;
-    float h = 15;
+    float h = 16;
     
     
     if (guiAlloc) {
@@ -169,12 +179,12 @@ void aTrackGui::setGUI() {
     
     TRK_gui_1 = new ofxUICanvas(0, 0, w + xInit * 2, ofGetHeight());
     TRK_gui_1->setFont("GUI/HelveticaNeueLTStd-Bd.otf");
-    TRK_gui_1->setFontSize(OFX_UI_FONT_SMALL, 6);
+    TRK_gui_1->setFontSize(OFX_UI_FONT_SMALL, 5);
 
     TRK_gui_1->addWidgetDown(new ofxUILabel("Material 1", OFX_UI_FONT_MEDIUM));
     TRK_gui_1->addSlider("Mat 1 Shine", 0, 128, 255, 230, 10);
     
-    TRK_gui_1->addSpacer(230,15);
+    TRK_gui_1->addSpacer(230,10);
         
     matDiffSlider.push_back(TRK_gui_1->addSlider("dr1", 0, 255, 100, h, vertH));
     TRK_gui_1->setWidgetPosition(OFX_UI_WIDGET_POSITION_RIGHT);
@@ -195,87 +205,38 @@ void aTrackGui::setGUI() {
     
     TRK_gui_1->setWidgetPosition(OFX_UI_WIDGET_POSITION_DOWN);
     
-    
     TRK_gui_1->addLabel("Material 2", OFX_UI_FONT_MEDIUM);
     TRK_gui_1->addSlider("Mat 2 Shine", 0, 128, 255, 230, 10);
+
+    TRK_gui_1->addSpacer(230,10);
+    
+    matDiffSlider.push_back(TRK_gui_1->addSlider("dr2", 0, 255, 100, h, vertH));
+    TRK_gui_1->setWidgetPosition(OFX_UI_WIDGET_POSITION_RIGHT);
+    matDiffSlider.push_back(TRK_gui_1->addSlider("dg2", 0, 255, 100, h, vertH));
+    matDiffSlider.push_back(TRK_gui_1->addSlider("db2", 0, 255, 100, h, vertH));
+    
+    TRK_gui_1->addSpacer(2, vertH+10);
+    
+    matEmSlider.push_back(TRK_gui_1->addSlider("er2", 0, 255, 100, h, vertH));
+    matEmSlider.push_back(TRK_gui_1->addSlider("eg2", 0, 255, 100, h, vertH));
+    matEmSlider.push_back(TRK_gui_1->addSlider("eb2", 0, 255, 100, h, vertH));
+    
+    TRK_gui_1->addSpacer(2, vertH+10);
+    
+    matSpecSlider.push_back(TRK_gui_1->addSlider("sr2", 0, 255, 100, h, vertH));
+    matSpecSlider.push_back(TRK_gui_1->addSlider("sg2", 0, 255, 100, h, vertH));
+    matSpecSlider.push_back(TRK_gui_1->addSlider("sb2", 0, 255, 100, h, vertH));
     
     
     
     
+    // after you build the gui top to bottom. Last thing -- add the headers.
     TRK_gui_1->addWidgetNorthOf(new ofxUILabel("Diffuse",OFX_UI_FONT_SMALL),"dr1");
     TRK_gui_1->addWidgetNorthOf(new ofxUILabel("Emissive",OFX_UI_FONT_SMALL),"er1");
     TRK_gui_1->addWidgetNorthOf(new ofxUILabel("Specular",OFX_UI_FONT_SMALL),"sr1");
     
     
-// END LOOP
-    
-    
-    
-    /*
 
-    
-    TRK_gui_1->addSpacer(230,15);
-    
-    matDiffSlider.push_back(TRK_gui_1->addSlider("DR", 0, 255, 100, h, vertH));
-    TRK_gui_1->setWidgetPosition(OFX_UI_WIDGET_POSITION_RIGHT);
-    matDiffSlider.push_back(TRK_gui_1->addSlider("DG", 0, 255, 100, h, vertH));
-    matDiffSlider.push_back(TRK_gui_1->addSlider("DB", 0, 255, 100, h, vertH));
-    
-    TRK_gui_1->addSpacer(2, vertH+10);
-    
-    matEmSlider.push_back(TRK_gui_1->addSlider("ER", 0, 255, 100, h, vertH));
-    TRK_gui_1->setWidgetPosition(OFX_UI_WIDGET_POSITION_RIGHT);
-    matEmSlider.push_back(TRK_gui_1->addSlider("EG", 0, 255, 100, h, vertH));
-    matEmSlider.push_back(TRK_gui_1->addSlider("EB", 0, 255, 100, h, vertH));
-    
-    TRK_gui_1->addSpacer(2, vertH+10);
-    
-    matSpecSlider.push_back(TRK_gui_1->addSlider("SR", 0, 255, 100, h, vertH));
-    matSpecSlider.push_back(TRK_gui_1->addSlider("SG", 0, 255, 100, h, vertH));
-    matSpecSlider.push_back(TRK_gui_1->addSlider("SB", 0, 255, 100, h, vertH));
-    
-    TRK_gui_1->addWidgetNorthOf(new ofxUILabel("Diffuse",OFX_UI_FONT_SMALL),"DR");
-    TRK_gui_1->addWidgetNorthOf(new ofxUILabel("Emissive",OFX_UI_FONT_SMALL),"ER");
-    TRK_gui_1->addWidgetNorthOf(new ofxUILabel("Specular",OFX_UI_FONT_SMALL),"SR");
-
- 
- 
-    //TO-DO
-    //ADD THE MATIERIAL.
-    //--need to put in a loop.
-    //--set up the sliders with labels "northOf"
-    
-    /*
-     
-     //Material Control 1
-     gui2->addSpacer(w, 2);
-     gui2->addWidgetDown(new ofxUILabel("Material 1", OFX_UI_FONT_MEDIUM));
-     gui2->addSlider("MAT SHINE 1", 0, 128, myLights2->material1.getShininess(), w, h);
-     gui2->addWidgetDown(new ofxUILabel("Material Diffuse/Emissive/Specular Color", OFX_UI_FONT_SMALL));
-     
-     c = myLights2->material1.getDiffuseColor();
-     matDiffSlider.push_back(gui2->addSlider("MDR1", 0, 255, c.r, h, vertH));
-     gui2->setWidgetPosition(OFX_UI_WIDGET_POSITION_RIGHT);
-     matDiffSlider.push_back(gui2->addSlider("MDG1", 0, 255, c.g, h, vertH));
-     matDiffSlider.push_back(gui2->addSlider("MDB1", 0, 255, c.b, h, vertH));
-     //    gui2->addSlider("MDA", 0, 255, c.a, h, vertH);
-     
-     gui2->addSpacer(2, vertH+10);
-     c = myLights2->material1.getEmissiveColor();
-     matEmSlider.push_back(gui2->addSlider("MER1", 0, 255, c.r, h, vertH));
-     gui->setWidgetPosition(OFX_UI_WIDGET_POSITION_RIGHT);
-     matEmSlider.push_back(gui2->addSlider("MEG1", 0, 255, c.g, h, vertH));
-     matEmSlider.push_back(gui2->addSlider("MEB1", 0, 255, c.b, h, vertH));
-     //    gui2->addSlider("MDA", 0, 255, c.a, h, vertH);
-     
-     gui2->addSpacer(2, vertH+10);
-     c = myLights2->material1.getSpecularColor();
-     matSpecSlider.push_back(gui2->addSlider("MSR1", 0, 255, c.r, h, vertH));
-     matSpecSlider.push_back(gui2->addSlider("MSG1", 0, 255, c.g, h, vertH));
-     matSpecSlider.push_back(gui2->addSlider("MSB1", 0, 255, c.b, h, vertH));
-     //    gui2->addSlider("MSA", 0, 255, c.a, h, vertH);
-     
-     */
     
     TRK_gui_1->setWidgetColor(OFX_UI_WIDGET_COLOR_BACK, ofColor(120,200));
     
