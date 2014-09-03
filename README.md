@@ -1,5 +1,8 @@
 Animation Machine (rebuild)
 ==================
+Latest Update: 2014-06-21
+* synced old changes from local
+
 Latest Update: 2014-05-20
 * Fixed UI overlap
 * Added Help (h)
