@@ -74,96 +74,95 @@ void aTrackGui::guiEvent(ofxUIEventArgs &e) {
     //--setup all the listeners for the matierial sliders.
     //--need to set this up in a loop. too many.
 
- //Material 1
-if (name == "Mat 1 Shine") {
-    ofxUISlider *slider = (ofxUISlider *)e.widget;
-    materials[0].setShininess(slider->getScaledValue());
-    
-//material diffuse
-} else if (name == "dr1") {
-    ofColor c = materials[0].getDiffuseColor();
-    ofxUISlider *slider = (ofxUISlider *)e.widget;
-    c.r = slider->getScaledValue();
-    setWSlider(matDiffSlider, c, slider->getScaledValue());
-    materials[0].setDiffuseColor(c);
-    materials[0].setAmbientColor(c);
-} else if (name == "dg1") {
-    ofColor c = materials[0].getDiffuseColor();
-    ofxUISlider *slider = (ofxUISlider *)e.widget;
-    c.g = slider->getScaledValue();
-    setWSlider(matDiffSlider, c, slider->getScaledValue());
-    materials[0].setDiffuseColor(c);
-    materials[0].setAmbientColor(c);
-} else if (name == "db1") {
-    ofColor c = materials[0].getDiffuseColor();
-    ofxUISlider *slider = (ofxUISlider *)e.widget;
-    c.b = slider->getScaledValue();
-    setWSlider(matDiffSlider, c, slider->getScaledValue());
-    materials[0].setDiffuseColor(c);
-    materials[0].setAmbientColor(c);
-} else if (name == "da1") {
-    ofColor c = materials[0].getDiffuseColor();
-    ofxUISlider *slider = (ofxUISlider *)e.widget;
-    c.a = slider->getScaledValue();
-    materials[0].setDiffuseColor(c);
-    materials[0].setAmbientColor(c);
-}
- /*
-//material emissive colour
-} else if (name == "MER1") {
-    ofColor c = myLights2->material1.getEmissiveColor();
-    ofxUISlider *slider = (ofxUISlider *)e.widget;
-    c.r = slider->getScaledValue();
-    setWSlider(matEmSlider, c, slider->getScaledValue());
-    myLights2->material1.setEmissiveColor(c);
-} else if (name == "MEG1") {
-    ofColor c = myLights2->material1.getEmissiveColor();
-    ofxUISlider *slider = (ofxUISlider *)e.widget;
-    c.g = slider->getScaledValue();
-    setWSlider(matEmSlider, c, slider->getScaledValue());
-    myLights2->material1.setEmissiveColor(c);
-} else if (name == "MEB1") {
-    ofColor c = myLights2->material1.getEmissiveColor();
-    ofxUISlider *slider = (ofxUISlider *)e.widget;
-    c.b = slider->getScaledValue();
-    setWSlider(matEmSlider, c, slider->getScaledValue());
-    myLights2->material1.setEmissiveColor(c);
-} else if (name == "MEA1") {
-    ofColor c = myLights2->material1.getEmissiveColor();
-    ofxUISlider *slider = (ofxUISlider *)e.widget;
-    c.a = slider->getScaledValue();
-    myLights2->material1.setEmissiveColor(c);
-    
-    //material specular colour
-} else if (name == "MSR1") {
-    ofColor c = myLights2->material1.getSpecularColor();
-    ofxUISlider *slider = (ofxUISlider *)e.widget;
-    c.r = slider->getScaledValue();
-    setWSlider(matSpecSlider, c, slider->getScaledValue());
-    myLights2->material1.setSpecularColor(c);
-    
-} else if (name == "MSG1") {
-    ofColor c = myLights2->material1.getSpecularColor();
-    ofxUISlider *slider = (ofxUISlider *)e.widget;
-    c.g = slider->getScaledValue();
-    setWSlider(matSpecSlider, c, slider->getScaledValue());
-    myLights2->material1.setSpecularColor(c);
-} else if (name == "MSB1") {
-    ofColor c = myLights2->material1.getSpecularColor();
-    ofxUISlider *slider = (ofxUISlider *)e.widget;
-    c.b = slider->getScaledValue();
-    setWSlider(matSpecSlider, c, slider->getScaledValue());
-    myLights2->material1.setSpecularColor(c);
-} else if (name == "MSA1") {
-    ofColor c = myLights2->material1.getSpecularColor();
-    ofxUISlider *slider = (ofxUISlider *)e.widget;
-    c.a = slider->getScaledValue();
-    myLights2->material1.setSpecularColor(c);
-    
-    */
-    
-}
+    //materials[0]
+    if (name == "Mat 1 Shine") {
+        ofxUISlider *slider = (ofxUISlider *)e.widget;
+        materials[0].setShininess(slider->getScaledValue());
+        
+    //materials[0] diffuse
+    } else if (name == "dr1") {
+        ofColor c = materials[0].getDiffuseColor();
+        ofxUISlider *slider = (ofxUISlider *)e.widget;
+        c.r = slider->getScaledValue();
+        setWSlider(matDiffSlider, c, slider->getScaledValue());
+        materials[0].setDiffuseColor(c);
+        materials[0].setAmbientColor(c);
+    } else if (name == "dg1") {
+        ofColor c = materials[0].getDiffuseColor();
+        ofxUISlider *slider = (ofxUISlider *)e.widget;
+        c.g = slider->getScaledValue();
+        setWSlider(matDiffSlider, c, slider->getScaledValue());
+        materials[0].setDiffuseColor(c);
+        materials[0].setAmbientColor(c);
+    } else if (name == "db1") {
+        ofColor c = materials[0].getDiffuseColor();
+        ofxUISlider *slider = (ofxUISlider *)e.widget;
+        c.b = slider->getScaledValue();
+        setWSlider(matDiffSlider, c, slider->getScaledValue());
+        materials[0].setDiffuseColor(c);
+        materials[0].setAmbientColor(c);
+    } else if (name == "da1") {
+        ofColor c = materials[0].getDiffuseColor();
+        ofxUISlider *slider = (ofxUISlider *)e.widget;
+        c.a = slider->getScaledValue();
+        materials[0].setDiffuseColor(c);
+        materials[0].setAmbientColor(c);
 
+    //materials[0] emissive colour
+    } else if (name == "er1") {
+        ofColor c = materials[0].getEmissiveColor();
+        ofxUISlider *slider = (ofxUISlider *)e.widget;
+        c.r = slider->getScaledValue();
+        setWSlider(matEmSlider, c, slider->getScaledValue());
+        materials[0].setEmissiveColor(c);
+    } else if (name == "eg1") {
+        ofColor c = materials[0].getEmissiveColor();
+        ofxUISlider *slider = (ofxUISlider *)e.widget;
+        c.g = slider->getScaledValue();
+        setWSlider(matEmSlider, c, slider->getScaledValue());
+        materials[0].setEmissiveColor(c);
+    } else if (name == "eb1") {
+        ofColor c = materials[0].getEmissiveColor();
+        ofxUISlider *slider = (ofxUISlider *)e.widget;
+        c.b = slider->getScaledValue();
+        setWSlider(matEmSlider, c, slider->getScaledValue());
+        materials[0].setEmissiveColor(c);
+    } else if (name == "ea1") {
+        ofColor c = materials[0].getEmissiveColor();
+        ofxUISlider *slider = (ofxUISlider *)e.widget;
+        c.a = slider->getScaledValue();
+        materials[0].setEmissiveColor(c);
+        
+    //materials[0] specular colour
+    } else if (name == "sr1") {
+        ofColor c = materials[0].getSpecularColor();
+        ofxUISlider *slider = (ofxUISlider *)e.widget;
+        c.r = slider->getScaledValue();
+        setWSlider(matSpecSlider, c, slider->getScaledValue());
+        materials[0].setSpecularColor(c);
+        
+    } else if (name == "sg1") {
+        ofColor c = materials[0].getSpecularColor();
+        ofxUISlider *slider = (ofxUISlider *)e.widget;
+        c.g = slider->getScaledValue();
+        setWSlider(matSpecSlider, c, slider->getScaledValue());
+        materials[0].setSpecularColor(c);
+    } else if (name == "sb1") {
+        ofColor c = materials[0].getSpecularColor();
+        ofxUISlider *slider = (ofxUISlider *)e.widget;
+        c.b = slider->getScaledValue();
+        setWSlider(matSpecSlider, c, slider->getScaledValue());
+        materials[0].setSpecularColor(c);
+    } else if (name == "sa1") {
+        ofColor c = materials[0].getSpecularColor();
+        ofxUISlider *slider = (ofxUISlider *)e.widget;
+        c.a = slider->getScaledValue();
+        materials[0].setSpecularColor(c);
+
+    }
+}//end guiEvent
+    
+    
 void aTrackGui::setGUI() {
     float xInit = OFX_UI_GLOBAL_WIDGET_SPACING;
     float w = 1000 - xInit * 2;

@@ -50,7 +50,8 @@ void ofApp::setup(){
     
     
     ofBackground(0);
-    //ofSetFrameRate(30);
+
+    ofSetFrameRate(60);
     ofEnableAntiAliasing();
     //ofDisableAntiAliasing();
     ofEnableAlphaBlending();
@@ -58,7 +59,10 @@ void ofApp::setup(){
     
     ofSetGlobalAmbientColor(ofColor(0, 0, 0));
     ofSetSmoothLighting(true);
-    glEnable(GL_DEPTH_TEST);
+    
+    //moved to draw
+    //glEnable(GL_DEPTH_TEST);
+    
     glDisable(GL_CULL_FACE);
     
     //used in the buttons at the top.
@@ -86,6 +90,8 @@ void ofApp::setup(){
     
     saveCam.isSettingCam = false;//flag to display the press 'n' to save message.
     
+    //added from snakeNoise Project
+    shader.load("shaders/phong/shader.vert", "shaders/phong/shader.frag");
     
 }
 
@@ -212,6 +218,9 @@ void ofApp::draw(){
     glClearColor(0.0, 0.0, 0.0, 0.0);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
+    //added 20140903. Moved from setup
+    glEnable(GL_DEPTH_TEST);
+    
     if (myGui->cull)
         glEnable(GL_CULL_FACE);
     
@@ -278,34 +287,130 @@ void ofApp::draw(){
                 //TO-DO:
                 //--currently this references materials in the aLights class. Need to move to the aTrackGui
                 
-                if(tracks[t].myLdrs[i].x<4){
-                    myLights->material1.begin();
-                } else {
-                    myLights->material2.begin();
+                /*
+                switch (int(tracks[t].myLdrs[i].x)) {
+                    case 1:
+                        myTrackGui->materials[0].begin();
+                        break;
+                    case 2:
+                        myLights->material2.begin();
+                        break;
+                    case 3:
+                        myTrackGui->materials[0].begin();
+                        break;
+                    case 4:
+                        myTrackGui->materials[0].begin();
+                        break;
+                    case 5:
+                        myTrackGui->materials[0].begin();
+                        break;
+                    case 6:
+                        myTrackGui->materials[0].begin();
+                        break;
+                    case 7:
+                        myTrackGui->materials[0].begin();
+                        break;
+                    case 8:
+                        myTrackGui->materials[0].begin();
+                        break;
+                    case 9:
+                        myTrackGui->materials[0].begin();
+                        break;
+                    case 10:
+                        myTrackGui->materials[0].begin();
+                        break;
+                    default:
+                        
+                        break;
                 }
+                */
+                //old method before case and aTrackGui
+                
+                
+                
+                
+                
+                if(tracks[t].myLdrs[i].x==0){
+                    //myLights->material1.begin();
+                    myTrackGui->materials[0].begin();
+                } else if (tracks[t].myLdrs[i].x==1){
+                    myLights->material2.begin();
+                } else {
+                    myTrackGui->materials[0].begin();
+                }
+                
+                shader.begin();
+                shader.setUniform3f("lightDir", 1,1,1);
+                shader.setUniform3f("ambientColor", 0.5, 0.5, 0.5);
+                shader.setUniform4f("diffuseColor", 1,1,1,1);
+                shader.setUniform4f("specularColor", 1,1,1,1);
+                
                 
                 if(!showLdr){
-                    //myLights->("material"+ofToString(i)).begin();
+                //here is where you're actually drawing the models.
                     if(abcModels[tracks[t].myLdrs[i].x].isActive) {
-                        
                         abcModels[tracks[t].myLdrs[i].x].draw();
-                        
                     }
                 }
-                //myLights->("material"+ofToString(i)).end();
                 
-                if(tracks[t].myLdrs[i].x<4){
-                    myLights->material1.end();
-                } else {
+                shader.end();
+
+                if(tracks[t].myLdrs[i].x==0){
+                    //myLights->material1.end();
+                    myTrackGui->materials[0].end();
+                } else if (tracks[t].myLdrs[i].x==1){
                     myLights->material2.end();
+                } else {
+                    myTrackGui->materials[0].end();
                 }
+
+                
+                
+                
+                /*
+                switch (int(tracks[t].myLdrs[i].x)) {
+                    case 1:
+                        myTrackGui->materials[0].end();
+                        break;
+                    case 2:
+                        myLights->material2.end();
+                        break;
+                    case 3:
+                        myTrackGui->materials[0].end();
+                        break;
+                    case 4:
+                        myTrackGui->materials[0].end();
+                        break;
+                    case 5:
+                        myTrackGui->materials[0].end();
+                        break;
+                    case 6:
+                        myTrackGui->materials[0].end();
+                        break;
+                    case 7:
+                        myTrackGui->materials[0].end();
+                        break;
+                    case 8:
+                        myTrackGui->materials[0].end();
+                        break;
+                    case 9:
+                        myTrackGui->materials[0].end();
+                        break;
+                    case 10:
+                        myTrackGui->materials[0].end();
+                        break;
+                    default:
+                        
+                        break;
+                }
+                 */
+            
             }
             
         }
         
     }
-    
-    //myLights->material1.end();
+
     
     glPopMatrix();
     
@@ -336,6 +441,9 @@ void ofApp::draw(){
     if (myGui->cull)
         glDisable(GL_CULL_FACE);
     
+    //added 20140903
+    glDisable(GL_DEPTH_TEST);
+    
     ofSetColor(255, 255, 255);
     
     ofEnableAlphaBlending();
@@ -355,6 +463,7 @@ void ofApp::draw(){
     
     //Display Midi notes, OSC, etc.
     drawMessages();
+    
     
     
     

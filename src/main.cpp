@@ -29,8 +29,8 @@ int main( ){
     //======================
     
     ofAppGLFWWindow window;
-    window.setNumSamples(4);
-    //window.setNumSamples(16); // I definately see a difference.  Need to do a better test though.
+    //window.setNumSamples(4);
+    window.setNumSamples(16); // I definately see a difference.  Need to do a better test though.
     
     ofSetupOpenGL(&window, 1280,720,OF_WINDOW);
     

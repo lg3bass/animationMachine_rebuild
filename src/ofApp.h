@@ -92,6 +92,8 @@ public:
     void LoaderGuiEvent(ofxUIEventArgs &e);
     void resetAnimation(int num);
     
+
+    
     
     int selectedLoaderRow;
     
@@ -121,7 +123,10 @@ public:
     
     vector<ofxAlembic::Reader *> myABCs;
     vector<abcModel> abcModels;
+
     
+private:
+    ofShader shader;
     
     
 };

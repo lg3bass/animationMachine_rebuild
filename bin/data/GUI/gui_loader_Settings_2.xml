@@ -521,12 +521,12 @@
 <Widget>
     <Kind>4</Kind>
     <Name>08_TRK_SPD</Name>
-    <Value>0.012000000</Value>
+    <Value>0.028800000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>08_TRK_SPEED</Name>
-    <Value>0.012000000</Value>
+    <Value>0.028800000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -581,12 +581,12 @@
 <Widget>
     <Kind>4</Kind>
     <Name>09_TRK_SPD</Name>
-    <Value>0.013200000</Value>
+    <Value>0.025199998</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>09_TRK_SPEED</Name>
-    <Value>0.013200000</Value>
+    <Value>0.025199998</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
