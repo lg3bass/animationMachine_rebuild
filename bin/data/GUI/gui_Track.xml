@@ -1,17 +1,107 @@
 <Widget>
+    <Kind>2</Kind>
+    <Name>Shader0</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
     <Kind>4</Kind>
-    <Name>Mat 1 Shine</Name>
-    <Value>128.000000000</Value>
+    <Name>Shininess0</Name>
+    <Value>15.026086807</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>dr0</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>dg0</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>db0</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>er0</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>eg0</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>eb0</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sr0</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sg0</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sb0</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdr0</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdg0</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdb0</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssr0</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssg0</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssb0</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>Shader1</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Shininess1</Name>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>dr1</Name>
-    <Value>255.000000000</Value>
+    <Value>146.625000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>dg1</Name>
-    <Value>255.000000000</Value>
+    <Value>146.625000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
@@ -26,7 +116,7 @@
 <Widget>
     <Kind>5</Kind>
     <Name>eg1</Name>
-    <Value>0.000000000</Value>
+    <Value>25.500005722</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
@@ -36,65 +126,725 @@
 <Widget>
     <Kind>5</Kind>
     <Name>sr1</Name>
-    <Value>248.625000000</Value>
+    <Value>38.249992371</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>sg1</Name>
-    <Value>255.000000000</Value>
+    <Value>31.875000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>sb1</Name>
+    <Value>31.875000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdr1</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdg1</Name>
     <Value>255.000000000</Value>
 </Widget>
 <Widget>
+    <Kind>5</Kind>
+    <Name>sdb1</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssr1</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssg1</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssb1</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>Shader2</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
     <Kind>4</Kind>
-    <Name>Mat 2 Shine</Name>
-    <Value>113.530433655</Value>
+    <Name>Shininess2</Name>
+    <Value>0.556521714</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>dr2</Name>
-    <Value>100.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>dg2</Name>
-    <Value>100.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>db2</Name>
-    <Value>100.000000000</Value>
+    <Value>255.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>er2</Name>
-    <Value>100.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>eg2</Name>
-    <Value>100.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>eb2</Name>
-    <Value>100.000000000</Value>
+    <Value>44.625003815</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>sr2</Name>
-    <Value>100.000000000</Value>
+    <Value>255.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>sg2</Name>
-    <Value>100.000000000</Value>
+    <Value>108.375000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>sb2</Name>
-    <Value>100.000000000</Value>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdr2</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdg2</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdb2</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssr2</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssg2</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssb2</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>Shader3</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Shininess3</Name>
+    <Value>128.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>dr3</Name>
+    <Value>95.625000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>dg3</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>db3</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>er3</Name>
+    <Value>95.625000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>eg3</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>eb3</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sr3</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sg3</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sb3</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdr3</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdg3</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdb3</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssr3</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssg3</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssb3</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>Shader4</Name>
+    <Value>1</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Shininess4</Name>
+    <Value>128.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>dr4</Name>
+    <Value>178.500000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>dg4</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>db4</Name>
+    <Value>178.500000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>er4</Name>
+    <Value>70.124992371</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>eg4</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>eb4</Name>
+    <Value>82.875000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sr4</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sg4</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sb4</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdr4</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdg4</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdb4</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssr4</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssg4</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssb4</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>Shader5</Name>
+    <Value>1</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Shininess5</Name>
+    <Value>72.904350281</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>dr5</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>dg5</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>db5</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>er5</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>eg5</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>eb5</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sr5</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sg5</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sb5</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdr5</Name>
+    <Value>6.374993801</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdg5</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdb5</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssr5</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssg5</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssb5</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>Shader6</Name>
+    <Value>1</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Shininess6</Name>
+    <Value>128.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>dr6</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>dg6</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>db6</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>er6</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>eg6</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>eb6</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sr6</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sg6</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sb6</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdr6</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdg6</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdb6</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssr6</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssg6</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssb6</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>Shader7</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Shininess7</Name>
+    <Value>5.008695602</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>dr7</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>dg7</Name>
+    <Value>76.500000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>db7</Name>
+    <Value>172.125000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>er7</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>eg7</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>eb7</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sr7</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sg7</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sb7</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdr7</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdg7</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdb7</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssr7</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssg7</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssb7</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>Shader8</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Shininess8</Name>
+    <Value>128.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>dr8</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>dg8</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>db8</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>er8</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>eg8</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>eb8</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sr8</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sg8</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sb8</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdr8</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdg8</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdb8</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssr8</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssg8</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssb8</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>Shader9</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Shininess9</Name>
+    <Value>128.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>dr9</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>dg9</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>db9</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>er9</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>eg9</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>eb9</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sr9</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sg9</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sb9</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdr9</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdg9</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>sdb9</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssr9</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssg9</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>ssb9</Name>
+    <Value>255.000000000</Value>
 </Widget>

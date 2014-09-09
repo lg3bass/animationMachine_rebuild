@@ -60,9 +60,6 @@ void ofApp::setup(){
     ofSetGlobalAmbientColor(ofColor(0, 0, 0));
     ofSetSmoothLighting(true);
     
-    //moved to draw
-    //glEnable(GL_DEPTH_TEST);
-    
     glDisable(GL_CULL_FACE);
     
     //used in the buttons at the top.
@@ -90,8 +87,7 @@ void ofApp::setup(){
     
     saveCam.isSettingCam = false;//flag to display the press 'n' to save message.
     
-    //added from snakeNoise Project
-    shader.load("shaders/phong/shader.vert", "shaders/phong/shader.frag");
+    
     
 }
 
@@ -105,15 +101,6 @@ void ofApp::reset()
     myTrackGui->reset();
     
     cam.reset();
-    
-    
-    
-    //*****NOT NEEDED, switched to ofNode()
-    //this sets the distance from the origin.
-    //in Maya this translates to +30 Z-units
-    //cam.setDistance(1500);
-    
-    
     
     //set up the default gui_loader
     setGUI_loader(numOfABC);
@@ -168,6 +155,9 @@ void ofApp::saveScene(int sceneIndex){
 
 //--------------------------------------------------------------
 void ofApp::update(){
+    //pass update to my singletons
+    myTrackGui->update();
+    
     
     
     
@@ -209,6 +199,9 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+
+    
+    
     
     //register the cursor position.
     float dx = dragPt.x;
@@ -277,133 +270,115 @@ void ofApp::draw(){
      abcModels[i].draw();
      }
      */
+ 
+    
+    /* 
+    //sample code for diffuse shader
+     shader.begin();
+     shader.setUniform3f("lightDir", 1,1,1);
+     shader.setUniform3f("ambientColor", 0.5, 0.5, 0.5);
+     shader.setUniform4f("diffuseColor", 1,1,1,1);
+     shader.setUniform4f("specularColor", 1,1,1,1);
+     
+     
+    */
     
     for(int t=0;t<tracks.size();t++){
         if(tracks[t].myLdrs.size()>0){
             for(int i=0; i<tracks[t].myLdrs.size();i++){
-                
-                //this actually needs to be an array of materials.  Let also move the materials out of the aLights class.
-                
-                //TO-DO:
-                //--currently this references materials in the aLights class. Need to move to the aTrackGui
-                
                 /*
-                switch (int(tracks[t].myLdrs[i].x)) {
-                    case 1:
-                        myTrackGui->materials[0].begin();
-                        break;
-                    case 2:
-                        myLights->material2.begin();
-                        break;
-                    case 3:
-                        myTrackGui->materials[0].begin();
-                        break;
-                    case 4:
-                        myTrackGui->materials[0].begin();
-                        break;
-                    case 5:
-                        myTrackGui->materials[0].begin();
-                        break;
-                    case 6:
-                        myTrackGui->materials[0].begin();
-                        break;
-                    case 7:
-                        myTrackGui->materials[0].begin();
-                        break;
-                    case 8:
-                        myTrackGui->materials[0].begin();
-                        break;
-                    case 9:
-                        myTrackGui->materials[0].begin();
-                        break;
-                    case 10:
-                        myTrackGui->materials[0].begin();
-                        break;
-                    default:
+                //commented. can be implemented in the loop.
+                if(t==0){
+                    if(myTrackGui->useShaders[0]){
+                        myTrackGui->shader_0.begin();
+                        //myTrackGui->shader_0.setUniform3f("lightDir", 1,1,1);
+                        //myTrackGui->shader_0.setUniform3f("ambientColor", 0.5, 0.5, 0.5);
+                        myTrackGui->shader_0.setUniform4f("diffuseColor", myTrackGui->v4Diffuse[t].x,myTrackGui->v4Diffuse[t].y,myTrackGui->v4Diffuse[t].z,1);
+                        myTrackGui->shader_0.setUniform4f("specularColor", myTrackGui->v4Specular[t].x,myTrackGui->v4Specular[t].y,myTrackGui->v4Specular[t].z,1);
                         
-                        break;
+                    } else {
+                        myTrackGui->materials[0].begin();
+                    }
+                } else if (t==1){
+                    if(myTrackGui->useShaders[1]){
+                        myTrackGui->shader_0.begin();
+                        //myTrackGui->shader_0.setUniform3f("lightDir", 1,1,1);
+                        //myTrackGui->shader_0.setUniform3f("ambientColor", 0.5, 0.5, 0.5);
+                        myTrackGui->shader_0.setUniform4f("diffuseColor", myTrackGui->v4Diffuse[t].x,myTrackGui->v4Diffuse[t].y,myTrackGui->v4Diffuse[t].z,1);
+                        myTrackGui->shader_0.setUniform4f("specularColor", myTrackGui->v4Specular[t].x,myTrackGui->v4Specular[t].y,myTrackGui->v4Specular[t].z,1);
+                    } else {
+                        //old aLights class
+                        //myLights->material2.begin();    //old aLights class.
+                        myTrackGui->materials[1].begin();
+                    }
+                } else if (t==2){
+                    if(myTrackGui->useShaders[2]){
+                        myTrackGui->shader_0.begin();
+                        //myTrackGui->shader_0.setUniform3f("lightDir", 1,1,1);
+                        //myTrackGui->shader_0.setUniform3f("ambientColor", 0.5, 0.5, 0.5);
+                        myTrackGui->shader_0.setUniform4f("diffuseColor", myTrackGui->v4Diffuse[t].x,myTrackGui->v4Diffuse[t].y,myTrackGui->v4Diffuse[t].z,1);
+                        myTrackGui->shader_0.setUniform4f("specularColor", myTrackGui->v4Specular[t].x,myTrackGui->v4Specular[t].y,myTrackGui->v4Specular[t].z,1);
+                    } else {
+                        myTrackGui->materials[2].begin();
+                    }
                 }
                 */
-                //old method before case and aTrackGui
-                
-                
-                
-                
-                
-                if(tracks[t].myLdrs[i].x==0){
-                    //myLights->material1.begin();
-                    myTrackGui->materials[0].begin();
-                } else if (tracks[t].myLdrs[i].x==1){
-                    myLights->material2.begin();
+                 
+                 
+                 
+                //t=track. every model gets rendered per track.
+                if(myTrackGui->useShaders[t]){
+                    myTrackGui->shader_0.begin();
+                    myTrackGui->shader_0.setUniform4f("diffuseColor", myTrackGui->v4Diffuse[t].x,myTrackGui->v4Diffuse[t].y,myTrackGui->v4Diffuse[t].z,1);
+                    myTrackGui->shader_0.setUniform4f("specularColor", myTrackGui->v4Specular[t].x,myTrackGui->v4Specular[t].y,myTrackGui->v4Specular[t].z,1);
+                    
                 } else {
-                    myTrackGui->materials[0].begin();
+                    myTrackGui->materials[t].begin();
                 }
                 
-                shader.begin();
-                shader.setUniform3f("lightDir", 1,1,1);
-                shader.setUniform3f("ambientColor", 0.5, 0.5, 0.5);
-                shader.setUniform4f("diffuseColor", 1,1,1,1);
-                shader.setUniform4f("specularColor", 1,1,1,1);
-                
-                
+                //shaders only - pass Light direction and ambient color.  same for all.
+                myTrackGui->shader_0.setUniform3f("lightDir", 1,1,1);
+                myTrackGui->shader_0.setUniform3f("ambientColor", 0.5, 0.5, 0.5);
+
+                //-------------------------------------------------
+                //DRAW TO THE SCREEN
+                //=================================================
                 if(!showLdr){
                 //here is where you're actually drawing the models.
                     if(abcModels[tracks[t].myLdrs[i].x].isActive) {
                         abcModels[tracks[t].myLdrs[i].x].draw();
                     }
                 }
-                
-                shader.end();
 
-                if(tracks[t].myLdrs[i].x==0){
-                    //myLights->material1.end();
-                    myTrackGui->materials[0].end();
-                } else if (tracks[t].myLdrs[i].x==1){
-                    myLights->material2.end();
+                if(myTrackGui->useShaders[t]){
+                    myTrackGui->shader_0.end();
                 } else {
-                    myTrackGui->materials[0].end();
+                    myTrackGui->materials[t].end();
                 }
-
-                
-                
                 
                 /*
-                switch (int(tracks[t].myLdrs[i].x)) {
-                    case 1:
+                //commented. can be implemented in the loop.
+                if(t==0){
+                    if(myTrackGui->useShaders[0]){
+                        myTrackGui->shader_0.end();
+                    } else {
                         myTrackGui->materials[0].end();
-                        break;
-                    case 2:
-                        myLights->material2.end();
-                        break;
-                    case 3:
-                        myTrackGui->materials[0].end();
-                        break;
-                    case 4:
-                        myTrackGui->materials[0].end();
-                        break;
-                    case 5:
-                        myTrackGui->materials[0].end();
-                        break;
-                    case 6:
-                        myTrackGui->materials[0].end();
-                        break;
-                    case 7:
-                        myTrackGui->materials[0].end();
-                        break;
-                    case 8:
-                        myTrackGui->materials[0].end();
-                        break;
-                    case 9:
-                        myTrackGui->materials[0].end();
-                        break;
-                    case 10:
-                        myTrackGui->materials[0].end();
-                        break;
-                    default:
-                        
-                        break;
+                    }
+                } else if (t==1){
+                    if(myTrackGui->useShaders[1]){
+                        myTrackGui->shader_0.end();
+                    } else {
+                        //myLights->material2.end();//old mylights
+                        myTrackGui->materials[1].end();
+                    }
+                } else if (t==2){
+                    if(myTrackGui->useShaders[2]){
+                        myTrackGui->shader_0.end();
+                    } else {
+                        myTrackGui->materials[2].end();
+                    }
                 }
-                 */
+                */
             
             }
             

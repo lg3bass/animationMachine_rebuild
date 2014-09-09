@@ -1,7 +1,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>Point Light Auto Move</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
@@ -21,7 +21,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>MAT SHINE 1</Name>
-    <Value>52.244899750</Value>
+    <Value>44.734695435</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
@@ -71,7 +71,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>MAT SHINE 2</Name>
-    <Value>52.244899750</Value>
+    <Value>128.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
@@ -86,7 +86,7 @@
 <Widget>
     <Kind>5</Kind>
     <Name>MDB2</Name>
-    <Value>0.000000000</Value>
+    <Value>255.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
@@ -126,17 +126,17 @@
 <Widget>
     <Kind>2</Kind>
     <Name>spot</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>point</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>dir</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -146,5 +146,5 @@
 <Widget>
     <Kind>4</Kind>
     <Name>ANIM</Name>
-    <Value>0.494897962</Value>
+    <Value>0.500000000</Value>
 </Widget>

@@ -66,6 +66,7 @@ public:
     
     //TRACK GUI
     aTrackGui *myTrackGui;
+    //bool useShaders = true;
     
     //CAM
     ofEasyCam cam;
@@ -126,7 +127,7 @@ public:
 
     
 private:
-    ofShader shader;
+    
     
     
 };

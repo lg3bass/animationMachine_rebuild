@@ -1,37 +1,37 @@
 <Widget>
     <Kind>4</Kind>
     <Name>Radius</Name>
-    <Value>116.683670044</Value>
+    <Value>182.678573608</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>Spot Source</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>SX_POS</Name>
-    <Value>-66.326538086</Value>
+    <Value>56.122436523</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>SY_POS</Name>
-    <Value>58.673461914</Value>
+    <Value>38.265258789</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>SZ_POS</Name>
-    <Value>474.489807129</Value>
+    <Value>418.367309570</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>SX_ORI</Name>
-    <Value>0.000000000</Value>
+    <Value>-4.591827393</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>SY_ORI</Name>
-    <Value>0.000000000</Value>
+    <Value>33.061233521</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -61,7 +61,7 @@
 <Widget>
     <Kind>5</Kind>
     <Name>SDB</Name>
-    <Value>0.000000000</Value>
+    <Value>255.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
@@ -81,22 +81,22 @@
 <Widget>
     <Kind>2</Kind>
     <Name>Dir Source</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>DIR_XORI</Name>
-    <Value>-19.285720825</Value>
+    <Value>-66.122451782</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>DIR_YORI</Name>
-    <Value>-28.469390869</Value>
+    <Value>133.163269043</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>DIR_ZORI</Name>
-    <Value>-10.102035522</Value>
+    <Value>-81.734695435</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
@@ -131,17 +131,17 @@
 <Widget>
     <Kind>2</Kind>
     <Name>Point Source</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>PDR</Name>
-    <Value>255.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>PDG</Name>
-    <Value>0.000000000</Value>
+    <Value>255.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
@@ -151,15 +151,15 @@
 <Widget>
     <Kind>5</Kind>
     <Name>PSR</Name>
-    <Value>0.000000000</Value>
+    <Value>255.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>PSG</Name>
-    <Value>0.000000000</Value>
+    <Value>255.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>PSB</Name>
-    <Value>0.000000000</Value>
+    <Value>255.000000000</Value>
 </Widget>

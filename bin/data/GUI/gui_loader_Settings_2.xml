@@ -231,7 +231,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>03_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>2.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -291,7 +291,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>04_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>2.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -351,7 +351,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>05_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>2.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -411,7 +411,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>06_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>2.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -471,7 +471,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>07_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>8.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -531,7 +531,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>08_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>3.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -591,7 +591,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>09_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>4.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -651,7 +651,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>10_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>5.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -711,7 +711,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>11_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>6.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -771,7 +771,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>12_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>7.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -831,7 +831,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>13_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>4.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -891,7 +891,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>14_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>4.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -951,7 +951,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>15_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>4.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1011,7 +1011,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>16_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>4.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1071,7 +1071,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>17_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>4.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1131,7 +1131,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>18_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>4.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1191,7 +1191,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>19_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>4.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1251,7 +1251,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>20_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>4.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1311,7 +1311,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>21_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>4.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1371,7 +1371,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>22_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>4.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1431,7 +1431,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>23_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>4.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1491,7 +1491,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>24_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>4.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1551,7 +1551,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>25_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>4.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1611,7 +1611,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>26_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>4.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1671,7 +1671,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>27_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>4.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
