@@ -14,9 +14,7 @@
 
 #endif /* defined(__animationMachine__aTrack__) */
 
-
 class aTrack  {
-    
     public:
         aTrack(std::string _behavior, bool _playNote, int _myID);
     

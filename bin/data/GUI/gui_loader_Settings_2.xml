@@ -36,7 +36,7 @@
 <Widget>
     <Kind>12</Kind>
     <Name>00_TRK_READER</Name>
-    <Value>abc/scalop_19/blob_01_sn0_1_30.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -46,7 +46,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>00_TRK_SPEED</Name>
-    <Value>0.067199998</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -56,17 +56,17 @@
 <Widget>
     <Kind>8</Kind>
     <Name>00_TRK_NOTE</Name>
-    <Value>48.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>00_random</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>00_seq</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -86,7 +86,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>00_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -96,7 +96,7 @@
 <Widget>
     <Kind>12</Kind>
     <Name>01_TRK_READER</Name>
-    <Value>abc/scalop_19/blob_02_sn0_1_30.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -106,7 +106,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>01_TRK_SPEED</Name>
-    <Value>0.066000000</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -116,17 +116,17 @@
 <Widget>
     <Kind>8</Kind>
     <Name>01_TRK_NOTE</Name>
-    <Value>49.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>01_random</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>01_seq</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -146,7 +146,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>01_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -156,7 +156,7 @@
 <Widget>
     <Kind>12</Kind>
     <Name>02_TRK_READER</Name>
-    <Value>abc/scalop_19/blob_03_sn0_1_30.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -166,7 +166,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>02_TRK_SPEED</Name>
-    <Value>0.066000000</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -176,17 +176,17 @@
 <Widget>
     <Kind>8</Kind>
     <Name>02_TRK_NOTE</Name>
-    <Value>50.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>02_random</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>02_seq</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -206,7 +206,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>02_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -216,7 +216,7 @@
 <Widget>
     <Kind>12</Kind>
     <Name>03_TRK_READER</Name>
-    <Value>abc/scalop_19/loftedSurface3_sn0_1_30.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -226,27 +226,27 @@
 <Widget>
     <Kind>8</Kind>
     <Name>03_TRK_SPEED</Name>
-    <Value>0.052800000</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>03_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>03_TRK_NOTE</Name>
-    <Value>51.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>03_random</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>03_seq</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -266,7 +266,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>03_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -276,7 +276,7 @@
 <Widget>
     <Kind>12</Kind>
     <Name>04_TRK_READER</Name>
-    <Value>abc/scalop_19/loftedSurface5_sn0_1_30.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -286,27 +286,27 @@
 <Widget>
     <Kind>8</Kind>
     <Name>04_TRK_SPEED</Name>
-    <Value>0.048000000</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>04_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>04_TRK_NOTE</Name>
-    <Value>52.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>04_random</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>04_seq</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -326,7 +326,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>04_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -336,7 +336,7 @@
 <Widget>
     <Kind>12</Kind>
     <Name>05_TRK_READER</Name>
-    <Value>abc/scalop_19/loftedSurface6_sn0_1_30.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -346,27 +346,27 @@
 <Widget>
     <Kind>8</Kind>
     <Name>05_TRK_SPEED</Name>
-    <Value>0.050399996</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>05_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>05_TRK_NOTE</Name>
-    <Value>53.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>05_random</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>05_seq</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -386,7 +386,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>05_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -396,7 +396,7 @@
 <Widget>
     <Kind>12</Kind>
     <Name>06_TRK_READER</Name>
-    <Value>abc/scalop_19/loftedSurface7_sn0_1_30.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -411,22 +411,22 @@
 <Widget>
     <Kind>8</Kind>
     <Name>06_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>06_TRK_NOTE</Name>
-    <Value>54.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>06_random</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>06_seq</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -446,7 +446,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>06_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -456,7 +456,7 @@
 <Widget>
     <Kind>12</Kind>
     <Name>07_TRK_READER</Name>
-    <Value>abc/scalop_19/loftedSurface8_sn0_1_30.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -471,22 +471,22 @@
 <Widget>
     <Kind>8</Kind>
     <Name>07_TRK_MIDI</Name>
-    <Value>8.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>07_TRK_NOTE</Name>
-    <Value>55.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>07_random</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>07_seq</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -506,7 +506,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>07_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -516,7 +516,7 @@
 <Widget>
     <Kind>12</Kind>
     <Name>08_TRK_READER</Name>
-    <Value>abc/scalop_19/loftedSurface2_sn0_1_30.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -526,27 +526,27 @@
 <Widget>
     <Kind>8</Kind>
     <Name>08_TRK_SPEED</Name>
-    <Value>0.028800000</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>08_TRK_MIDI</Name>
-    <Value>3.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>08_TRK_NOTE</Name>
-    <Value>56.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>08_random</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>08_seq</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -566,7 +566,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>08_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -576,7 +576,7 @@
 <Widget>
     <Kind>12</Kind>
     <Name>09_TRK_READER</Name>
-    <Value>abc/scalop_19/loftedSurface4_sn0_1_30.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -586,27 +586,27 @@
 <Widget>
     <Kind>8</Kind>
     <Name>09_TRK_SPEED</Name>
-    <Value>0.025199998</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>09_TRK_MIDI</Name>
-    <Value>4.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>09_TRK_NOTE</Name>
-    <Value>57.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>09_random</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>09_seq</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -626,7 +626,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>09_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -636,7 +636,7 @@
 <Widget>
     <Kind>12</Kind>
     <Name>10_TRK_READER</Name>
-    <Value>abc/scalop_19/loftedSurface1_sn0_1_30.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -646,27 +646,27 @@
 <Widget>
     <Kind>8</Kind>
     <Name>10_TRK_SPEED</Name>
-    <Value>0.025199998</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>10_TRK_MIDI</Name>
-    <Value>5.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>10_TRK_NOTE</Name>
-    <Value>58.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>10_random</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>10_seq</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -686,7 +686,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>10_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -696,7 +696,7 @@
 <Widget>
     <Kind>12</Kind>
     <Name>11_TRK_READER</Name>
-    <Value>abc/scalop_19/loftedSurface9_sn0_1_30.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -706,27 +706,27 @@
 <Widget>
     <Kind>8</Kind>
     <Name>11_TRK_SPEED</Name>
-    <Value>0.025199998</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>11_TRK_MIDI</Name>
-    <Value>6.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>11_TRK_NOTE</Name>
-    <Value>59.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>11_random</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>11_seq</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -746,7 +746,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>11_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -756,7 +756,7 @@
 <Widget>
     <Kind>12</Kind>
     <Name>12_TRK_READER</Name>
-    <Value>abc/scalop_19/loftedSurface10_sn0_1_30.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -766,27 +766,27 @@
 <Widget>
     <Kind>8</Kind>
     <Name>12_TRK_SPEED</Name>
-    <Value>0.025199998</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>12_TRK_MIDI</Name>
-    <Value>7.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>12_TRK_NOTE</Name>
-    <Value>60.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>12_random</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>12_seq</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -806,7 +806,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>12_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -831,7 +831,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>13_TRK_MIDI</Name>
-    <Value>4.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -891,7 +891,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>14_TRK_MIDI</Name>
-    <Value>4.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -951,7 +951,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>15_TRK_MIDI</Name>
-    <Value>4.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1011,7 +1011,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>16_TRK_MIDI</Name>
-    <Value>4.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1071,7 +1071,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>17_TRK_MIDI</Name>
-    <Value>4.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1131,7 +1131,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>18_TRK_MIDI</Name>
-    <Value>4.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1191,7 +1191,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>19_TRK_MIDI</Name>
-    <Value>4.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1251,7 +1251,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>20_TRK_MIDI</Name>
-    <Value>4.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1311,7 +1311,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>21_TRK_MIDI</Name>
-    <Value>4.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1371,7 +1371,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>22_TRK_MIDI</Name>
-    <Value>4.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1431,7 +1431,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>23_TRK_MIDI</Name>
-    <Value>4.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1491,7 +1491,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>24_TRK_MIDI</Name>
-    <Value>4.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1551,7 +1551,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>25_TRK_MIDI</Name>
-    <Value>4.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1611,7 +1611,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>26_TRK_MIDI</Name>
-    <Value>4.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1671,7 +1671,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>27_TRK_MIDI</Name>
-    <Value>4.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>

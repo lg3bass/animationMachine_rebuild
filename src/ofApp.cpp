@@ -17,6 +17,11 @@ const int numOfABC = 28;
 //--------------------------------------------------------------
 void ofApp::setup(){
     
+    //enabled for the kashimShaders
+    ofEnableDepthTest();
+    ofDisableArbTex();
+    testIMG.loadImage("shaders/kashimAstro/img.jpg");
+    //end enabled for the kashimShaders
     
     doneBuilding = false;
     
@@ -86,7 +91,6 @@ void ofApp::setup(){
     //saveCam.disableSave(); // or disable key save wtih this
     
     saveCam.isSettingCam = false;//flag to display the press 'n' to save message.
-    
     
     
 }
@@ -263,82 +267,31 @@ void ofApp::draw(){
     //THIS IS WHERE THE ANIMATION HAPPENS.
     glPushMatrix();
     
-    //old method
-    /*
-     for(int i = 0; i < abcModels.size(); i++){
-     //glRotatef(ofGetElapsedTimef()*.8f,0,0,1); //rotating the models.
-     abcModels[i].draw();
-     }
-     */
- 
-    
-    /* 
-    //sample code for diffuse shader
-     shader.begin();
-     shader.setUniform3f("lightDir", 1,1,1);
-     shader.setUniform3f("ambientColor", 0.5, 0.5, 0.5);
-     shader.setUniform4f("diffuseColor", 1,1,1,1);
-     shader.setUniform4f("specularColor", 1,1,1,1);
-     
-     
-    */
-    
+    //Loop through the tracks,specifically the loaders within and shade and materialze.
     for(int t=0;t<tracks.size();t++){
         if(tracks[t].myLdrs.size()>0){
             for(int i=0; i<tracks[t].myLdrs.size();i++){
-                /*
-                //commented. can be implemented in the loop.
-                if(t==0){
-                    if(myTrackGui->useShaders[0]){
-                        myTrackGui->shader_0.begin();
-                        //myTrackGui->shader_0.setUniform3f("lightDir", 1,1,1);
-                        //myTrackGui->shader_0.setUniform3f("ambientColor", 0.5, 0.5, 0.5);
-                        myTrackGui->shader_0.setUniform4f("diffuseColor", myTrackGui->v4Diffuse[t].x,myTrackGui->v4Diffuse[t].y,myTrackGui->v4Diffuse[t].z,1);
-                        myTrackGui->shader_0.setUniform4f("specularColor", myTrackGui->v4Specular[t].x,myTrackGui->v4Specular[t].y,myTrackGui->v4Specular[t].z,1);
-                        
-                    } else {
-                        myTrackGui->materials[0].begin();
-                    }
-                } else if (t==1){
-                    if(myTrackGui->useShaders[1]){
-                        myTrackGui->shader_0.begin();
-                        //myTrackGui->shader_0.setUniform3f("lightDir", 1,1,1);
-                        //myTrackGui->shader_0.setUniform3f("ambientColor", 0.5, 0.5, 0.5);
-                        myTrackGui->shader_0.setUniform4f("diffuseColor", myTrackGui->v4Diffuse[t].x,myTrackGui->v4Diffuse[t].y,myTrackGui->v4Diffuse[t].z,1);
-                        myTrackGui->shader_0.setUniform4f("specularColor", myTrackGui->v4Specular[t].x,myTrackGui->v4Specular[t].y,myTrackGui->v4Specular[t].z,1);
-                    } else {
-                        //old aLights class
-                        //myLights->material2.begin();    //old aLights class.
-                        myTrackGui->materials[1].begin();
-                    }
-                } else if (t==2){
-                    if(myTrackGui->useShaders[2]){
-                        myTrackGui->shader_0.begin();
-                        //myTrackGui->shader_0.setUniform3f("lightDir", 1,1,1);
-                        //myTrackGui->shader_0.setUniform3f("ambientColor", 0.5, 0.5, 0.5);
-                        myTrackGui->shader_0.setUniform4f("diffuseColor", myTrackGui->v4Diffuse[t].x,myTrackGui->v4Diffuse[t].y,myTrackGui->v4Diffuse[t].z,1);
-                        myTrackGui->shader_0.setUniform4f("specularColor", myTrackGui->v4Specular[t].x,myTrackGui->v4Specular[t].y,myTrackGui->v4Specular[t].z,1);
-                    } else {
-                        myTrackGui->materials[2].begin();
-                    }
-                }
-                */
-                 
-                 
-                 
+                
                 //t=track. every model gets rendered per track.
                 if(myTrackGui->useShaders[t]){
                     myTrackGui->shader_0.begin();
-                    myTrackGui->shader_0.setUniform4f("diffuseColor", myTrackGui->v4Diffuse[t].x,myTrackGui->v4Diffuse[t].y,myTrackGui->v4Diffuse[t].z,1);
-                    myTrackGui->shader_0.setUniform4f("specularColor", myTrackGui->v4Specular[t].x,myTrackGui->v4Specular[t].y,myTrackGui->v4Specular[t].z,1);
+                    
+                    
+                    //myTrackGui->shader_0.setUniform4f("diffuseColor", myTrackGui->v4Diffuse[t].x,myTrackGui->v4Diffuse[t].y,myTrackGui->v4Diffuse[t].z,1);
+                    //myTrackGui->shader_0.setUniform4f("specularColor", myTrackGui->v4Specular[t].x,myTrackGui->v4Specular[t].y,myTrackGui->v4Specular[t].z,1);
                     
                 } else {
                     myTrackGui->materials[t].begin();
                 }
                 
                 //shaders only - pass Light direction and ambient color.  same for all.
-                myTrackGui->shader_0.setUniform3f("lightDir", 1,1,1);
-                myTrackGui->shader_0.setUniform3f("ambientColor", 0.5, 0.5, 0.5);
+                //myTrackGui->shader_0.setUniform3f("lightDir", 1,1,1);
+                //myTrackGui->shader_0.setUniform3f("ambientColor", 0.5, 0.5, 0.5);
+                
+                
+                //more shader fun
+                myTrackGui->shader_0.setUniformTexture("texture",testIMG,1);
+                myTrackGui->shader_0.setUniform1f("time", ofGetElapsedTimef());
 
                 //-------------------------------------------------
                 //DRAW TO THE SCREEN
@@ -356,30 +309,6 @@ void ofApp::draw(){
                     myTrackGui->materials[t].end();
                 }
                 
-                /*
-                //commented. can be implemented in the loop.
-                if(t==0){
-                    if(myTrackGui->useShaders[0]){
-                        myTrackGui->shader_0.end();
-                    } else {
-                        myTrackGui->materials[0].end();
-                    }
-                } else if (t==1){
-                    if(myTrackGui->useShaders[1]){
-                        myTrackGui->shader_0.end();
-                    } else {
-                        //myLights->material2.end();//old mylights
-                        myTrackGui->materials[1].end();
-                    }
-                } else if (t==2){
-                    if(myTrackGui->useShaders[2]){
-                        myTrackGui->shader_0.end();
-                    } else {
-                        myTrackGui->materials[2].end();
-                    }
-                }
-                */
-            
             }
             
         }
@@ -423,8 +352,8 @@ void ofApp::draw(){
     
     ofEnableAlphaBlending();
     
+    //Syphon
     mClient.draw(50, 50);
-    
 	mainOutputSyphonServer.publishScreen();
     
     
@@ -438,9 +367,6 @@ void ofApp::draw(){
     
     //Display Midi notes, OSC, etc.
     drawMessages();
-    
-    
-    
     
 }// end draw
 
@@ -488,6 +414,9 @@ void ofApp::setupABCLoaders(int num) {
         
         //componsate for the Maya cm->m
         abcModels[i].setScale(25.0);
+        
+        
+        //abcModels[i].move(100, 100, 0);
         
     }
     
@@ -1294,7 +1223,12 @@ void ofApp::keyPressed(int key){
                 resetAnimation(numOfABC);
                 break;
             case 'a':
-                if(modkey) myGui->showAxis = true;
+                if(modkey) {
+                    myGui->showAxis = true;
+                } else {
+                    myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material11.frag");
+                }
+                
                 break;
             case '1':
                 if(modkey) loadScene(1);
@@ -1354,6 +1288,8 @@ void ofApp::keyPressed(int key){
                         showTrack = false;
                     }
                     
+                } else {
+                    myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material15.frag");
                 }
                 break;
             case 'm'://CTRL+M is minimize
@@ -1375,6 +1311,8 @@ void ofApp::keyPressed(int key){
                         myGui->gui2->toggleVisible();
                         showLights = false;
                     }
+                } else {
+                     myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material4.frag");
                 }
                 break;
             case 'o':
@@ -1387,6 +1325,9 @@ void ofApp::keyPressed(int key){
                     cout << "cycle loadScene: "<< currentScene << endl;
                     
                     loadScene(currentScene);
+                } else {
+                    myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material9.frag");
+                    
                 }
                 
                 break;
@@ -1398,7 +1339,11 @@ void ofApp::keyPressed(int key){
                 if(modkey) saveCam.nextView(4.0);
                 break;
             case 's':
-                if(modkey) saveCam.updateView(-1);//-1= current view
+                if(modkey) {
+                    saveCam.updateView(-1);//-1= current view
+                } else {
+                    myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material12.frag");
+                }
                 break;
             case 'n':
                 if(modkey) saveCam.newView();
@@ -1429,6 +1374,36 @@ void ofApp::keyPressed(int key){
                 addMessage("CTRL+Q/ESC - Quit App");
                 addMessage("+===========++++===========+");
                 
+                break;
+            case 'q':
+                myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material.frag");
+                break;           
+            case 'w':
+                myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material1.frag");
+                break;
+            case 'e':
+                myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material2.frag");
+                break;
+            case 'r':
+                myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material3.frag");
+                break;
+            case 'y':
+                myTrackGui->shader_0.load("shaders/kashimAstro/aterial.vert","shaders/kashimAstro/material6.frag");
+                break;
+            case 'u':
+                myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material7.frag");
+                break;
+            case 'i':
+                myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material8.frag");
+                break;
+            case 'p':
+                myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material10.frag");
+                break;
+            case 'd':
+                myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material13.frag");
+                break;
+            case 'f':
+                myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material14.frag");
                 break;
             default:
                 break;

@@ -22,8 +22,8 @@ class aTrackGui{
         static aTrackGui* Instance();//pointer to oneself.
 
         //setting up multiple gui's.  Right now I got one.
-        ofxUIScrollableCanvas *TRK_gui_1;
-        ofxUICanvas *TRK_gui_2;
+        ofxUIScrollableCanvas *TRK_gui_1;//Materials/Shaders
+        ofxUIScrollableCanvas *TRK_gui_2;//Positioning
         ofxUICanvas *TRK_gui_3;
         ofxUICanvas *TRK_gui_4;
         ofxUICanvas *TRK_gui_5;
@@ -44,7 +44,7 @@ class aTrackGui{
         bool wModActive;
         bool doReset;
     
-        //materials
+        //Materials/Shaders Variables
         void resetMaterials();
     
         ofMaterial materials[TRACKS];
@@ -68,6 +68,12 @@ class aTrackGui{
         void materialStats();
         void shaderStats();
 
+    
+        //additional shaders
+        ofImage img;
+    
+    
+        //Positioning
     
     
     protected:

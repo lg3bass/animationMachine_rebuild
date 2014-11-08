@@ -24,8 +24,8 @@ aTrackGui::aTrackGui() {
 
 //--------------------------------------------------------------
 void aTrackGui::setup(){
-    //shaders
-    //added from snakeNoise Project
+    //pull in my shaders
+    //this is the default shader.
     shader_0.load("shaders/phong/shader.vert", "shaders/phong/shader.frag");
 }
 

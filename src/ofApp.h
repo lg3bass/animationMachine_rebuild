@@ -13,11 +13,9 @@
 #include "ofxOsc.h"
 #include "util.h"
 
-
 // listen on port 12345
 #define PORT 12345
 #define NUM_MSG_STRINGS 20
-
 
 class ofApp : public ofBaseApp, public ofxMidiListener {
     
@@ -125,6 +123,11 @@ public:
     vector<ofxAlembic::Reader *> myABCs;
     vector<abcModel> abcModels;
 
+    
+    //shaders
+    ofImage testIMG;
+    
+    
     
 private:
     
