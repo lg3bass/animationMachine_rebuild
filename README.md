@@ -93,24 +93,52 @@ Triggering can be both Note-on or Note-off.  i.e. A 20 frame animation sequence 
 <dd>Play the segment in halves. Play frames 1-10, stop.  On note-off play 11-20, then rewind and stop.</dd>
 </dl>
 
-Development Roadmap
+Development TO-DO
 -------------------
+- [ ] Bug - Unused tracks should have params set to NULL so not to intefere with track calculations.
+- [ ] Bug - When switching between shaders and materials the each preset is not stored correctly in the xml.
+- [ ] Bug - .abc asset validity check so app doesn't crash when trying to load missing file or invalid abc file. 
+- [ ] Bug - Random select in total tracks.  e.g. lots of empty tracks messes up random selection.
+- [ ] Bug - Random play is not working. Review algorithm.
+- [ ] Bug - Lights refinement. Set default positions.  Point light positioning controls.
+- [ ] Bug - Work out world space with blend shapes.  I use an older version of ofAlembic for this project. The newer version messes with the world space coordinates of my blend shape geometry.
+- [ ] Enhancement - load/save scene xml via dialog. Store scene xml files
+- [ ] Enhancement - Toggle preview for all tracks on and off
+- [ ] Enhancement - scrollable track loaders
+- [ ] Enhancement - FFT Audio input.
+- [ ] Enhancement - Set X,Y,Z world space position per track.
+- [ ] Enhancement - Load shaders.
+- [ ] Enhancement - preset midi notes from 36-06 bottom to top.
+- [ ] Enhancement - load cameras individually by value by passing OSC value or Midi Value
+- [ ] Enhancement - Debug incoming messages screen.
 
-- [-] Make loader speed mod a ofxUISlider, (un-hooked up)
-- [ ] Create a Track GUI to tie Materials to midi channels so each can have a different material. 
-- [ ] .abc asset check so app doesn't crash when trying to load something that's not there. 
-- [ ] Fix - Random select in total tracks.  e.g. lots of empty tracks messes up random selection.
-- [x] Adjust midi in input selector.  Put in a switch for 1. IAC or 2. Network Midi...etc.
-- [x] Added OSC.
-- [ ] Control camera with OSC.
-- [ ] Lights refinement. Set default positions.  Point light positioning controls.
+Development COMPLETE
+------------------
 - [x] .abc World-Space translation controls using ofNode().
-- [ ] FFT Audio input
+- [x] Added OSC. 
+- [x] Adjust midi in input selector.  Put in a switch for 1. IAC or 2. Network Midi...etc.
+- [x] Control camera with OSC.
+- [x] Make loader speed mod a ofxUISlider, (un-hooked up)
+- [x] Create a Track GUI to tie Materials to midi channels so each can have a different material. 
 
 Future Dev (suspended for now)
 ------------------
 - [ ] VBOMesh expirments. Preload .abc content to <vbomesh> vectors to increase performance and do instancing.
 - [ ] Average normals script to calcute normals on meshes that have none.
 - [ ] Defered Rendering (Ambient Occulsion, Blur, Depth, etc.)
+- [ ] Load a directory of shaders.
 - [ ] Maya scripts/Gui to consruct geometry and export Alembic at the same time.
 - [ ] Turn this whole thing into a FFGL plugin for Resolume.
+
+Maya Alembic Files
+-----------------
+
+I use Maya 2014 to export my alembic files.  After considerable trial and error here are some tips:
+
+1. SetNormalAngle to 90. If that's to much, your geometry looks wrong(e.g. pixelated per face), reduce to 60 or lower. Do not bo below 20 unless you're looking for the faceted look.
+
+2. when modifying a shape in Maya abc files need constant tesselation.  for lofts and extrudes I use general tesselation so my polycount remains constant. 
+
+3. Always check the direction of your normals this matters in this app. 
+
+4. More to come with pictures(don't know where else to put this info :)
