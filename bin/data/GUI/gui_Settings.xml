@@ -1,7 +1,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>Radius</Name>
-    <Value>182.678573608</Value>
+    <Value>228.367340088</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -86,17 +86,17 @@
 <Widget>
     <Kind>4</Kind>
     <Name>DIR_XORI</Name>
-    <Value>-66.122451782</Value>
+    <Value>-33.979598999</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>DIR_YORI</Name>
-    <Value>133.163269043</Value>
+    <Value>95.510192871</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>DIR_ZORI</Name>
-    <Value>-81.734695435</Value>
+    <Value>-64.285713196</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
@@ -136,7 +136,7 @@
 <Widget>
     <Kind>5</Kind>
     <Name>PDR</Name>
-    <Value>0.000000000</Value>
+    <Value>255.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
@@ -146,7 +146,7 @@
 <Widget>
     <Kind>5</Kind>
     <Name>PDB</Name>
-    <Value>0.000000000</Value>
+    <Value>255.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>

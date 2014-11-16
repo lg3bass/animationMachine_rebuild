@@ -38,6 +38,7 @@ public:
     void launch();// dont think this is needed anymore.
     bool holdAnimation();
     bool finalizeAnimation();
+    void setWSPosition();
     void setClipMarkers(int _currentSegment);
     void playSegment(int type);
     void INFOlaunchingToPlay();
@@ -51,7 +52,9 @@ public:
     float midiChannel;
     float midiNote;
     int ldrType; // 0=random, 1=linear
-    int trackMode; // 0=noteOn, 1=noteOn/noteOff
+    int trackMode; // 0=noteOn, 1=noteOff, 2=noteOn/noteOff
+    
+    
     float segLength;
     int currentSegment;
     string abcName;
@@ -72,7 +75,7 @@ public:
     bool stageHold;
     bool stageEnd;//are we finalizing the animation run
     
-
+    ofVec3f abcPostion; //global position in WS.
 };
 
 

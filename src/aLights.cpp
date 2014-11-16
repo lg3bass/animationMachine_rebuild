@@ -70,26 +70,19 @@ void aLights::reset() {
 
     
     //*************MOVING TO aTrackGui
-    material1.setShininess(128);
-    
-    material1.setSpecularColor(ofColor(255, 255, 255, 255));
-    material1.setEmissiveColor(ofColor(0, 0, 0, 255));
-    material1.setDiffuseColor(ofColor(255, 255, 255, 255));
-    material1.setAmbientColor(ofColor(255, 255, 255, 255));
-    
-    material2.setShininess(128);
-    
-    material2.setSpecularColor(ofColor(255, 255, 255, 255));
-    material2.setEmissiveColor(ofColor(0, 0, 0, 255));
-    material2.setDiffuseColor(ofColor(255, 255, 255, 255));
-    material2.setAmbientColor(ofColor(255, 255, 255, 255));
+    //    material1.setShininess(128);
+    //    
+    //    material1.setSpecularColor(ofColor(255, 255, 255, 255));
+    //    material1.setEmissiveColor(ofColor(0, 0, 0, 255));
+    //    material1.setDiffuseColor(ofColor(255, 255, 255, 255));
+    //    material1.setAmbientColor(ofColor(255, 255, 255, 255));
+    //    
+    //    material2.setShininess(128);
+    //    
+    //    material2.setSpecularColor(ofColor(255, 255, 255, 255));
+    //    material2.setEmissiveColor(ofColor(0, 0, 0, 255));
+    //    material2.setDiffuseColor(ofColor(255, 255, 255, 255));
+    //    material2.setAmbientColor(ofColor(255, 255, 255, 255));
     //************MOVING TO aTrackGUI
 
-}
-
-
-
-void aLights::draw() {
-    
-    
 }

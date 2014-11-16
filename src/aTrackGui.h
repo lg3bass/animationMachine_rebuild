@@ -13,6 +13,7 @@
 #include "ofMain.h"
 #include "ofxUI.h"
 
+
 #define TRACKS 10
 
 #endif /* defined(__animationMachine__aTrackGui__) */
@@ -23,7 +24,7 @@ class aTrackGui{
 
         //setting up multiple gui's.  Right now I got one.
         ofxUIScrollableCanvas *TRK_gui_1;//Materials/Shaders
-        ofxUIScrollableCanvas *TRK_gui_2;//Positioning
+        ofxUIScrollableCanvas *TRK_gui_2;//Positioning/Rotate/Scale
         ofxUICanvas *TRK_gui_3;
         ofxUICanvas *TRK_gui_4;
         ofxUICanvas *TRK_gui_5;
@@ -35,8 +36,9 @@ class aTrackGui{
         void exit();
     
         //GUI methods
-        void guiEvent(ofxUIEventArgs &);
-        void setGUI();//sets gui and gui2
+        void guiEvent_1(ofxUIEventArgs &);
+        void setGUI_1();//materials
+        void setGUI_2();//positioning/rotate/scale
         void setWSlider(vector<ofxUISlider *>sliders, ofColor &c, float v);
         void toggleVisibility(bool _view = true);
 

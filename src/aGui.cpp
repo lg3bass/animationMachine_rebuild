@@ -90,13 +90,10 @@ void aGui::draw(){
 void aGui::exit(){
     gui->saveSettings("GUI/gui_Settings.xml");
     gui2->saveSettings("GUI/gui_Settings2.xml");
-    //gui_loader->saveSettings("GUI/gui_loader_Settings.xml");
-	//delete gui_loader;
     
     delete gui;
 	delete gui2;
-    
-    
+
 }
 
 
@@ -350,182 +347,6 @@ void aGui::guiEvent(ofxUIEventArgs &e)
     } else if (name == "dir") {
         ofxUIToggle *toggle = (ofxUIToggle *)e.widget;
         useDir = toggle->getValue();
- 
-        
-//Material 1
-        /* material shininess */
-    } else if (name == "MAT SHINE 1") {
-        ofxUISlider *slider = (ofxUISlider *)e.widget;
-        myLights2->material1.setShininess(slider->getScaledValue());
-        
-        /* material diffuse/ambient colour */
-    } else if (name == "MDR1") {
-        ofColor c = myLights2->material1.getDiffuseColor();
-        ofxUISlider *slider = (ofxUISlider *)e.widget;
-        c.r = slider->getScaledValue();
-        setWSlider(matDiffSlider, c, slider->getScaledValue());
-        myLights2->material1.setDiffuseColor(c);
-        myLights2->material1.setAmbientColor(c);
-    } else if (name == "MDG1") {
-        ofColor c = myLights2->material1.getDiffuseColor();
-        ofxUISlider *slider = (ofxUISlider *)e.widget;
-        c.g = slider->getScaledValue();
-        setWSlider(matDiffSlider, c, slider->getScaledValue());
-        myLights2->material1.setDiffuseColor(c);
-        myLights2->material1.setAmbientColor(c);
-    } else if (name == "MDB1") {
-        ofColor c = myLights2->material1.getDiffuseColor();
-        ofxUISlider *slider = (ofxUISlider *)e.widget;
-        c.b = slider->getScaledValue();
-        setWSlider(matDiffSlider, c, slider->getScaledValue());
-        myLights2->material1.setDiffuseColor(c);
-        myLights2->material1.setAmbientColor(c);
-    } else if (name == "MDA1") {
-        ofColor c = myLights2->material1.getDiffuseColor();
-        ofxUISlider *slider = (ofxUISlider *)e.widget;
-        c.a = slider->getScaledValue();
-        myLights2->material1.setDiffuseColor(c);
-        myLights2->material1.setAmbientColor(c);
-        
-        /* material emissive colour */
-    } else if (name == "MER1") {
-        ofColor c = myLights2->material1.getEmissiveColor();
-        ofxUISlider *slider = (ofxUISlider *)e.widget;
-        c.r = slider->getScaledValue();
-        setWSlider(matEmSlider, c, slider->getScaledValue());
-        myLights2->material1.setEmissiveColor(c);
-    } else if (name == "MEG1") {
-        ofColor c = myLights2->material1.getEmissiveColor();
-        ofxUISlider *slider = (ofxUISlider *)e.widget;
-        c.g = slider->getScaledValue();
-        setWSlider(matEmSlider, c, slider->getScaledValue());
-        myLights2->material1.setEmissiveColor(c);
-    } else if (name == "MEB1") {
-        ofColor c = myLights2->material1.getEmissiveColor();
-        ofxUISlider *slider = (ofxUISlider *)e.widget;
-        c.b = slider->getScaledValue();
-        setWSlider(matEmSlider, c, slider->getScaledValue());
-        myLights2->material1.setEmissiveColor(c);
-    } else if (name == "MEA1") {
-        ofColor c = myLights2->material1.getEmissiveColor();
-        ofxUISlider *slider = (ofxUISlider *)e.widget;
-        c.a = slider->getScaledValue();
-        myLights2->material1.setEmissiveColor(c);
-        
-        /* material specular colour */
-    } else if (name == "MSR1") {
-        ofColor c = myLights2->material1.getSpecularColor();
-        ofxUISlider *slider = (ofxUISlider *)e.widget;
-        c.r = slider->getScaledValue();
-        setWSlider(matSpecSlider, c, slider->getScaledValue());
-        myLights2->material1.setSpecularColor(c);
-        
-    } else if (name == "MSG1") {
-        ofColor c = myLights2->material1.getSpecularColor();
-        ofxUISlider *slider = (ofxUISlider *)e.widget;
-        c.g = slider->getScaledValue();
-        setWSlider(matSpecSlider, c, slider->getScaledValue());
-        myLights2->material1.setSpecularColor(c);
-    } else if (name == "MSB1") {
-        ofColor c = myLights2->material1.getSpecularColor();
-        ofxUISlider *slider = (ofxUISlider *)e.widget;
-        c.b = slider->getScaledValue();
-        setWSlider(matSpecSlider, c, slider->getScaledValue());
-        myLights2->material1.setSpecularColor(c);
-    } else if (name == "MSA1") {
-        ofColor c = myLights2->material1.getSpecularColor();
-        ofxUISlider *slider = (ofxUISlider *)e.widget;
-        c.a = slider->getScaledValue();
-        myLights2->material1.setSpecularColor(c);
-
- 
-        
-//Material 2
-        /* material shininess */
-    } else if (name == "MAT SHINE 2") {
-        ofxUISlider *slider = (ofxUISlider *)e.widget;
-        myLights2->material2.setShininess(slider->getScaledValue());
-        
-        /* material diffuse/ambient colour */
-    } else if (name == "MDR2") {
-        ofColor c = myLights2->material2.getDiffuseColor();
-        ofxUISlider *slider = (ofxUISlider *)e.widget;
-        c.r = slider->getScaledValue();
-        setWSlider(matDiffSlider, c, slider->getScaledValue());
-        myLights2->material2.setDiffuseColor(c);
-        myLights2->material2.setAmbientColor(c);
-    } else if (name == "MDG2") {
-        ofColor c = myLights2->material2.getDiffuseColor();
-        ofxUISlider *slider = (ofxUISlider *)e.widget;
-        c.g = slider->getScaledValue();
-        setWSlider(matDiffSlider, c, slider->getScaledValue());
-        myLights2->material2.setDiffuseColor(c);
-        myLights2->material2.setAmbientColor(c);
-    } else if (name == "MDB2") {
-        ofColor c = myLights2->material2.getDiffuseColor();
-        ofxUISlider *slider = (ofxUISlider *)e.widget;
-        c.b = slider->getScaledValue();
-        setWSlider(matDiffSlider, c, slider->getScaledValue());
-        myLights2->material2.setDiffuseColor(c);
-        myLights2->material2.setAmbientColor(c);
-    } else if (name == "MDA2") {
-        ofColor c = myLights2->material2.getDiffuseColor();
-        ofxUISlider *slider = (ofxUISlider *)e.widget;
-        c.a = slider->getScaledValue();
-        myLights2->material2.setDiffuseColor(c);
-        myLights2->material2.setAmbientColor(c);
-        
-        /* material emissive colour */
-    } else if (name == "MER2") {
-        ofColor c = myLights2->material2.getEmissiveColor();
-        ofxUISlider *slider = (ofxUISlider *)e.widget;
-        c.r = slider->getScaledValue();
-        setWSlider(matEmSlider, c, slider->getScaledValue());
-        myLights2->material2.setEmissiveColor(c);
-    } else if (name == "MEG2") {
-        ofColor c = myLights2->material2.getEmissiveColor();
-        ofxUISlider *slider = (ofxUISlider *)e.widget;
-        c.g = slider->getScaledValue();
-        setWSlider(matEmSlider, c, slider->getScaledValue());
-        myLights2->material2.setEmissiveColor(c);
-    } else if (name == "MEB2") {
-        ofColor c = myLights2->material2.getEmissiveColor();
-        ofxUISlider *slider = (ofxUISlider *)e.widget;
-        c.b = slider->getScaledValue();
-        setWSlider(matEmSlider, c, slider->getScaledValue());
-        myLights2->material2.setEmissiveColor(c);
-    } else if (name == "MEA2") {
-        ofColor c = myLights2->material2.getEmissiveColor();
-        ofxUISlider *slider = (ofxUISlider *)e.widget;
-        c.a = slider->getScaledValue();
-        myLights2->material2.setEmissiveColor(c);
-        
-        /* material specular colour */
-    } else if (name == "MSR2") {
-        ofColor c = myLights2->material2.getSpecularColor();
-        ofxUISlider *slider = (ofxUISlider *)e.widget;
-        c.r = slider->getScaledValue();
-        setWSlider(matSpecSlider, c, slider->getScaledValue());
-        myLights2->material2.setSpecularColor(c);
-        
-    } else if (name == "MSG2") {
-        ofColor c = myLights2->material2.getSpecularColor();
-        ofxUISlider *slider = (ofxUISlider *)e.widget;
-        c.g = slider->getScaledValue();
-        setWSlider(matSpecSlider, c, slider->getScaledValue());
-        myLights2->material2.setSpecularColor(c);
-    } else if (name == "MSB2") {
-        ofColor c = myLights2->material2.getSpecularColor();
-        ofxUISlider *slider = (ofxUISlider *)e.widget;
-        c.b = slider->getScaledValue();
-        setWSlider(matSpecSlider, c, slider->getScaledValue());
-        myLights2->material2.setSpecularColor(c);
-    } else if (name == "MSA2") {
-        ofColor c = myLights2->material2.getSpecularColor();
-        ofxUISlider *slider = (ofxUISlider *)e.widget;
-        c.a = slider->getScaledValue();
-        myLights2->material2.setSpecularColor(c);
-        
         
         /* ambient light stuff */
     } else if (name == "ambient") {
@@ -581,9 +402,7 @@ void aGui::setGUI()
         dirDiffSlider.clear();
         pointspecslider.clear();
         pointDiffSlider.clear();
-        matDiffSlider.clear();
-        matSpecSlider.clear();
-        matEmSlider.clear();
+
         
         delete gui;
         delete gui2;
@@ -709,63 +528,6 @@ void aGui::setGUI()
     gui2->setWidgetPosition(OFX_UI_WIDGET_POSITION_DOWN);
     
     
-    //Material Control 1    
-    gui2->addSpacer(w, 2);
-    gui2->addWidgetDown(new ofxUILabel("Material 1", OFX_UI_FONT_MEDIUM));
-    gui2->addSlider("MAT SHINE 1", 0, 128, myLights2->material1.getShininess(), w, h);
-    gui2->addWidgetDown(new ofxUILabel("Material Diffuse/Emissive/Specular Color", OFX_UI_FONT_SMALL));
-    
-    c = myLights2->material1.getDiffuseColor();
-    matDiffSlider.push_back(gui2->addSlider("MDR1", 0, 255, c.r, h, vertH));
-    gui2->setWidgetPosition(OFX_UI_WIDGET_POSITION_RIGHT);
-    matDiffSlider.push_back(gui2->addSlider("MDG1", 0, 255, c.g, h, vertH));
-    matDiffSlider.push_back(gui2->addSlider("MDB1", 0, 255, c.b, h, vertH));
-    //    gui2->addSlider("MDA", 0, 255, c.a, h, vertH);
-    
-    gui2->addSpacer(2, vertH+10);
-    c = myLights2->material1.getEmissiveColor();
-    matEmSlider.push_back(gui2->addSlider("MER1", 0, 255, c.r, h, vertH));
-    gui->setWidgetPosition(OFX_UI_WIDGET_POSITION_RIGHT);
-    matEmSlider.push_back(gui2->addSlider("MEG1", 0, 255, c.g, h, vertH));
-    matEmSlider.push_back(gui2->addSlider("MEB1", 0, 255, c.b, h, vertH));
-    //    gui2->addSlider("MDA", 0, 255, c.a, h, vertH);
-    
-    gui2->addSpacer(2, vertH+10);
-    c = myLights2->material1.getSpecularColor();
-    matSpecSlider.push_back(gui2->addSlider("MSR1", 0, 255, c.r, h, vertH));
-    matSpecSlider.push_back(gui2->addSlider("MSG1", 0, 255, c.g, h, vertH));
-    matSpecSlider.push_back(gui2->addSlider("MSB1", 0, 255, c.b, h, vertH));
-    //    gui2->addSlider("MSA", 0, 255, c.a, h, vertH);
-
-    gui2->setWidgetPosition(OFX_UI_WIDGET_POSITION_DOWN);
-    
-    //Material Control 2
-    gui2->addSpacer(w, 2);
-    gui2->addWidgetDown(new ofxUILabel("Material 2", OFX_UI_FONT_MEDIUM));
-    gui2->addSlider("MAT SHINE 2", 0, 128, myLights2->material2.getShininess(), w, h);
-    gui2->addWidgetDown(new ofxUILabel("Material Diffuse/Emissive/Specular Color", OFX_UI_FONT_SMALL));
-    
-    c = myLights2->material2.getDiffuseColor();
-    matDiffSlider.push_back(gui2->addSlider("MDR2", 0, 255, c.r, h, vertH));
-    gui2->setWidgetPosition(OFX_UI_WIDGET_POSITION_RIGHT);
-    matDiffSlider.push_back(gui2->addSlider("MDG2", 0, 255, c.g, h, vertH));
-    matDiffSlider.push_back(gui2->addSlider("MDB2", 0, 255, c.b, h, vertH));
-    //    gui2->addSlider("MDA", 0, 255, c.a, h, vertH);
-    
-    gui2->addSpacer(2, vertH+10);
-    c = myLights2->material2.getEmissiveColor();
-    matEmSlider.push_back(gui2->addSlider("MER2", 0, 255, c.r, h, vertH));
-    gui->setWidgetPosition(OFX_UI_WIDGET_POSITION_RIGHT);
-    matEmSlider.push_back(gui2->addSlider("MEG2", 0, 255, c.g, h, vertH));
-    matEmSlider.push_back(gui2->addSlider("MEB2", 0, 255, c.b, h, vertH));
-    //    gui2->addSlider("MDA", 0, 255, c.a, h, vertH);
-    
-    gui2->addSpacer(2, vertH+10);
-    c = myLights2->material2.getSpecularColor();
-    matSpecSlider.push_back(gui2->addSlider("MSR2", 0, 255, c.r, h, vertH));
-    matSpecSlider.push_back(gui2->addSlider("MSG2", 0, 255, c.g, h, vertH));
-    matSpecSlider.push_back(gui2->addSlider("MSB2", 0, 255, c.b, h, vertH));
-    //    gui2->addSlider("MSA", 0, 255, c.a, h, vertH);
     
     
     //turn on an off spotlights.
@@ -791,10 +553,7 @@ void aGui::setGUI()
     gui2->addSlider("ANIM", 0.0, 1.0, animTime, w, h);
     
     ofAddListener(gui2->newGUIEvent, this, &aGui::guiEvent);
-    
-    
-    
-    //guiAlloc = true; //--moved to reset();
+
     
 }// end setGUI()
 

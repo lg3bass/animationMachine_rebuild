@@ -20,7 +20,6 @@ public:
     //methods
     void reset();
     void update();
-    void draw();
     void setLightOri(ofLight &light, ofVec3f rot);
  
     //variables
@@ -32,10 +31,10 @@ public:
     
     //turn this into an array.
     //************MOVING TO aTrackGui
-    ofMaterial material1;
-    ofMaterial material2;
-    ofMaterial material3;
-    ofMaterial material4;
+//    ofMaterial material1;
+//    ofMaterial material2;
+//    ofMaterial material3;
+//    ofMaterial material4;
     //*****************************
     
     ofVec3f dir_rot;

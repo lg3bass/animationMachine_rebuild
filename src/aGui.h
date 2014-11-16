@@ -82,9 +82,7 @@ public:
     vector<ofxUISlider *> dirDiffSlider;
     vector<ofxUISlider *> pointspecslider;
     vector<ofxUISlider *> pointDiffSlider;
-    vector<ofxUISlider *> matDiffSlider;
-    vector<ofxUISlider *> matSpecSlider;
-    vector<ofxUISlider *> matEmSlider;
+
 
 protected:
     aGui();

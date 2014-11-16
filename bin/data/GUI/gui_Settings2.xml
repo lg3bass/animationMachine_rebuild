@@ -19,106 +19,6 @@
     <Value>0.000000000</Value>
 </Widget>
 <Widget>
-    <Kind>4</Kind>
-    <Name>MAT SHINE 1</Name>
-    <Value>35.591835022</Value>
-</Widget>
-<Widget>
-    <Kind>5</Kind>
-    <Name>MDR1</Name>
-    <Value>255.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>5</Kind>
-    <Name>MDG1</Name>
-    <Value>255.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>5</Kind>
-    <Name>MDB1</Name>
-    <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>5</Kind>
-    <Name>MER1</Name>
-    <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>5</Kind>
-    <Name>MEG1</Name>
-    <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>5</Kind>
-    <Name>MEB1</Name>
-    <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>5</Kind>
-    <Name>MSR1</Name>
-    <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>5</Kind>
-    <Name>MSG1</Name>
-    <Value>255.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>5</Kind>
-    <Name>MSB1</Name>
-    <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>4</Kind>
-    <Name>MAT SHINE 2</Name>
-    <Value>128.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>5</Kind>
-    <Name>MDR2</Name>
-    <Value>255.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>5</Kind>
-    <Name>MDG2</Name>
-    <Value>255.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>5</Kind>
-    <Name>MDB2</Name>
-    <Value>255.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>5</Kind>
-    <Name>MER2</Name>
-    <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>5</Kind>
-    <Name>MEG2</Name>
-    <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>5</Kind>
-    <Name>MEB2</Name>
-    <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>5</Kind>
-    <Name>MSR2</Name>
-    <Value>255.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>5</Kind>
-    <Name>MSG2</Name>
-    <Value>255.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>5</Kind>
-    <Name>MSB2</Name>
-    <Value>255.000000000</Value>
-</Widget>
-<Widget>
     <Kind>2</Kind>
     <Name>cull</Name>
     <Value>0</Value>
@@ -146,5 +46,5 @@
 <Widget>
     <Kind>4</Kind>
     <Name>ANIM</Name>
-    <Value>0.642857134</Value>
+    <Value>0.403061211</Value>
 </Widget>

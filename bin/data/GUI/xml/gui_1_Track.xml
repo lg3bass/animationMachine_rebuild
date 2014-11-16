@@ -1,22 +1,22 @@
 <Widget>
     <Kind>2</Kind>
     <Name>Shader0</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>Shininess0</Name>
-    <Value>84.034782410</Value>
+    <Value>128.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>dr0</Name>
-    <Value>0.000000000</Value>
+    <Value>255.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>dg0</Name>
-    <Value>159.375000000</Value>
+    <Value>255.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
@@ -41,12 +41,12 @@
 <Widget>
     <Kind>5</Kind>
     <Name>sr0</Name>
-    <Value>0.000000000</Value>
+    <Value>255.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>sg0</Name>
-    <Value>159.375000000</Value>
+    <Value>255.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
@@ -66,7 +66,7 @@
 <Widget>
     <Kind>5</Kind>
     <Name>sdb0</Name>
-    <Value>0.000000000</Value>
+    <Value>255.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>

@@ -40,6 +40,7 @@
 		7ED71B6619290A2200BAC72B /* aLights.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7ED71B5E19290A2200BAC72B /* aLights.cpp */; };
 		7ED71B6719290A2200BAC72B /* aTrack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7ED71B6019290A2200BAC72B /* aTrack.cpp */; };
 		7ED71B6819290A2200BAC72B /* aTrackGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7ED71B6219290A2200BAC72B /* aTrackGui.cpp */; };
+		7EF7DA0E1A17EE3600EBC04C /* aPositionGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7EF7DA0C1A17EE3600EBC04C /* aPositionGui.cpp */; };
 		83D9F930112E0944444124EE /* ofxMidiOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F77E5C73A62E2E77C78EC6 /* ofxMidiOut.cpp */; };
 		879A251454401BC0B6E4F238 /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9BFFBBF4CC43DEE890B3C3E /* OscTypes.cpp */; };
 		8F5205AEF8861EF234F0651A /* ofxOscSender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81967292BFC87A0144BD32C6 /* ofxOscSender.cpp */; };
@@ -297,6 +298,8 @@
 		7ED71B6119290A2200BAC72B /* aTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aTrack.h; sourceTree = "<group>"; };
 		7ED71B6219290A2200BAC72B /* aTrackGui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aTrackGui.cpp; sourceTree = "<group>"; };
 		7ED71B6319290A2200BAC72B /* aTrackGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aTrackGui.h; sourceTree = "<group>"; };
+		7EF7DA0C1A17EE3600EBC04C /* aPositionGui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aPositionGui.cpp; sourceTree = "<group>"; };
+		7EF7DA0D1A17EE3600EBC04C /* aPositionGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aPositionGui.h; sourceTree = "<group>"; };
 		7F194478E266268E40876C0D /* CompoundPropertyWriter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = CompoundPropertyWriter.h; path = ../../../addons/ofxAlembic/libs/alembic/include/Alembic/AbcCoreAbstract/CompoundPropertyWriter.h; sourceTree = SOURCE_ROOT; };
 		7F6680A728AFA77AA2F46EDC /* TypedPropertyTraits.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = TypedPropertyTraits.h; path = ../../../addons/ofxAlembic/libs/alembic/include/Alembic/Abc/TypedPropertyTraits.h; sourceTree = SOURCE_ROOT; };
 		7FB06429ED91763029ED73BA /* H5DSpublic.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = H5DSpublic.h; path = ../../../addons/ofxAlembic/libs/alembic/include/H5DSpublic.h; sourceTree = SOURCE_ROOT; };
@@ -1303,6 +1306,8 @@
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
 				7E5D3FA919363BBA00026C80 /* util.cpp */,
 				7E5D3FAA19363BBB00026C80 /* util.h */,
+				7EF7DA0C1A17EE3600EBC04C /* aPositionGui.cpp */,
+				7EF7DA0D1A17EE3600EBC04C /* aPositionGui.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -1531,6 +1536,7 @@
 				63F9FE1D90234FA6DE6F509E /* ofxMidi.cpp in Sources */,
 				7E5D3FAB19363BBB00026C80 /* util.cpp in Sources */,
 				0BFC9C20FD7E3C8D5873AA97 /* ofxMidiIn.cpp in Sources */,
+				7EF7DA0E1A17EE3600EBC04C /* aPositionGui.cpp in Sources */,
 				C6FE64F74F1EA1D98C8F9847 /* ofxMidiMessage.cpp in Sources */,
 				83D9F930112E0944444124EE /* ofxMidiOut.cpp in Sources */,
 				63D0FD8734D5760B8080C901 /* RtMidi.cpp in Sources */,

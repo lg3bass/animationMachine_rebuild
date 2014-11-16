@@ -6,7 +6,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>BANKS(1,0)</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -36,12 +36,17 @@
 <Widget>
     <Kind>12</Kind>
     <Name>00_TRK_READER</Name>
-    <Value>abc/scalop_19/loftedSurface4_sn0_1_30.abc</Value>
+    <Value>abc/scalop_19/loftedSurface1_sn0_1_30.abc</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>00_TRK_SPD</Name>
-    <Value>0.014400000</Value>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>00_TRK_SPEED</Name>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -51,7 +56,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>00_TRK_NOTE</Name>
-    <Value>63.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -60,12 +65,17 @@
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>00_ON</Name>
+    <Name>00_seq</Name>
+    <Value>1</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>00_note_On</Name>
     <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>00_OFF</Name>
+    <Name>00_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -79,21 +89,6 @@
     <Value>30.000000000</Value>
 </Widget>
 <Widget>
-    <Kind>8</Kind>
-    <Name>00_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>00_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>00_Z</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
     <Kind>20</Kind>
     <Name>01_TRK_PLAY</Name>
     <Value>0</Value>
@@ -101,12 +96,17 @@
 <Widget>
     <Kind>12</Kind>
     <Name>01_TRK_READER</Name>
-    <Value>abc/scalop_19/loftedSurface3_sn0_1_30.abc</Value>
+    <Value>abc/scalop_19/loftedSurface2_sn0_1_30.abc</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>01_TRK_SPD</Name>
-    <Value>0.014400000</Value>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>01_TRK_SPEED</Name>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -116,7 +116,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>01_TRK_NOTE</Name>
-    <Value>62.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -125,13 +125,18 @@
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>01_ON</Name>
+    <Name>01_seq</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>01_OFF</Name>
+    <Name>01_note_On</Name>
     <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>01_note_Off</Name>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -144,21 +149,6 @@
     <Value>30.000000000</Value>
 </Widget>
 <Widget>
-    <Kind>8</Kind>
-    <Name>01_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>01_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>01_Z</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
     <Kind>20</Kind>
     <Name>02_TRK_PLAY</Name>
     <Value>0</Value>
@@ -166,12 +156,17 @@
 <Widget>
     <Kind>12</Kind>
     <Name>02_TRK_READER</Name>
-    <Value>abc/scalop_19/loftedSurface2_sn0_1_30.abc</Value>
+    <Value>abc/scalop_19/loftedSurface3_sn0_1_30.abc</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>02_TRK_SPD</Name>
-    <Value>0.013200000</Value>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>02_TRK_SPEED</Name>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -181,7 +176,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>02_TRK_NOTE</Name>
-    <Value>61.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -190,12 +185,17 @@
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>02_ON</Name>
+    <Name>02_seq</Name>
+    <Value>1</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>02_note_On</Name>
     <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>02_OFF</Name>
+    <Name>02_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -209,21 +209,6 @@
     <Value>30.000000000</Value>
 </Widget>
 <Widget>
-    <Kind>8</Kind>
-    <Name>02_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>02_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>02_Z</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
     <Kind>20</Kind>
     <Name>03_TRK_PLAY</Name>
     <Value>0</Value>
@@ -231,12 +216,17 @@
 <Widget>
     <Kind>12</Kind>
     <Name>03_TRK_READER</Name>
-    <Value>abc/scalop_19/loftedSurface1_sn0_1_30.abc</Value>
+    <Value>abc/scalop_19/loftedSurface4_sn0_1_30.abc</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>03_TRK_SPD</Name>
-    <Value>0.014400000</Value>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>03_TRK_SPEED</Name>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -246,7 +236,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>03_TRK_NOTE</Name>
-    <Value>60.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -255,12 +245,17 @@
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>03_ON</Name>
+    <Name>03_seq</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>03_OFF</Name>
+    <Name>03_note_On</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>03_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -274,21 +269,6 @@
     <Value>30.000000000</Value>
 </Widget>
 <Widget>
-    <Kind>8</Kind>
-    <Name>03_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>03_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>03_Z</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
     <Kind>20</Kind>
     <Name>04_TRK_PLAY</Name>
     <Value>0</Value>
@@ -296,11 +276,16 @@
 <Widget>
     <Kind>12</Kind>
     <Name>04_TRK_READER</Name>
-    <Value>empty</Value>
+    <Value>abc/scalop_19/loftedSurface5_sn0_1_30.abc</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>04_TRK_SPD</Name>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>04_TRK_SPEED</Name>
     <Value>0.050000001</Value>
 </Widget>
 <Widget>
@@ -311,7 +296,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>04_TRK_NOTE</Name>
-    <Value>59.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -320,12 +305,17 @@
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>04_ON</Name>
+    <Name>04_seq</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>04_OFF</Name>
+    <Name>04_note_On</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>04_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -336,22 +326,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>04_TRK_SEGLN</Name>
-    <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>04_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>04_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>04_Z</Name>
-    <Value>1.000000000</Value>
+    <Value>30.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -361,11 +336,16 @@
 <Widget>
     <Kind>12</Kind>
     <Name>05_TRK_READER</Name>
-    <Value>empty</Value>
+    <Value>abc/scalop_19/loftedSurface6_sn0_1_30.abc</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>05_TRK_SPD</Name>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>05_TRK_SPEED</Name>
     <Value>0.050000001</Value>
 </Widget>
 <Widget>
@@ -376,7 +356,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>05_TRK_NOTE</Name>
-    <Value>58.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -385,12 +365,17 @@
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>05_ON</Name>
+    <Name>05_seq</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>05_OFF</Name>
+    <Name>05_note_On</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>05_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -401,22 +386,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>05_TRK_SEGLN</Name>
-    <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>05_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>05_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>05_Z</Name>
-    <Value>1.000000000</Value>
+    <Value>30.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -426,11 +396,16 @@
 <Widget>
     <Kind>12</Kind>
     <Name>06_TRK_READER</Name>
-    <Value>empty</Value>
+    <Value>abc/scalop_19/loftedSurface7_sn0_1_30.abc</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>06_TRK_SPD</Name>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>06_TRK_SPEED</Name>
     <Value>0.050000001</Value>
 </Widget>
 <Widget>
@@ -441,7 +416,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>06_TRK_NOTE</Name>
-    <Value>57.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -450,12 +425,17 @@
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>06_ON</Name>
+    <Name>06_seq</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>06_OFF</Name>
+    <Name>06_note_On</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>06_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -466,22 +446,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>06_TRK_SEGLN</Name>
-    <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>06_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>06_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>06_Z</Name>
-    <Value>1.000000000</Value>
+    <Value>30.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -491,11 +456,16 @@
 <Widget>
     <Kind>12</Kind>
     <Name>07_TRK_READER</Name>
-    <Value>empty</Value>
+    <Value>abc/scalop_19/loftedSurface8_sn0_1_30.abc</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>07_TRK_SPD</Name>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>07_TRK_SPEED</Name>
     <Value>0.050000001</Value>
 </Widget>
 <Widget>
@@ -506,7 +476,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>07_TRK_NOTE</Name>
-    <Value>56.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -515,12 +485,17 @@
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>07_ON</Name>
+    <Name>07_seq</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>07_OFF</Name>
+    <Name>07_note_On</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>07_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -531,22 +506,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>07_TRK_SEGLN</Name>
-    <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>07_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>07_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>07_Z</Name>
-    <Value>1.000000000</Value>
+    <Value>30.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -556,11 +516,16 @@
 <Widget>
     <Kind>12</Kind>
     <Name>08_TRK_READER</Name>
-    <Value>empty</Value>
+    <Value>abc/scalop_19/loftedSurface9_sn0_1_30.abc</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>08_TRK_SPD</Name>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>08_TRK_SPEED</Name>
     <Value>0.050000001</Value>
 </Widget>
 <Widget>
@@ -571,7 +536,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>08_TRK_NOTE</Name>
-    <Value>55.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -580,12 +545,17 @@
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>08_ON</Name>
+    <Name>08_seq</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>08_OFF</Name>
+    <Name>08_note_On</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>08_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -596,22 +566,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>08_TRK_SEGLN</Name>
-    <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>08_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>08_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>08_Z</Name>
-    <Value>1.000000000</Value>
+    <Value>30.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -621,11 +576,16 @@
 <Widget>
     <Kind>12</Kind>
     <Name>09_TRK_READER</Name>
-    <Value>empty</Value>
+    <Value>abc/scalop_19/loftedSurface10_sn0_1_30.abc</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>09_TRK_SPD</Name>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>09_TRK_SPEED</Name>
     <Value>0.050000001</Value>
 </Widget>
 <Widget>
@@ -636,7 +596,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>09_TRK_NOTE</Name>
-    <Value>54.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -645,12 +605,17 @@
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>09_ON</Name>
+    <Name>09_seq</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>09_OFF</Name>
+    <Name>09_note_On</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>09_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -661,22 +626,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>09_TRK_SEGLN</Name>
-    <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>09_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>09_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>09_Z</Name>
-    <Value>1.000000000</Value>
+    <Value>30.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -695,27 +645,37 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
+    <Name>10_TRK_SPEED</Name>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
     <Name>10_TRK_MIDI</Name>
     <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>10_TRK_NOTE</Name>
-    <Value>53.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>10_random</Name>
-    <Value>0</Value>
-</Widget>
-<Widget>
-    <Kind>2</Kind>
-    <Name>10_ON</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>10_OFF</Name>
+    <Name>10_seq</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>10_note_On</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>10_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -727,21 +687,6 @@
     <Kind>8</Kind>
     <Name>10_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>10_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>10_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>10_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -760,27 +705,37 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
+    <Name>11_TRK_SPEED</Name>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
     <Name>11_TRK_MIDI</Name>
     <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>11_TRK_NOTE</Name>
-    <Value>52.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>11_random</Name>
-    <Value>0</Value>
-</Widget>
-<Widget>
-    <Kind>2</Kind>
-    <Name>11_ON</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>11_OFF</Name>
+    <Name>11_seq</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>11_note_On</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>11_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -792,21 +747,6 @@
     <Kind>8</Kind>
     <Name>11_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>11_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>11_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>11_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -825,27 +765,37 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
+    <Name>12_TRK_SPEED</Name>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
     <Name>12_TRK_MIDI</Name>
     <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>12_TRK_NOTE</Name>
-    <Value>51.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>12_random</Name>
-    <Value>0</Value>
-</Widget>
-<Widget>
-    <Kind>2</Kind>
-    <Name>12_ON</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>12_OFF</Name>
+    <Name>12_seq</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>12_note_On</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>12_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -857,21 +807,6 @@
     <Kind>8</Kind>
     <Name>12_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>12_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>12_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>12_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -890,27 +825,37 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
+    <Name>13_TRK_SPEED</Name>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
     <Name>13_TRK_MIDI</Name>
     <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>13_TRK_NOTE</Name>
-    <Value>50.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>13_random</Name>
-    <Value>0</Value>
-</Widget>
-<Widget>
-    <Kind>2</Kind>
-    <Name>13_ON</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>13_OFF</Name>
+    <Name>13_seq</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>13_note_On</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>13_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -922,21 +867,6 @@
     <Kind>8</Kind>
     <Name>13_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>13_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>13_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>13_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -955,27 +885,37 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
+    <Name>14_TRK_SPEED</Name>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
     <Name>14_TRK_MIDI</Name>
     <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>14_TRK_NOTE</Name>
-    <Value>49.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>14_random</Name>
-    <Value>0</Value>
-</Widget>
-<Widget>
-    <Kind>2</Kind>
-    <Name>14_ON</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>14_OFF</Name>
+    <Name>14_seq</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>14_note_On</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>14_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -987,21 +927,6 @@
     <Kind>8</Kind>
     <Name>14_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>14_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>14_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>14_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1020,27 +945,37 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
+    <Name>15_TRK_SPEED</Name>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
     <Name>15_TRK_MIDI</Name>
     <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>15_TRK_NOTE</Name>
-    <Value>48.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>15_random</Name>
-    <Value>0</Value>
-</Widget>
-<Widget>
-    <Kind>2</Kind>
-    <Name>15_ON</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>15_OFF</Name>
+    <Name>15_seq</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>15_note_On</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>15_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -1052,21 +987,6 @@
     <Kind>8</Kind>
     <Name>15_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>15_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>15_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>15_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1085,27 +1005,37 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
+    <Name>16_TRK_SPEED</Name>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
     <Name>16_TRK_MIDI</Name>
     <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>16_TRK_NOTE</Name>
-    <Value>47.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>16_random</Name>
-    <Value>0</Value>
-</Widget>
-<Widget>
-    <Kind>2</Kind>
-    <Name>16_ON</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>16_OFF</Name>
+    <Name>16_seq</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>16_note_On</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>16_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -1117,21 +1047,6 @@
     <Kind>8</Kind>
     <Name>16_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>16_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>16_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>16_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1150,27 +1065,37 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
+    <Name>17_TRK_SPEED</Name>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
     <Name>17_TRK_MIDI</Name>
     <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>17_TRK_NOTE</Name>
-    <Value>46.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>17_random</Name>
-    <Value>0</Value>
-</Widget>
-<Widget>
-    <Kind>2</Kind>
-    <Name>17_ON</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>17_OFF</Name>
+    <Name>17_seq</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>17_note_On</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>17_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -1182,21 +1107,6 @@
     <Kind>8</Kind>
     <Name>17_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>17_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>17_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>17_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1215,27 +1125,37 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
+    <Name>18_TRK_SPEED</Name>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
     <Name>18_TRK_MIDI</Name>
     <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>18_TRK_NOTE</Name>
-    <Value>45.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>18_random</Name>
-    <Value>0</Value>
-</Widget>
-<Widget>
-    <Kind>2</Kind>
-    <Name>18_ON</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>18_OFF</Name>
+    <Name>18_seq</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>18_note_On</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>18_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -1247,21 +1167,6 @@
     <Kind>8</Kind>
     <Name>18_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>18_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>18_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>18_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1280,27 +1185,37 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
+    <Name>19_TRK_SPEED</Name>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
     <Name>19_TRK_MIDI</Name>
     <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>19_TRK_NOTE</Name>
-    <Value>44.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>19_random</Name>
-    <Value>0</Value>
-</Widget>
-<Widget>
-    <Kind>2</Kind>
-    <Name>19_ON</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>19_OFF</Name>
+    <Name>19_seq</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>19_note_On</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>19_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -1312,21 +1227,6 @@
     <Kind>8</Kind>
     <Name>19_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>19_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>19_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>19_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1345,27 +1245,37 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
+    <Name>20_TRK_SPEED</Name>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
     <Name>20_TRK_MIDI</Name>
     <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>20_TRK_NOTE</Name>
-    <Value>43.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>20_random</Name>
-    <Value>0</Value>
-</Widget>
-<Widget>
-    <Kind>2</Kind>
-    <Name>20_ON</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>20_OFF</Name>
+    <Name>20_seq</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>20_note_On</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>20_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -1377,21 +1287,6 @@
     <Kind>8</Kind>
     <Name>20_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>20_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>20_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>20_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1410,27 +1305,37 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
+    <Name>21_TRK_SPEED</Name>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
     <Name>21_TRK_MIDI</Name>
     <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>21_TRK_NOTE</Name>
-    <Value>42.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>21_random</Name>
-    <Value>0</Value>
-</Widget>
-<Widget>
-    <Kind>2</Kind>
-    <Name>21_ON</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>21_OFF</Name>
+    <Name>21_seq</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>21_note_On</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>21_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -1442,21 +1347,6 @@
     <Kind>8</Kind>
     <Name>21_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>21_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>21_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>21_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1475,27 +1365,37 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
+    <Name>22_TRK_SPEED</Name>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
     <Name>22_TRK_MIDI</Name>
     <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>22_TRK_NOTE</Name>
-    <Value>41.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>22_random</Name>
-    <Value>0</Value>
-</Widget>
-<Widget>
-    <Kind>2</Kind>
-    <Name>22_ON</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>22_OFF</Name>
+    <Name>22_seq</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>22_note_On</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>22_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -1507,21 +1407,6 @@
     <Kind>8</Kind>
     <Name>22_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>22_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>22_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>22_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1540,27 +1425,37 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
+    <Name>23_TRK_SPEED</Name>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
     <Name>23_TRK_MIDI</Name>
     <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>23_TRK_NOTE</Name>
-    <Value>40.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>23_random</Name>
-    <Value>0</Value>
-</Widget>
-<Widget>
-    <Kind>2</Kind>
-    <Name>23_ON</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>23_OFF</Name>
+    <Name>23_seq</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>23_note_On</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>23_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -1572,21 +1467,6 @@
     <Kind>8</Kind>
     <Name>23_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>23_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>23_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>23_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1605,27 +1485,37 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
+    <Name>24_TRK_SPEED</Name>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
     <Name>24_TRK_MIDI</Name>
     <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>24_TRK_NOTE</Name>
-    <Value>39.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>24_random</Name>
-    <Value>0</Value>
-</Widget>
-<Widget>
-    <Kind>2</Kind>
-    <Name>24_ON</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>24_OFF</Name>
+    <Name>24_seq</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>24_note_On</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>24_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -1637,21 +1527,6 @@
     <Kind>8</Kind>
     <Name>24_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>24_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>24_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>24_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1670,27 +1545,37 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
+    <Name>25_TRK_SPEED</Name>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
     <Name>25_TRK_MIDI</Name>
     <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>25_TRK_NOTE</Name>
-    <Value>38.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>25_random</Name>
-    <Value>0</Value>
-</Widget>
-<Widget>
-    <Kind>2</Kind>
-    <Name>25_ON</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>25_OFF</Name>
+    <Name>25_seq</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>25_note_On</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>25_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -1702,21 +1587,6 @@
     <Kind>8</Kind>
     <Name>25_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>25_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>25_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>25_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1735,27 +1605,37 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
+    <Name>26_TRK_SPEED</Name>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
     <Name>26_TRK_MIDI</Name>
     <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>26_TRK_NOTE</Name>
-    <Value>37.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>26_random</Name>
-    <Value>0</Value>
-</Widget>
-<Widget>
-    <Kind>2</Kind>
-    <Name>26_ON</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>26_OFF</Name>
+    <Name>26_seq</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>26_note_On</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>26_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -1767,21 +1647,6 @@
     <Kind>8</Kind>
     <Name>26_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>26_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>26_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>26_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1800,27 +1665,37 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
+    <Name>27_TRK_SPEED</Name>
+    <Value>0.050000001</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
     <Name>27_TRK_MIDI</Name>
     <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>27_TRK_NOTE</Name>
-    <Value>36.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>27_random</Name>
-    <Value>0</Value>
-</Widget>
-<Widget>
-    <Kind>2</Kind>
-    <Name>27_ON</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>27_OFF</Name>
+    <Name>27_seq</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>27_note_On</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>27_note_Off</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
@@ -1832,19 +1707,4 @@
     <Kind>8</Kind>
     <Name>27_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>27_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>27_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>27_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>

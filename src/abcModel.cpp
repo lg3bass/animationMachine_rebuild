@@ -50,7 +50,7 @@ abcModel::abcModel(int _id){
     midiNote = 0;
     //track type(0:random,1:linear)
     ldrType = 0;
-    //track mode(0:note On,1:note Off)
+    //track mode(0:note On,1:note Off, 2:note On and Off)
     trackMode = 0;
     //how big are the segments
     segLength = 0;
@@ -65,6 +65,7 @@ abcModel::abcModel(int _id){
     full_unit = 1.0;
     half_unit = 0.5;
     
+    abcPostion = ofVec3f(0, 0, 0);
     
     vbo_mesh.setMode(OF_PRIMITIVE_TRIANGLES);
 
@@ -128,11 +129,17 @@ void abcModel::playSegment(int _type){
     
    //set the flags.
     isFinishing = false;
-    isHolding = false;
-    isAnimating = true; //may be redundant. 
+    isAnimating = true;
+    if(trackMode == 1){
+        isHolding = true;//note Off only
+    } else {
+        isHolding = false;
+    }
+    
+    
     
     //finally output what is slated to play. Uncomment to see what is playing
-    //INFOlaunchingToPlay();
+    INFOlaunchingToPlay();
 }
 
 //-----------------------------------------------------
@@ -159,26 +166,51 @@ void abcModel::calcTime(float t){
         aReader.setTime(scaledTime);//animTime
     } else {    
         if(isAnimating) {
-                if(trackMode == 1){
-                    if(clipTime < midTime) {
-                        clipTime += clipSpeedMod;
-                        if(clipTime > midTime){
-                            clipTime = midTime;
+            
+                switch (trackMode) {
+                    case 3:
+                        //nothing selected
+                        
+                        
+                        break;
+                    case 2:
+                        //Note On AND Off
+                        if(clipTime < midTime) {
+                            clipTime += clipSpeedMod;
+                            if(clipTime > midTime){
+                                clipTime = midTime;//stop the clip halfway
+                            }
+                            //cout << "clipTime:" << clipTime << endl;
                         }
-                        //cout << "clipTime:" << clipTime << endl;
-                    } else {
-                        //cout << "midTime:" << clipTime << endl;
-                    }
-                } else {
-                    if(clipTime < endTime) {
-                        clipTime += clipSpeedMod;
-                        if(clipTime > endTime){
-                            clipTime = endTime;
+                        break;
+                    case 1:
+                        //Note On ONLY
+                        if(!isHolding){
+                            if(clipTime < endTime) {
+                                clipTime += clipSpeedMod;
+                                if(clipTime > endTime){
+                                    clipTime = endTime;
+                                }
+                            } else {
+                                isAnimating = false;
+                            }
                         }
-                    } else {
-                        isAnimating = false;
-                    }
-                }        
+                        break;
+                    case 0:
+                        //Note On ONLY
+                        if(clipTime < endTime) {
+                            clipTime += clipSpeedMod;
+                            if(clipTime > endTime){
+                                clipTime = endTime;
+                            }
+                        } else {
+                            isAnimating = false;
+                        }
+
+                        break;
+
+                }
+
         } else {
             if(isHolding) {
                 finalizeAnimation();
@@ -193,6 +225,7 @@ void abcModel::calcTime(float t){
 
 }
 
+//--------------------------------------------------------------
 bool abcModel::holdAnimation(){
     
     clipTime = aReader.getMaxTime()/segments;
@@ -200,8 +233,9 @@ bool abcModel::holdAnimation(){
     return true;
 }
 
+//--------------------------------------------------------------
 bool abcModel::finalizeAnimation(){
-    //isAnimating = true;
+    
     if(clipTime < endTime) {
         clipTime += clipSpeedMod;
         if(clipTime > endTime){
@@ -215,7 +249,20 @@ bool abcModel::finalizeAnimation(){
     return true;
 }
 
+//--------------------------------------------------------------
+void abcModel::setWSPosition(){
+    
+    setGlobalPosition(abcPostion.x, abcPostion.y, abcPostion.z);
+    
+}
+
+//--------------------------------------------------------------
 void abcModel::update(){
+
+    //set the position 
+    
+    
+    /*
     for (int i = 0; i < aReader.size(); i++)
 	{
 		ofMesh mesh;
@@ -230,10 +277,13 @@ void abcModel::update(){
             
 		}
 	}
+     */
     
     
 }
 
+
+//--------------------------------------------------------------
 void abcModel::customDraw() {
     
     for (int i = 0; i < aReader.size(); i++)
@@ -274,11 +324,13 @@ void abcModel::draw(){
 }
 */
 
+//--------------------------------------------------------------
 void abcModel::report() {
     // show all drawable names
 	aReader.dumpNames();
 }
 
+//--------------------------------------------------------------
 void abcModel::INFOlaunchingToPlay() {
     cout    << "----->LDR (index:" << this_id    
             << ",name:" << abcName

@@ -16,6 +16,8 @@ const int numOfABC = 28;
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    appStart = true;
+    
     
     //enabled for the kashimShaders
     ofEnableDepthTest();
@@ -80,6 +82,8 @@ void ofApp::setup(){
     //aTrackGui
     myTrackGui = aTrackGui::Instance();
     myTrackGui->setup();
+    myPositionGui.setup();
+    myPositionGui.setGUI_2();
     
     gui_loader_Alloc = false;
     
@@ -87,9 +91,6 @@ void ofApp::setup(){
     reset();
     
     saveCam.setup(&cam,"xml"); // add you ofeasycam and the folder where the xmls are
-    //saveCam.enableSave(); // by defaul the listion is on you can actival with enableSave;
-    //saveCam.disableSave(); // or disable key save wtih this
-    
     saveCam.isSettingCam = false;//flag to display the press 'n' to save message.
     
     
@@ -103,6 +104,7 @@ void ofApp::reset()
     myLights->reset();
     myGui->reset();
     myTrackGui->reset();
+    myPositionGui.reset();
     
     cam.reset();
     
@@ -116,23 +118,45 @@ void ofApp::reset()
     myGui->gui->setVisible(false);
     myGui->gui2->setVisible(false);
     gui_loader->setVisible(false);
-    //myTrackGui->TRK_gui_1->setVisible(false);
     myTrackGui->toggleVisibility(false);
 }
 
 void ofApp::loadScene(int sceneIndex){
     
+    //process the filenames
     string filename = "GUI/gui_loader_Settings_" + ofToString(sceneIndex) + ".xml";
     
-    //load the settings
-    gui_loader->loadSettings(filename);
+    //check if the file exists
+    ofFile fileToRead(ofToDataPath(filename));
+    if(fileToRead.exists()){
+        appStart = false;
+        
+        addMessage("loading scene "+ofToString(sceneIndex));
+        
+        //load the settings
+        gui_loader->loadSettings(filename);
+        
+        gui_loader_Alloc = true;
+        
+        //Load Alembic Models. gather data from gui_loader and load the models.
+        setupABCLoaders(numOfABC);
+        
+        doneBuilding = true;
+        
     
-    gui_loader_Alloc = true;
+    } else {
+        addMessage("scene "+ofToString(sceneIndex)+" doesn't exist yet");
+        if(appStart){
+            addMessage("creating new "+ofToString(sceneIndex));
+            gui_loader->loadSettings(filename);
+            gui_loader_Alloc = true;
+            setupABCLoaders(numOfABC);
+            doneBuilding = true;
+            appStart = false;
+        }
+    }
     
-    //Load Alembic Models. gather data from gui_loader and load the models.
-    setupABCLoaders(numOfABC);
-    
-    doneBuilding = true;
+
     
 }
 
@@ -159,28 +183,24 @@ void ofApp::saveScene(int sceneIndex){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    //pass update to my singletons
-    myTrackGui->update();
-    
-    
-    
     
     ofSetWindowTitle("size:"+ofToString(ofGetWidth())+","+ofToString(ofGetHeight())+", port: "+ofToString(midiIn.getPortName(midiIn.getPort()))+", fps: "+ofToString(ofGetFrameRate())+", cam: "+ofToString(saveCam.currentIdx));
     
+    //pass update to my singletons
+    myTrackGui->update();
+    myPositionGui.update();
     
     //Messaging(OSC,MIDI)
     eraseMessages();
     newOscMessage();
     
-    
-    
-    //KEEP
     //loop through all the abc files and calculate the time in each.
     for(int i = 0; i < abcModels.size(); i++){
         //animTime is passed but not used.
-        abcModels[i].calcTime(myGui->animTime);
-        //abcModels[i].update();
+        abcModels[i].calcTime(myGui->animTime);//advances the frames in the alembic files.
+        abcModels[i].setWSPosition();//sets the WS position.
     }
+    
     
     if (myGui->doReset)
         reset();
@@ -203,10 +223,6 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-
-    
-    
-    
     //register the cursor position.
     float dx = dragPt.x;
 	float dy = dragPt.y;
@@ -261,8 +277,6 @@ void ofApp::draw(){
     //on our material
     glDisable(GL_COLOR_MATERIAL);
     
-    //we could enable GL_COLOR_MATERIAL set the color here
-    //    ofSetColor(255);
     
     //THIS IS WHERE THE ANIMATION HAPPENS.
     glPushMatrix();
@@ -299,6 +313,7 @@ void ofApp::draw(){
                 if(!showLdr){
                 //here is where you're actually drawing the models.
                     if(abcModels[tracks[t].myLdrs[i].x].isActive) {
+                        
                         abcModels[tracks[t].myLdrs[i].x].draw();
                     }
                 }
@@ -376,8 +391,8 @@ void ofApp::exit() {
     
 	myGui->exit();//save the gui XML
     myTrackGui->exit();
+    myPositionGui.exit();
     
-    //gui_loader->saveSettings("GUI/gui_loader_Settings.xml");//take out because I have a load button now
 	delete gui_loader;
     
 	// clean up
@@ -392,14 +407,19 @@ void ofApp::setupABCLoaders(int num) {
     myABCs.clear();
     abcModels.clear();
     
-    cout << "myABCs:" << myABCs.size() << "-" << "abcModels:" << abcModels.size() << endl;
+    cout << "setupABCLoaders()" << endl;
     
     //Set up all the ABCLoaders.
     for(int i = 0; i < num; i++){
         
-        //create abcReader
+        //create abcReader(s)
         ofxAlembic::Reader *newabc = new ofxAlembic::Reader;
         myABCs.push_back(newabc);
+        
+        //set the play(preview) button off
+        ofxUIImageToggle *playBut = (ofxUIImageToggle *)gui_loader->getWidget(util::dDigiter(i)+"_TRK_PLAY");
+        playBut->setValue(false);
+        
         
         //get the contents of the Text Input field in gui_loader. This contains the file path.
         ofxUITextInput *loader_label = (ofxUITextInput *)gui_loader->getWidget(util::dDigiter(i)+"_TRK_READER");
@@ -412,12 +432,6 @@ void ofApp::setupABCLoaders(int num) {
         //syntax: init(file,divisions,reader,id)
         abcModels[i].init(loader_label->getTextString(),0,*myABCs[i]);
         
-        //componsate for the Maya cm->m
-        abcModels[i].setScale(25.0);
-        
-        
-        //abcModels[i].move(100, 100, 0);
-        
     }
     
     tracks.clear();
@@ -428,23 +442,16 @@ void ofApp::setupABCLoaders(int num) {
     //Set the attributes in the loaders based on what is currently loaded in the GUI.
     setParamsInABCloaders(num);
     
-    
-    // OUTPUT/TRACE
-    //proof is in the pudding. output what we go so far.
-    cout << "TRACKS:" << "-----------------------------" << endl;
-    
-    for(int t=0;t<tracks.size();t++){
-        if(tracks[t].myLdrs.size()>0){
-            tracks[t].getInfo();
-        }
-        for(int i=0; i<tracks[t].myLdrs.size();i++){
-            abcModels[tracks[t].myLdrs[i].x].INFOlaunchingToPlay();
-        }
-    }
+    trackReport();
+
     
     
 }
 
+
+/*  This function loops through the UI and uses that data
+    to create Tracks.  specifically it looks for midi channel, Note, type
+*/
 //--------------------------------------------------------------
 void ofApp::createTracks(int num){
     //var num is not being used right now.
@@ -468,23 +475,23 @@ void ofApp::createTracks(int num){
         midiChannel = floor(midiDialer->getValue());
         
         //note number
-        
         ofxUINumberDialer *noteDialer = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(i)+"_TRK_NOTE");
         int midiNote = noteDialer->getValue();
         if(midiNote > 0) {
             playsOnNote = true;
+        } else {
+            playsOnNote = false;
         }
         
-        //behavior
-        ofxUIRadio *butType = (ofxUIRadio *)gui_loader->getWidget(util::dDigiter(i)+"_TRK_TYPE");
-        vector<ofxUIToggle*> toggles = butType->getToggles();
-        for(int j = 0; j < toggles.size(); j++) {
-            if(toggles[j]->getValue() == 0) {
-                behavior = "random";
-            } else {
-                behavior = "linear";
-            }
+        //new behavior
+        ofxUIToggle *togType = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(i)+"_random");
+        //cout << togType->getValue() << endl;
+        if(togType->getValue()){
+            behavior = "random";
+        } else {
+            behavior = "linear";
         }
+        
         
         //segments
         ofxUINumberDialer *segDialer = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(i)+"_TRK_SEGMENTS");
@@ -529,15 +536,16 @@ void ofApp::setParamsInABCloaders(int num) {
     // loop through the loaders and set the params.
     for(int i = 0; i < num; i++){
         
+        //IMPORTANT: componsate for the Maya cm->m
+        abcModels[i].setScale(25.0);
+        
+        //demo Mode
+        abcModels[i].isDemo = false;
         
         ofxUISlider *trackSlider = (ofxUISlider *)gui_loader->getWidget(util::dDigiter(i)+"_TRK_SPD");
         trackSlider->setLabelVisible(false);
-        
-        //cout << "slider:"+ofToString(trackSlider->getValue()) << endl;
-        
-        //track speed
-        ofxUINumberDialer *trackDialer = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(i)+"_TRK_SPEED");
-        abcModels[i].clipSpeedMod = trackDialer->getValue();
+        float sldr_val = ofMap(trackSlider->getValue(), 0.0, 1.0, 0.00, 0.12);
+        abcModels[i].clipSpeedMod = sldr_val;//abcModel.cpp
         
         
         //track midi
@@ -547,25 +555,41 @@ void ofApp::setParamsInABCloaders(int num) {
         //track note
         ofxUINumberDialer *noteDialer = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(i)+"_TRK_NOTE");
         abcModels[i].midiNote = noteDialer->getValue();
-        
+
         //track type
-        ofxUIRadio *butType = (ofxUIRadio *)gui_loader->getWidget(util::dDigiter(i)+"_TRK_TYPE");
-        vector<ofxUIToggle*> type_toggles = butType->getToggles();
-        if(type_toggles[0]->getValue()) {
-            abcModels[i].ldrType = 0;//reporting[1,0] then set "random:0"
+        ofxUIToggle *togType = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(i)+"_random");
+        if(togType->getValue()){
+            abcModels[i].ldrType = 0;
         } else {
             abcModels[i].ldrType = 1;
         }
         
-        
+        /*
         //track mode
         ofxUIRadio *butMode = (ofxUIRadio *)gui_loader->getWidget(util::dDigiter(i)+"_TRK_MODE");
         vector<ofxUIToggle*> mode_toggles = butMode->getToggles();
         if(mode_toggles[0]->getValue()) {
             abcModels[i].trackMode = 0;//reporting[1,0] then set "noteOn:0"
         } else {
-            abcModels[i].trackMode = 1;
+            abcModels[i].trackMode = 2;
         }
+        */
+        
+        //track mode (NEW)
+        setNoteInTrigger(i, "ON");
+
+//        ofxUIToggle *midiOn = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(i)+"_ON");
+//        ofxUIToggle *midiOff = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(i)+"_OFF");
+//        if(midiOn){
+//            if(midiOff){
+//                abcModels[i].trackMode = 2;
+//            } else {
+//                abcModels[i].trackMode = 0;
+//            }
+//        } else {
+//            //midi Off Only
+//            abcModels[i].trackMode = 1;
+//        }
         
         //segments
         ofxUINumberDialer *segDialer = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(i)+"_TRK_SEGMENTS");
@@ -594,8 +618,13 @@ void ofApp::clearParamsInABCloaders(int start, int end) {
         uitrack->setTextString("empty");
         
         //track speed
-        ofxUINumberDialer *trackDialer = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(i)+"_TRK_SPEED");
-        trackDialer->setValue(0.05);
+        ofxUISlider *trackSlider = (ofxUISlider *)gui_loader->getWidget(util::dDigiter(i)+"_TRK_SPD");
+        trackSlider->setValue(0.05);
+        
+        //set the text dialer.
+        //float sldr_val = ofMap(trackSlider->getValue(), 0.0, 1.0, 0.00, 0.12);
+        //abcModels[row].clipSpeedMod = sldr_val;//abcModel.cpp
+        
         
         
         //track midi
@@ -604,17 +633,23 @@ void ofApp::clearParamsInABCloaders(int start, int end) {
         
         //track note
         ofxUINumberDialer *noteDialer = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(i)+"_TRK_NOTE");
-        noteDialer->setValue(0);
+        noteDialer->setValue(63-i);
         
         //track type
-        ofxUIRadio *butType = (ofxUIRadio *)gui_loader->getWidget(util::dDigiter(i)+"_TRK_TYPE");
-        butType->activateToggle(util::dDigiter(i)+"_random");
+//        ofxUIRadio *butType = (ofxUIRadio *)gui_loader->getWidget(util::dDigiter(i)+"_TRK_TYPE");
+//        butType->activateToggle(util::dDigiter(i)+"_random");
         
+        ofxUIToggle *togType = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(i)+"_random");
+        togType->setValue(false);
         
         //track mode
-        ofxUIRadio *butMode = (ofxUIRadio *)gui_loader->getWidget(util::dDigiter(i)+"_TRK_MODE");
-        butMode->activateToggle(util::dDigiter(i)+"_note_Off");
+//        ofxUIRadio *butMode = (ofxUIRadio *)gui_loader->getWidget(util::dDigiter(i)+"_TRK_MODE");
+//        butMode->activateToggle(util::dDigiter(i)+"_ON");
         
+        ofxUIToggle *midiOn = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(i)+"_ON");
+        midiOn->setValue(true);
+        ofxUIToggle *midiOff = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(i)+"_OFF");
+        midiOff->setValue(true);
         
         //segments
         ofxUINumberDialer *segDialer = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(i)+"_TRK_SEGMENTS");
@@ -713,6 +748,28 @@ void ofApp::newMidiMessage(ofxMidiMessage& msg) {
 }
 
 //--------------------------------------------------------------
+void ofApp::setNoteInTrigger(int row, string _clicked) {
+    ofxUIToggle *midiOn = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(row)+"_ON");
+    ofxUIToggle *midiOff = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(row)+"_OFF");
+    
+    if((midiOn->getValue() == true) && (midiOff->getValue() == false)){
+        abcModels[row].trackMode = 0;
+    }
+    
+    if((midiOn->getValue() == false) && (midiOff->getValue() == true)){
+        abcModels[row].trackMode = 1;
+    }
+
+    if((midiOn->getValue() == true) && (midiOff->getValue() == true)){
+        abcModels[row].trackMode = 2;
+    }
+    
+    if((midiOn->getValue() == false) && (midiOff->getValue() == false)){
+        abcModels[row].trackMode = 3;
+    }
+}
+
+//--------------------------------------------------------------
 void ofApp::noteIn() {
     
     if (ofxMidiMessage::getStatusString(midiMessage.status) == "Note On") {
@@ -743,10 +800,8 @@ void ofApp::noteIn() {
                         } else {
                             abcModels[currentPlayingIndex].playSegment(1);
                         }
-                        
-                        //abcModels[currentPlayingIndex].isAnimating = true;// this is already in playSegment
+                        //flag the loader as tied to a specific note.
                         specificNote = true;
-                        //goto jmp;// works but dont like it.
                     }
                 }
             }//end for
@@ -786,19 +841,17 @@ void ofApp::noteIn() {
                         }
                     }//end linear
                 }//end availLdrs
-            }//if specificNote
+            }//if NOT specificNote
             
         }//if has content.
         
-        //jmp://end jmp point. Not used but a good example.
-        
-        //cout << "Note ON - currentPlayingIndex:" << currentPlayingIndex << endl;
         
         
     } else if (ofxMidiMessage::getStatusString(midiMessage.status) == "Note Off"){
-        //I think i have to mimic the note on behavior.
         
         //cout << ofxMidiMessage::getStatusString(midiMessage.status) << " -- value:" << midiMessage.value << " pitch: " << midiMessage.pitch << " delta: " << midiMessage.deltatime << " ch: " << midiMessage.channel << endl;
+        
+
         
         //make sure the track is not empty. Does the track have content.
         if(tracks[midiMessage.channel-1].myLdrs.size()>0){
@@ -814,14 +867,21 @@ void ofApp::noteIn() {
                         
                         //only actually do this if the trackMode is 1.
                         //reminder: trackMode = NoteOn or NoteOff enabled.
-                        //trackMode 0 = animate on noteOn only.
-                        //trackMode 1 = animate noteOn then finish animating on noteOff message.
+                        //trackMode 0 = animate on noteOn ONLY.
+                        //trackMode 1 = animate on noteOff ONLY.
+                        //trackMode 2 = animate noteOn then finish animating on noteOff message.
                         if(abcModels[tracks[midiMessage.channel-1].myLdrs[i].x].trackMode == 1) {
                             
+                            //release the hold onthe animation on note off message.
+                            abcModels[tracks[midiMessage.channel-1].myLdrs[i].x].isHolding = false;
+                        
+                        }
+                        if(abcModels[tracks[midiMessage.channel-1].myLdrs[i].x].trackMode == 2) {
+                            
+                            //you're no longer animating( playing abc frames)
                             abcModels[tracks[midiMessage.channel-1].myLdrs[i].x].isAnimating = false;
                             abcModels[tracks[midiMessage.channel-1].myLdrs[i].x].isHolding = true;
                             
-                            //cout << "Note OFF - match currentPlayingIndex:" << tracks[midiMessage.channel-1].myLdrs[i].x << endl;
                             
                         }//end if trackMode
                     }//end match against midi note.
@@ -830,6 +890,10 @@ void ofApp::noteIn() {
                 }//end if animating
             }//end for
         }//end if midiChannel
+    
+    
+    
+    
     }//end elseIf
     
     
@@ -951,7 +1015,7 @@ void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
     //get the track number from the name.
     vector<string> result=ofSplitString(name, "_");
     int row = ofToInt(result[0]);
-    selectedLoaderRow = row;
+    //selectedLoaderRow = row;//not used
     
     
     if(doneBuilding){ //only if the loaders are done.
@@ -1017,11 +1081,14 @@ void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
             float sldr_val = ofMap(trackSlider->getValue(), 0.0, 1.0, 0.00, 0.12);
             abcModels[row].clipSpeedMod = sldr_val;//abcModel.cpp
             
-            ofxUINumberDialer *trackDialer = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_SPEED");
-            trackDialer->setValue(sldr_val);
+            
+            
+            //ofxUINumberDialer *trackDialer = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_SPEED");
+            //trackDialer->setValue(sldr_val);
             
             cout << util::dDigiter(row) << "_TRK_SPD" << ":ofxUISlider (Clip speed modifier) >" << ofToString(sldr_val) << endl;
          
+        /*
         } else if (ofIsStringInString(name, "TRK_SPEED")){
             ofxUINumberDialer *trackDialer = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_SPEED");
             abcModels[row].clipSpeedMod = trackDialer->getValue();//abcModel.cpp
@@ -1030,7 +1097,7 @@ void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
             trackSlider->setValue(trackDialer->getValue());
             
             cout << util::dDigiter(row) << "_TRK_SPEED" << ":ofxUINumberDialer (Clip speed modifier) >" << trackDialer->getValue() << endl;
-            
+        */
         } else if (ofIsStringInString(name, "TRK_MIDI")){
             ofxUINumberDialer *midiDialer = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_MIDI");
             abcModels[row].midiChannel = midiDialer->getValue();
@@ -1047,6 +1114,7 @@ void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
             
             cout << util::dDigiter(row) << "_TRK_NOTE" << ":ofxUINumberDialer (Midi Note Number) >" << noteDialer->getValue() << endl;
             
+        /*
         } else if (ofIsStringInString(name, "random")){
             ofxUIRadio *butType = (ofxUIRadio *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_TYPE");
             vector<ofxUIToggle*> toggles = butType->getToggles();
@@ -1076,7 +1144,22 @@ void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
                 }
             }
             cout << endl;
-        } else if (ofIsStringInString(name, "note_On")){
+        */
+            
+        } else if (ofIsStringInString(name, "random")){
+            ofxUIToggle *randseq = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(row)+"_random");
+            cout << util::dDigiter(row) << "_random" << ":ofxUIToggle (random/sequence) >" << randseq->getValue() << endl;
+            if(randseq->getValue()) {
+                abcModels[row].ldrType = 0;
+                tracks[abcModels[row].midiChannel-1].behavior = "random";
+            } else {
+                abcModels[row].ldrType = 1;
+                tracks[abcModels[row].midiChannel-1].behavior = "linear";
+            }
+            
+        /*
+            
+        } else if (ofIsStringInString(name, "ON")){
             ofxUIRadio *butMode = (ofxUIRadio *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_MODE");
             vector<ofxUIToggle*> toggles = butMode->getToggles();
             cout << util::dDigiter(row) << "_TRK_MODE" << ":UIRadio (Trigger on Note On) >" << "[";
@@ -1087,17 +1170,51 @@ void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
                 }
             }
             cout << endl;
-        } else if (ofIsStringInString(name, "note_Off")){
+        } else if (ofIsStringInString(name, "OFF")){
             ofxUIRadio *butMode = (ofxUIRadio *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_MODE");
             vector<ofxUIToggle*> toggles = butMode->getToggles();
             cout << util::dDigiter(row) << "_TRK_MODE" << ":UIRadio (Trigger on Note On & Note Off) >"  << "[";
             for(int i = 0; i < toggles.size(); i++) {
                 cout << toggles[i]->getValue() << (i<toggles.size()-1?",":"]");
                 if(toggles[i]->getValue()) {
-                    abcModels[row].trackMode = 1;
+                    abcModels[row].trackMode = 2;
                 }
             }
             cout << endl;
+        */
+        // New Midi
+        
+        } else if (ofIsStringInString(name, "ON")){
+            
+            
+            
+//            ofxUIToggle *midiOn = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(row)+"_ON");
+//            ofxUIToggle *midiOff = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(row)+"_OFF");
+//            cout << util::dDigiter(row) << "_ON" << ":ofxUIToggle (Note On) >" << midiOn->getValue() << endl;
+//            if(midiOn->getValue()) {
+//                if(midiOff->getValue()){
+//                    abcModels[row].trackMode = 2;
+//                } else {
+//                    abcModels[row].trackMode = 0;
+//                }
+//            }
+            setNoteInTrigger(row,"ON");
+            cout << "trackMode is now " << ofToString(abcModels[row].trackMode) << endl;
+        } else if (ofIsStringInString(name, "OFF")){
+
+//            ofxUIToggle *midiOn = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(row)+"_ON");
+//            ofxUIToggle *midiOff = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(row)+"_OFF");
+//            cout << util::dDigiter(row) << "_OFF" << ":ofxUIToggle (Note Off) >" << midiOff->getValue() << endl;
+//            if(midiOff->getValue()) {
+//                if(midiOn->getValue()){
+//                    abcModels[row].trackMode = 2;
+//                } else {
+//                    abcModels[row].trackMode = 1;
+//                }
+//            }
+
+            setNoteInTrigger(row,"OFF");
+            cout << "trackMode is now " << ofToString(abcModels[row].trackMode) << endl;
         } else if (ofIsStringInString(name, "TRK_SEGMENTS")){
             ofxUINumberDialer *segDialer = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_SEGMENTS");
             abcModels[row].segments = segDialer->getValue();
@@ -1108,7 +1225,23 @@ void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
             ofxUINumberDialer *segLnDialer = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_SEGLN");
             abcModels[row].segLength = segLnDialer->getValue();
             cout << util::dDigiter(row) << "_TRK_SEGLN" << ":ofxUINumberDialer (ABC segment length[time]) >" << segLnDialer->getValue() << endl;
+        } else if (ofIsStringInString(name, "_X")){
+            ofxUINumberDialer *posX = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(row)+"_X");
+            abcModels[row].abcPostion.x = posX->getValue();
+            cout << util::dDigiter(row) << "_X" << ":ofxUINumberDialer (Position X) >" << posX->getValue() << endl;
+        } else if (ofIsStringInString(name, "_Y")){
+            ofxUINumberDialer *posY = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(row)+"_Y");
+            abcModels[row].abcPostion.y = posY->getValue();
+            cout << util::dDigiter(row) << "_Y" << ":ofxUINumberDialer (Position Y) >" << posY->getValue() << endl;
+        } else if (ofIsStringInString(name, "_Z")){
+            ofxUINumberDialer *posZ = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(row)+"_Z");
+            abcModels[row].abcPostion.z = posZ->getValue();
+            cout << util::dDigiter(row) << "_Z" << ":ofxUINumberDialer (Position Z) >" << posZ->getValue() << endl;
         }
+
+
+
+        
         
     }
     
@@ -1152,17 +1285,35 @@ void ofApp::setGUI_loader(int num){
         
         gui_loader->addWidgetRight(new ofxUISlider(util::dDigiter(i)+"_TRK_SPD", 0.00f, 0.12f, 0.05, 100, 18));
         
-        gui_loader->addWidgetRight(new ofxUINumberDialer(0, 0.12, 0.0, 3, util::dDigiter(i)+"_TRK_SPEED", OFX_UI_FONT_SMALL));
-        gui_loader->addWidgetRight(new ofxUINumberDialer(1, 10, 10, 0, util::dDigiter(i)+"_TRK_MIDI", OFX_UI_FONT_SMALL));
-        gui_loader->addWidgetRight(new ofxUINumberDialer(0, 88, 0.0, 0, util::dDigiter(i)+"_TRK_NOTE", OFX_UI_FONT_SMALL));
-        vector<string> htype; htype.push_back(util::dDigiter(i)+"_random"); htype.push_back(util::dDigiter(i)+"_seq");
-        gui_loader->addWidgetRight(new ofxUIRadio(util::dDigiter(i)+"_TRK_TYPE", htype,OFX_UI_ORIENTATION_HORIZONTAL,20,20));
+        //gui_loader->addWidgetRight(new ofxUINumberDialer(0, 0.12, 0.0, 3, util::dDigiter(i)+"_TRK_SPEED", OFX_UI_FONT_SMALL));
+        gui_loader->addWidgetRight(new ofxUINumberDialer(1, 10, 1, 0, util::dDigiter(i)+"_TRK_MIDI", OFX_UI_FONT_SMALL));
+        gui_loader->addWidgetRight(new ofxUINumberDialer(0, 88, 63-i, 0, util::dDigiter(i)+"_TRK_NOTE", OFX_UI_FONT_SMALL));
+        
+        //radio Buttons
+        //vector<string> htype;
+        //htype.push_back(util::dDigiter(i)+"_random");
+        //htype.push_back(util::dDigiter(i)+"_seq");
+        //gui_loader->addWidgetRight(new ofxUIRadio(util::dDigiter(i)+"_TRK_TYPE", htype,OFX_UI_ORIENTATION_HORIZONTAL,20,20));
+        
+        //Play mode (random/sequence)
+        gui_loader->addWidgetRight(new ofxUIToggle(util::dDigiter(i)+"_random",false,20,20));
+        
+        //midi trigger behavior (Note On, Off, Both)
+//        vector<string> hmode;
+//        hmode.push_back(util::dDigiter(i)+"_ON");
+//        hmode.push_back(util::dDigiter(i)+"_OFF");
+//        gui_loader->addWidgetRight(new ofxUIRadio(util::dDigiter(i)+"_TRK_MODE", hmode,OFX_UI_ORIENTATION_HORIZONTAL,20,20));
+        
+        gui_loader->addWidgetRight(new ofxUIToggle(util::dDigiter(i)+"_ON",true,20,20));
+        gui_loader->addWidgetRight(new ofxUIToggle(util::dDigiter(i)+"_OFF",true,20,20));
         
         
-        vector<string> hmode; hmode.push_back(util::dDigiter(i)+"_note_On"); hmode.push_back(util::dDigiter(i)+"_note_Off");
-        gui_loader->addWidgetRight(new ofxUIRadio(util::dDigiter(i)+"_TRK_MODE", hmode,OFX_UI_ORIENTATION_HORIZONTAL,20,20));
         gui_loader->addWidgetRight(new ofxUINumberDialer(1, 50, 1.0, 0,util::dDigiter(i)+"_TRK_SEGMENTS", OFX_UI_FONT_SMALL));
         gui_loader->addWidgetRight(new ofxUINumberDialer(0, 600, 30, 0,util::dDigiter(i)+"_TRK_SEGLN", OFX_UI_FONT_SMALL));
+        
+        gui_loader->addWidgetRight(new ofxUINumberDialer(-720, 720, 1.0, 0,util::dDigiter(i)+"_X", OFX_UI_FONT_SMALL));
+        gui_loader->addWidgetRight(new ofxUINumberDialer(-720, 720, 1.0, 0,util::dDigiter(i)+"_Y", OFX_UI_FONT_SMALL));
+        gui_loader->addWidgetRight(new ofxUINumberDialer(-720, 720, 1.0, 0,util::dDigiter(i)+"_Z", OFX_UI_FONT_SMALL));
         
     }
     // set the labels over the top row
@@ -1175,17 +1326,20 @@ void ofApp::setGUI_loader(int num){
     gui_loader->addWidgetNorthOf(new ofxUISpacer(30,2,"note_spacer"),"00_TRK_NOTE");
     gui_loader->addWidgetNorthOf(new ofxUILabel("NOTE",OFX_UI_FONT_SMALL),"note_spacer");
     
-    gui_loader->addWidgetNorthOf(new ofxUISpacer(130,2,"type_spacer"),"00_TRK_TYPE");
-    gui_loader->addWidgetNorthOf(new ofxUILabel("TYPE",OFX_UI_FONT_SMALL),"type_spacer");
+    gui_loader->addWidgetNorthOf(new ofxUISpacer(120,2,"type_spacer"),"00_random");
+    gui_loader->addWidgetNorthOf(new ofxUILabel("RANDOM",OFX_UI_FONT_SMALL),"type_spacer");
     
-    gui_loader->addWidgetNorthOf(new ofxUISpacer(120,2,"mode_spacer"),"00_TRK_MODE");
-    gui_loader->addWidgetNorthOf(new ofxUILabel("MODE",OFX_UI_FONT_SMALL),"mode_spacer");
+    gui_loader->addWidgetNorthOf(new ofxUISpacer(120,2,"mode_spacer"),"00_ON");
+    gui_loader->addWidgetNorthOf(new ofxUILabel("NOTE ON/OFF",OFX_UI_FONT_SMALL),"mode_spacer");
     
     gui_loader->addWidgetNorthOf(new ofxUISpacer(30,2,"seg_spacer"),"00_TRK_SEGMENTS");
     gui_loader->addWidgetNorthOf(new ofxUILabel("SEG",OFX_UI_FONT_SMALL),"seg_spacer");
     
-    gui_loader->addWidgetNorthOf(new ofxUISpacer(45,2,"segln_spacer"),"00_TRK_SEGLN");
-    gui_loader->addWidgetNorthOf(new ofxUILabel("LENGTH",OFX_UI_FONT_SMALL),"segln_spacer");
+    gui_loader->addWidgetNorthOf(new ofxUISpacer(30,2,"segln_spacer"),"00_TRK_SEGLN");
+    gui_loader->addWidgetNorthOf(new ofxUILabel("FRM",OFX_UI_FONT_SMALL),"segln_spacer");
+    
+    gui_loader->addWidgetNorthOf(new ofxUISpacer(60,2,"position_spacer"),"00_X");
+    gui_loader->addWidgetNorthOf(new ofxUILabel("POSITION",OFX_UI_FONT_SMALL),"position_spacer");
     
     //gui_loader->setColorBack(ofColor(255,100));
     gui_loader->setWidgetColor(OFX_UI_WIDGET_COLOR_BACK, ofColor(120,200));
@@ -1519,6 +1673,24 @@ void ofApp::addMessage(string msg) {
     // clear the next line
     msg_strings[current_msg_string] = "";
 }
+
+
+//--------------------------------------------------------------
+void ofApp::trackReport() {
+    // OUTPUT/TRACE
+    //proof is in the pudding. output what we go so far.
+    cout << "TRACKS:" << "-----------------------------" << endl;
+    
+    for(int t=0;t<tracks.size();t++){
+        if(tracks[t].myLdrs.size()>0){
+            tracks[t].getInfo();
+        }
+        for(int i=0; i<tracks[t].myLdrs.size();i++){
+            abcModels[tracks[t].myLdrs[i].x].INFOlaunchingToPlay();
+        }
+    }
+}
+
 
 //--------------------------------------------------------------
 void ofApp::dragEvent(ofDragInfo info){

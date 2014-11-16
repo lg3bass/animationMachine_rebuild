@@ -10,6 +10,7 @@
 #include "aLights.h"
 #include "aTrack.h"
 #include "aTrackGui.h"
+#include "aPositionGui.h"
 #include "ofxOsc.h"
 #include "util.h"
 
@@ -49,6 +50,7 @@ public:
     
     
     //SCENES
+    bool appStart;
     int currentScene;
     void clearScene(int sceneIndex);
     void loadScene(int sceneIndex);
@@ -64,6 +66,7 @@ public:
     
     //TRACK GUI
     aTrackGui *myTrackGui;
+    aPositionGui myPositionGui;
     //bool useShaders = true;
     
     //CAM
@@ -77,10 +80,12 @@ public:
     bool showLights = false;
     bool showLdr = false;
     
-    //MESSAGING
+    //MESSAGING-REPORTING
     void drawMessages();
     void eraseMessages();
     void addMessage(string msg);
+    void trackReport();
+    
     
     //GUI LOADER
     ofPoint dragPt;//drag and drop
@@ -94,7 +99,7 @@ public:
 
     
     
-    int selectedLoaderRow;
+    //int selectedLoaderRow;
     
     
     //int currentPlayingIndex;
@@ -105,7 +110,8 @@ public:
     
     //MIDI
     //void fireNote(); //removed 20130920
-    void noteIn();
+    void setNoteInTrigger(int row, string _clicked);
+    void noteIn();    
     void newMidiMessage(ofxMidiMessage& eventArgs);
     
     ofxMidiIn midiIn;

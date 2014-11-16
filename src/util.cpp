@@ -21,6 +21,13 @@ namespace util
         return output;
     }
     
+    float presetMidiNotes(float i){
+        float returnedMidiNote;
+        
+        returnedMidiNote = 80-i;
+        
+        return returnedMidiNote;
+    }
     
 }
 
