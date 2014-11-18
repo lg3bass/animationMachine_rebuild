@@ -4,14 +4,10 @@
 *.sublime-workspace
 
 # .abc files
-/bin/data/abc/1_ODDITY/
-/bin/data/abc/block/
-/bin/data/abc/COG/
-/bin/kapow_data/
-/bin/data/abc/2013-05-13_oddity/
-/bin/data/abc/2014-02-03_inclined/
-/bin/data/abc/20140528_medallion/
-/bin/data/abc/scalop_19/
+/bin/data/abc/_OLD/
+/bin/data/abc/inclined-pedal/
+/bin/data/abc/lightningBolts_9/
+/bin/data/abc/oddity-scalop_19/
 
 # xml gui files
 /bin/data/GUI/OLD/

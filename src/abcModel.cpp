@@ -250,10 +250,32 @@ bool abcModel::finalizeAnimation(){
 }
 
 //--------------------------------------------------------------
-void abcModel::setWSPosition(){
+void abcModel::setABCPosition(){
     
-    setGlobalPosition(abcPostion.x, abcPostion.y, abcPostion.z);
+    //setGlobalPosition(abcPostion.x, abcPostion.y, abcPostion.z);
+    setPosition(abcPostion.x, abcPostion.y, abcPostion.z);
+}
+
+//--------------------------------------------------------------
+void abcModel::setABCOrientation(){
+
+    ofVec3f xax(1, 0, 0);
+    ofVec3f yax(0, 1, 0);
+    ofVec3f zax(0, 0, 1);
+    ofQuaternion q;
+    q.makeRotate(abcOrientation.x, xax, abcOrientation.y, yax, abcOrientation.z, zax);
+    setOrientation(q);
     
+}
+
+//--------------------------------------------------------------
+void abcModel::setABCRotate(){
+    rotate(0.5,0,0,1);
+}
+
+//--------------------------------------------------------------
+void abcModel::setABCMove(){
+    move(5.0,0,0);
 }
 
 //--------------------------------------------------------------

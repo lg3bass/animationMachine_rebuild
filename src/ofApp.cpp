@@ -80,10 +80,13 @@ void ofApp::setup(){
     myGui->setup(numOfABC);//set the nmber of loader slots
     
     //aTrackGui
-    myTrackGui = aTrackGui::Instance();
-    myTrackGui->setup();
+    //myTrackGui = aTrackGui::Instance();
+    //myTrackGui->setup();
+    
+    myTrackGui.setup();
+    
     myPositionGui.setup();
-    myPositionGui.setGUI_2();
+    //myPositionGui.setGUI_2(numOfABC);
     
     gui_loader_Alloc = false;
     
@@ -103,8 +106,9 @@ void ofApp::reset()
     //pass through the reset commands.
     myLights->reset();
     myGui->reset();
-    myTrackGui->reset();
-    myPositionGui.reset();
+    //myTrackGui->reset();
+    myTrackGui.reset();
+    
     
     cam.reset();
     
@@ -118,7 +122,15 @@ void ofApp::reset()
     myGui->gui->setVisible(false);
     myGui->gui2->setVisible(false);
     gui_loader->setVisible(false);
-    myTrackGui->toggleVisibility(false);
+    
+    //GUI > materials/shaders
+    //myTrackGui->toggleVisibility(false);
+    myTrackGui.toggleVisibility(false);
+    
+    //GUI > Position
+    myPositionGui.reset();
+    myPositionGui.toggleVisibility(false);
+    
 }
 
 void ofApp::loadScene(int sceneIndex){
@@ -187,7 +199,7 @@ void ofApp::update(){
     ofSetWindowTitle("size:"+ofToString(ofGetWidth())+","+ofToString(ofGetHeight())+", port: "+ofToString(midiIn.getPortName(midiIn.getPort()))+", fps: "+ofToString(ofGetFrameRate())+", cam: "+ofToString(saveCam.currentIdx));
     
     //pass update to my singletons
-    myTrackGui->update();
+    myTrackGui.update();
     myPositionGui.update();
     
     //Messaging(OSC,MIDI)
@@ -198,7 +210,12 @@ void ofApp::update(){
     for(int i = 0; i < abcModels.size(); i++){
         //animTime is passed but not used.
         abcModels[i].calcTime(myGui->animTime);//advances the frames in the alembic files.
-        abcModels[i].setWSPosition();//sets the WS position.
+        
+        abcModels[i].setABCPosition();//sets the position.
+        abcModels[i].setABCOrientation();//sets the orientation.
+
+        //abcModels[i].setABCRotate();
+        //abcModels[i].setABCMove();
     }
     
     
@@ -287,15 +304,15 @@ void ofApp::draw(){
             for(int i=0; i<tracks[t].myLdrs.size();i++){
                 
                 //t=track. every model gets rendered per track.
-                if(myTrackGui->useShaders[t]){
-                    myTrackGui->shader_0.begin();
+                if(myTrackGui.useShaders[t]){
+                    myTrackGui.shader_0.begin();
                     
                     
                     //myTrackGui->shader_0.setUniform4f("diffuseColor", myTrackGui->v4Diffuse[t].x,myTrackGui->v4Diffuse[t].y,myTrackGui->v4Diffuse[t].z,1);
                     //myTrackGui->shader_0.setUniform4f("specularColor", myTrackGui->v4Specular[t].x,myTrackGui->v4Specular[t].y,myTrackGui->v4Specular[t].z,1);
                     
                 } else {
-                    myTrackGui->materials[t].begin();
+                    myTrackGui.materials[t].begin();
                 }
                 
                 //shaders only - pass Light direction and ambient color.  same for all.
@@ -304,8 +321,8 @@ void ofApp::draw(){
                 
                 
                 //more shader fun
-                myTrackGui->shader_0.setUniformTexture("texture",testIMG,1);
-                myTrackGui->shader_0.setUniform1f("time", ofGetElapsedTimef());
+                myTrackGui.shader_0.setUniformTexture("texture",testIMG,1);
+                myTrackGui.shader_0.setUniform1f("time", ofGetElapsedTimef());
 
                 //-------------------------------------------------
                 //DRAW TO THE SCREEN
@@ -313,15 +330,14 @@ void ofApp::draw(){
                 if(!showLdr){
                 //here is where you're actually drawing the models.
                     if(abcModels[tracks[t].myLdrs[i].x].isActive) {
-                        
                         abcModels[tracks[t].myLdrs[i].x].draw();
                     }
                 }
 
-                if(myTrackGui->useShaders[t]){
-                    myTrackGui->shader_0.end();
+                if(myTrackGui.useShaders[t]){
+                    myTrackGui.shader_0.end();
                 } else {
-                    myTrackGui->materials[t].end();
+                    myTrackGui.materials[t].end();
                 }
                 
             }
@@ -390,7 +406,7 @@ void ofApp::draw(){
 void ofApp::exit() {
     
 	myGui->exit();//save the gui XML
-    myTrackGui->exit();
+    myTrackGui.exit();
     myPositionGui.exit();
     
 	delete gui_loader;
@@ -1225,20 +1241,11 @@ void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
             ofxUINumberDialer *segLnDialer = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_SEGLN");
             abcModels[row].segLength = segLnDialer->getValue();
             cout << util::dDigiter(row) << "_TRK_SEGLN" << ":ofxUINumberDialer (ABC segment length[time]) >" << segLnDialer->getValue() << endl;
-        } else if (ofIsStringInString(name, "_X")){
-            ofxUINumberDialer *posX = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(row)+"_X");
-            abcModels[row].abcPostion.x = posX->getValue();
-            cout << util::dDigiter(row) << "_X" << ":ofxUINumberDialer (Position X) >" << posX->getValue() << endl;
-        } else if (ofIsStringInString(name, "_Y")){
-            ofxUINumberDialer *posY = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(row)+"_Y");
-            abcModels[row].abcPostion.y = posY->getValue();
-            cout << util::dDigiter(row) << "_Y" << ":ofxUINumberDialer (Position Y) >" << posY->getValue() << endl;
-        } else if (ofIsStringInString(name, "_Z")){
-            ofxUINumberDialer *posZ = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(row)+"_Z");
-            abcModels[row].abcPostion.z = posZ->getValue();
-            cout << util::dDigiter(row) << "_Z" << ":ofxUINumberDialer (Position Z) >" << posZ->getValue() << endl;
+        } else if (ofIsStringInString(name, "DEMO")){
+            ofxUILabelToggle *demoMode = (ofxUILabelToggle *)gui_loader->getWidget("DEMO");
+            cout << "DEMO MODE:" << demoMode->getValue() << endl;
+            toggleDemoMode(demoMode->getValue(), row);
         }
-
 
 
         
@@ -1311,11 +1318,12 @@ void ofApp::setGUI_loader(int num){
         gui_loader->addWidgetRight(new ofxUINumberDialer(1, 50, 1.0, 0,util::dDigiter(i)+"_TRK_SEGMENTS", OFX_UI_FONT_SMALL));
         gui_loader->addWidgetRight(new ofxUINumberDialer(0, 600, 30, 0,util::dDigiter(i)+"_TRK_SEGLN", OFX_UI_FONT_SMALL));
         
-        gui_loader->addWidgetRight(new ofxUINumberDialer(-720, 720, 1.0, 0,util::dDigiter(i)+"_X", OFX_UI_FONT_SMALL));
-        gui_loader->addWidgetRight(new ofxUINumberDialer(-720, 720, 1.0, 0,util::dDigiter(i)+"_Y", OFX_UI_FONT_SMALL));
-        gui_loader->addWidgetRight(new ofxUINumberDialer(-720, 720, 1.0, 0,util::dDigiter(i)+"_Z", OFX_UI_FONT_SMALL));
         
     }
+    
+    gui_loader->addWidgetDown(new ofxUILabelToggle(50,false,"DEMO",OFX_UI_FONT_SMALL));
+    //gui_loader->addWidgetDown(new ofxUILabelToggle(50,false,"CLEAR DEMO",OFX_UI_FONT_SMALL));
+    
     // set the labels over the top row
     gui_loader->addWidgetNorthOf(new ofxUISpacer(55,2,"speed_spacer"),"00_TRK_SPEED");
     gui_loader->addWidgetNorthOf(new ofxUILabel("SPEED",OFX_UI_FONT_SMALL),"speed_spacer");
@@ -1338,8 +1346,6 @@ void ofApp::setGUI_loader(int num){
     gui_loader->addWidgetNorthOf(new ofxUISpacer(30,2,"segln_spacer"),"00_TRK_SEGLN");
     gui_loader->addWidgetNorthOf(new ofxUILabel("FRM",OFX_UI_FONT_SMALL),"segln_spacer");
     
-    gui_loader->addWidgetNorthOf(new ofxUISpacer(60,2,"position_spacer"),"00_X");
-    gui_loader->addWidgetNorthOf(new ofxUILabel("POSITION",OFX_UI_FONT_SMALL),"position_spacer");
     
     //gui_loader->setColorBack(ofColor(255,100));
     gui_loader->setWidgetColor(OFX_UI_WIDGET_COLOR_BACK, ofColor(120,200));
@@ -1348,6 +1354,21 @@ void ofApp::setGUI_loader(int num){
     
 }
 
+//--------------------------------------------------------------
+void ofApp::toggleDemoMode(int _ToggleBut, int _loaderRow){
+    for(int i=0; i<numOfABC;i++){
+        ofxUIImageToggle *playBut = (ofxUIImageToggle *)gui_loader->getWidget(util::dDigiter(i)+"_TRK_PLAY");
+        if(abcModels[i].isActive){
+            if(_ToggleBut == 0){
+                playBut->setValue(false);
+                abcModels[i].isDemo = false;
+            } else if (_ToggleBut == 1){
+                playBut->setValue(true);
+                abcModels[i].isDemo = true;
+            }
+        }
+    }
+}
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
@@ -1380,9 +1401,8 @@ void ofApp::keyPressed(int key){
                 if(modkey) {
                     myGui->showAxis = true;
                 } else {
-                    myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material11.frag");
+                    myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material11.frag");
                 }
-                
                 break;
             case '1':
                 if(modkey) loadScene(1);
@@ -1421,8 +1441,12 @@ void ofApp::keyPressed(int key){
                     }
                     if(showTrack) {
                         //myTrackGui->TRK_gui_1->toggleVisible();
-                        myTrackGui->toggleVisibility();
+                        myTrackGui.toggleVisibility();
                         showTrack = false;
+                    }
+                    if(showPos) {
+                        myPositionGui.toggleVisibility();
+                        showPos = false;
                     }
                 }
                 break;
@@ -1438,12 +1462,15 @@ void ofApp::keyPressed(int key){
                     }
                     if(showTrack){
                         //myTrackGui->TRK_gui_1->toggleVisible();
-                        myTrackGui->toggleVisibility();
+                        myTrackGui.toggleVisibility();
                         showTrack = false;
                     }
-                    
+                    if(showPos) {
+                        myPositionGui.toggleVisibility();
+                        showPos = false;
+                    }
                 } else {
-                    myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material15.frag");
+                    myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material15.frag");
                 }
                 break;
             case 'm'://CTRL+M is minimize
@@ -1454,7 +1481,7 @@ void ofApp::keyPressed(int key){
                 //gui screens
                 if(modkey){
                     //myTrackGui->TRK_gui_1->toggleVisible();
-                    myTrackGui->toggleVisibility();
+                    myTrackGui.toggleVisibility();
                     showTrack = !showTrack;
                     if(showLdr) {
                         gui_loader->toggleVisible();
@@ -1465,8 +1492,12 @@ void ofApp::keyPressed(int key){
                         myGui->gui2->toggleVisible();
                         showLights = false;
                     }
+                    if(showPos) {
+                        myPositionGui.toggleVisibility();
+                        showPos = false;
+                    }
                 } else {
-                     myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material4.frag");
+                     myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material4.frag");
                 }
                 break;
             case 'o':
@@ -1480,7 +1511,7 @@ void ofApp::keyPressed(int key){
                     
                     loadScene(currentScene);
                 } else {
-                    myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material9.frag");
+                    myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material9.frag");
                     
                 }
                 
@@ -1496,7 +1527,7 @@ void ofApp::keyPressed(int key){
                 if(modkey) {
                     saveCam.updateView(-1);//-1= current view
                 } else {
-                    myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material12.frag");
+                    myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material12.frag");
                 }
                 break;
             case 'n':
@@ -1530,40 +1561,59 @@ void ofApp::keyPressed(int key){
                 
                 break;
             case 'q':
-                myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material.frag");
+                myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material.frag");
                 break;           
             case 'w':
-                myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material1.frag");
+                //gui screens
+                if(modkey){
+                    myPositionGui.toggleVisibility();
+                    showPos = !showPos;
+                    if(showLdr) {
+                        gui_loader->toggleVisible();
+                        showLdr = false;
+                    }
+                    if(showLights) {
+                        myGui->gui->toggleVisible();
+                        myGui->gui2->toggleVisible();
+                        showLights = false;
+                    }
+                    if(showTrack) {
+                        myTrackGui.toggleVisibility();
+                        showTrack = false;
+                    }
+                } else {
+                    myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material1.frag");
+                }
                 break;
             case 'e':
-                myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material2.frag");
+                myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material2.frag");
                 break;
             case 'r':
-                myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material3.frag");
+                myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material3.frag");
                 break;
             case 'y':
-                myTrackGui->shader_0.load("shaders/kashimAstro/aterial.vert","shaders/kashimAstro/material6.frag");
+                myTrackGui.shader_0.load("shaders/kashimAstro/aterial.vert","shaders/kashimAstro/material6.frag");
                 break;
             case 'u':
-                myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material7.frag");
+                myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material7.frag");
                 break;
             case 'i':
-                myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material8.frag");
+                myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material8.frag");
                 break;
             case 'p':
-                myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material10.frag");
+                //positioning
+                myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material10.frag");
                 break;
             case 'd':
-                myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material13.frag");
+                myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material13.frag");
                 break;
             case 'f':
-                myTrackGui->shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material14.frag");
+                myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material14.frag");
                 break;
             default:
                 break;
         }
 	}
-    
 }
 
 //--------------------------------------------------------------
@@ -1587,7 +1637,7 @@ void ofApp::keyReleased(int key){
     }else{
         if (key == ' '){
             myGui->wModActive = false;
-            myTrackGui->wModActive = false;
+            myTrackGui.wModActive = false;
         }
         if (key == 'a'){
             myGui->showAxis = false;
@@ -1621,10 +1671,12 @@ void ofApp::mousePressed(int x, int y, int button){
     if (gui_loader->isHit(x,y)) {
         cam.disableMouseInput();
     }
-    if (myTrackGui->TRK_gui_1->isHit(x,y)) {
+    if (myTrackGui.TRK_gui_1->isHit(x,y)) {
         cam.disableMouseInput();
     }
-    
+    if (myPositionGui.Position_gui_1->isHit(x,y)){
+        cam.disableMouseInput();
+    }
     
 }
 

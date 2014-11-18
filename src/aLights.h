@@ -28,14 +28,7 @@ public:
     ofLight point;
     ofLight dir;
     ofLight amb;
-    
-    //turn this into an array.
-    //************MOVING TO aTrackGui
-//    ofMaterial material1;
-//    ofMaterial material2;
-//    ofMaterial material3;
-//    ofMaterial material4;
-    //*****************************
+
     
     ofVec3f dir_rot;
     ofVec3f spot_rot;

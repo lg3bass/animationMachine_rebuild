@@ -61,28 +61,14 @@ void aLights::reset() {
     
     dir.setDiffuseColor(ofColor(0.0f, 0.0f, 255.0f));
     dir.setSpecularColor(ofColor(255.0f, 0.0f, 0.0f));
-    
+    dir.setPosition(0,0,100);
     dir.setDirectional();
+    
     dir_rot = ofVec3f(0, 0, 0);
     setLightOri(dir, dir_rot);
     
     amb.setAmbientColor(ofColor(20.0, 20.0, 20.0, 20.0));
 
-    
-    //*************MOVING TO aTrackGui
-    //    material1.setShininess(128);
-    //    
-    //    material1.setSpecularColor(ofColor(255, 255, 255, 255));
-    //    material1.setEmissiveColor(ofColor(0, 0, 0, 255));
-    //    material1.setDiffuseColor(ofColor(255, 255, 255, 255));
-    //    material1.setAmbientColor(ofColor(255, 255, 255, 255));
-    //    
-    //    material2.setShininess(128);
-    //    
-    //    material2.setSpecularColor(ofColor(255, 255, 255, 255));
-    //    material2.setEmissiveColor(ofColor(0, 0, 0, 255));
-    //    material2.setDiffuseColor(ofColor(255, 255, 255, 255));
-    //    material2.setAmbientColor(ofColor(255, 255, 255, 255));
-    //************MOVING TO aTrackGUI
+
 
 }

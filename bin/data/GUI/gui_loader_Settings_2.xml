@@ -66,7 +66,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>00_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -131,7 +131,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>01_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -196,7 +196,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>02_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -261,7 +261,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>03_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -326,7 +326,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>04_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -391,7 +391,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>05_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -456,7 +456,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>06_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -521,7 +521,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>07_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -586,7 +586,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>08_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -651,7 +651,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>09_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -716,7 +716,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>10_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -781,7 +781,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>11_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -846,7 +846,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>12_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -911,7 +911,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>13_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -976,7 +976,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>14_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1041,7 +1041,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>15_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1106,7 +1106,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>16_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1171,7 +1171,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>17_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1236,7 +1236,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>18_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1301,7 +1301,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>19_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1366,7 +1366,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>20_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1431,7 +1431,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>21_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1496,7 +1496,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>22_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1561,7 +1561,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>23_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1626,7 +1626,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>24_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1691,7 +1691,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>25_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1756,7 +1756,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>26_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1821,7 +1821,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>27_OFF</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>

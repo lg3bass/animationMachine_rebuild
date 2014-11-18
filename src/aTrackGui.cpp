@@ -8,15 +8,15 @@
 
 #include "aTrackGui.h"
 
-
-aTrackGui* aTrackGui::_instance = NULL;
+//USED TO BE (the mayor of) SINGLETON...
+//aTrackGui* aTrackGui::_instance = NULL;
 //--------------------------------------------------------------
-aTrackGui* aTrackGui::Instance() {
-    if (_instance == NULL) {
-        _instance = new aTrackGui();
-    }
-    return _instance;
-}
+//aTrackGui* aTrackGui::Instance() {
+//    if (_instance == NULL) {
+//        _instance = new aTrackGui();
+//    }
+//    return _instance;
+//}
 
 //--------------------------------------------------------------
 aTrackGui::aTrackGui() {
@@ -35,7 +35,6 @@ void aTrackGui::reset() {
     
     //initialize the GUI
     setGUI_1();
-    setGUI_2();
     
     //setup the materials
     resetMaterials();
@@ -43,8 +42,6 @@ void aTrackGui::reset() {
     //load the settings from xml
     TRK_gui_1->loadSettings("GUI/xml/gui_1_Track.xml");
     TRK_gui_1->setVisible(false);
-    TRK_gui_2->loadSettings("GUI/xml/gui_2_Track.xml");
-    TRK_gui_2->setVisible(false);
     
     guiAlloc = true;
     doReset = false;
@@ -65,8 +62,6 @@ void aTrackGui::draw() {
 void aTrackGui::exit() {
     TRK_gui_1->saveSettings("GUI/xml/gui_1_Track.xml");
     delete TRK_gui_1;
-    TRK_gui_2->saveSettings("GUI/xml/gui_2_Track.xml");
-    delete TRK_gui_2;
 }
 
 //--------------------------------------------------------------
@@ -1773,44 +1768,7 @@ void aTrackGui::setGUI_1() {
 }
 
 
-//--------------------------------------------------------------
-void aTrackGui::setGUI_2() {
-    float xInit = OFX_UI_GLOBAL_WIDGET_SPACING;
-    float w = 1000 - xInit * 2;
-    float vertH = 40;
-    float h = 16;
-    
-    
-    if (guiAlloc) {
-        ofRemoveListener(TRK_gui_2->newGUIEvent, this, &aTrackGui::guiEvent_1);
-        delete TRK_gui_2;
-    }
-    
-    
-    TRK_gui_2 = new ofxUIScrollableCanvas(300, 0, w + xInit * 2, ofGetHeight());
-    TRK_gui_2->setScrollArea(300, 0, 600, ofGetHeight());
-    TRK_gui_2->setScrollableDirections(false,true);
-    
-    TRK_gui_2->setFont("GUI/HelveticaNeueLTStd-Bd.otf");
-    TRK_gui_2->setFontSize(OFX_UI_FONT_SMALL, 5);
-    
-    TRK_gui_2->addWidgetDown(new ofxUILabel("Positioning", OFX_UI_FONT_MEDIUM));
-    
-    TRK_gui_2->addWidgetDown(new ofxUINumberDialer(-720,720,1.0,0,"01_X",OFX_UI_FONT_SMALL));
-    TRK_gui_2->addWidgetRight(new ofxUINumberDialer(-720,720,1.0,0,"01_Y",OFX_UI_FONT_SMALL));
-    TRK_gui_2->addWidgetRight(new ofxUINumberDialer(-720,720,1.0,0,"01_Z",OFX_UI_FONT_SMALL));
 
-    TRK_gui_2->setWidgetColor(OFX_UI_WIDGET_COLOR_BACK, ofColor(120,200));
-    
-    TRK_gui_2->autoSizeToFitWidgets();
-    TRK_gui_2->getRect()->setWidth(ofGetWidth());
-    
-  
-    
-    
-    
-    ofAddListener(TRK_gui_2->newGUIEvent, this, &aTrackGui::guiEvent_1);
-}
 
 
 //--------------------------------------------------------------
@@ -1824,17 +1782,26 @@ void aTrackGui::setWSlider(vector<ofxUISlider *>sliders, ofColor &c, float v){
     
 }
 
+
+//--------------------------------------------------------------
+void aTrackGui::cycleShaders(){
+
+    
+    
+}
+
+
 //--------------------------------------------------------------
 void aTrackGui::toggleVisibility(bool _view){
     if(_view == false){
         TRK_gui_1->setVisible(false);
-        TRK_gui_2->setVisible(false);
+        //TRK_gui_2->setVisible(false);
         //TRK_gui_3->setVisible(false);
         //TRK_gui_4->setVisible(false);
         //TRK_gui_5->setVisible(false);
     } else {
         TRK_gui_1->toggleVisible();
-        TRK_gui_2->toggleVisible();
+        //TRK_gui_2->toggleVisible();
         //TRK_gui_3->toggleVisible();
         //TRK_gui_4->toggleVisible();
         //TRK_gui_5->toggleVisible();

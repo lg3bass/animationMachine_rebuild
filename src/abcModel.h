@@ -38,7 +38,10 @@ public:
     void launch();// dont think this is needed anymore.
     bool holdAnimation();
     bool finalizeAnimation();
-    void setWSPosition();
+    void setABCPosition();
+    void setABCOrientation();
+    void setABCRotate();
+    void setABCMove();
     void setClipMarkers(int _currentSegment);
     void playSegment(int type);
     void INFOlaunchingToPlay();
@@ -76,6 +79,7 @@ public:
     bool stageEnd;//are we finalizing the animation run
     
     ofVec3f abcPostion; //global position in WS.
+    ofVec3f abcOrientation;
 };
 
 

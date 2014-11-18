@@ -16,7 +16,6 @@
 #include "util.h"
 
 class aPositionGui {
-    
     public:
         aPositionGui();
     
@@ -27,7 +26,9 @@ class aPositionGui {
         void exit();
     
         void guiEvent(ofxUIEventArgs &);
-        void setGUI_2();//positioning/rotate/scale
+        void setGUI_2(int numOfLoaders);//positioning/rotate/scale
+        void toggleVisibility(bool _view = true);
+        void resetGUI(int numOfLoaders, int selectLdr, bool allLdrs = true);
     
         ofxUIScrollableCanvas *Position_gui_1;
         bool guiAlloc;

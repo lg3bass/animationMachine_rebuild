@@ -65,7 +65,8 @@ public:
     int pickRandomLoader(int ch);
     
     //TRACK GUI
-    aTrackGui *myTrackGui;
+    //aTrackGui *myTrackGui;
+    aTrackGui myTrackGui;
     aPositionGui myPositionGui;
     //bool useShaders = true;
     
@@ -79,13 +80,13 @@ public:
     bool showTrack = false;
     bool showLights = false;
     bool showLdr = false;
+    bool showPos = false;
     
     //MESSAGING-REPORTING
     void drawMessages();
     void eraseMessages();
     void addMessage(string msg);
     void trackReport();
-    
     
     //GUI LOADER
     ofPoint dragPt;//drag and drop
@@ -95,18 +96,10 @@ public:
     void setGUI_loader(int num);
     void LoaderGuiEvent(ofxUIEventArgs &e);
     void resetAnimation(int num);
-    
-
-    
-    
-    //int selectedLoaderRow;
-    
-    
-    //int currentPlayingIndex;
+    void toggleDemoMode(int _ToggleBut, int _loaderRow);
     
     //Lights
     aLights *myLights;
-    
     
     //MIDI
     //void fireNote(); //removed 20130920
@@ -124,16 +117,11 @@ public:
     
     //ALEMBIC
     void setupABCLoaders(int num);
-    
-    
     vector<ofxAlembic::Reader *> myABCs;
     vector<abcModel> abcModels;
-
     
     //shaders
     ofImage testIMG;
-    
-    
     
 private:
     
