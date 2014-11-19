@@ -28,6 +28,7 @@
 		6B14C8EB193E1E460A736C71 /* ofxCameraMove.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F85AA6DD0C84D2A79EBFBE1 /* ofxCameraMove.cpp */; };
 		6F7F2BBDC3266D263C42FB90 /* ofxAlembicUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE7D9F5B188B6FD8CBBA9B98 /* ofxAlembicUtil.cpp */; };
 		72A929D3561B8232A182ABFC /* ofxOscBundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65EEFA3DA3526E9CDD9C21F9 /* ofxOscBundle.cpp */; };
+		7E3B28251A1CAC3600156C84 /* aRotationGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B28231A1CAC3600156C84 /* aRotationGui.cpp */; };
 		7E5D3FAB19363BBB00026C80 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E5D3FA919363BBA00026C80 /* util.cpp */; };
 		7ED71B3F1929090900BAC72B /* Syphon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED71B2E1929090900BAC72B /* Syphon.framework */; };
 		7ED71B401929090900BAC72B /* SyphonNameboundClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED71B311929090900BAC72B /* SyphonNameboundClient.m */; };
@@ -276,6 +277,8 @@
 		7B8D7C3EF7DCCC49D7873F74 /* Exception.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Exception.h; path = ../../../addons/ofxAlembic/libs/alembic/include/Alembic/Util/Exception.h; sourceTree = SOURCE_ROOT; };
 		7B8DFF2DE221E55FDB10E9BA /* ArchiveBounds.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ArchiveBounds.h; path = ../../../addons/ofxAlembic/libs/alembic/include/Alembic/AbcGeom/ArchiveBounds.h; sourceTree = SOURCE_ROOT; };
 		7BC6846FD0788ECDE70FAA8C /* ISchemaObject.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ISchemaObject.h; path = ../../../addons/ofxAlembic/libs/alembic/include/Alembic/Abc/ISchemaObject.h; sourceTree = SOURCE_ROOT; };
+		7E3B28231A1CAC3600156C84 /* aRotationGui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aRotationGui.cpp; sourceTree = "<group>"; };
+		7E3B28241A1CAC3600156C84 /* aRotationGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aRotationGui.h; sourceTree = "<group>"; };
 		7E5D3FA919363BBA00026C80 /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util.cpp; sourceTree = "<group>"; };
 		7E5D3FAA19363BBB00026C80 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
 		7ED71B2E1929090900BAC72B /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Syphon.framework; sourceTree = "<group>"; };
@@ -1308,6 +1311,8 @@
 				7E5D3FAA19363BBB00026C80 /* util.h */,
 				7EF7DA0C1A17EE3600EBC04C /* aPositionGui.cpp */,
 				7EF7DA0D1A17EE3600EBC04C /* aPositionGui.h */,
+				7E3B28231A1CAC3600156C84 /* aRotationGui.cpp */,
+				7E3B28241A1CAC3600156C84 /* aRotationGui.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -1504,6 +1509,7 @@
 				4ADB88E2FB52E76A471065DE /* ofxOscParameterSync.cpp in Sources */,
 				640279EE111671BD026CB013 /* ofxOscReceiver.cpp in Sources */,
 				7ED71B6519290A2200BAC72B /* aGui.cpp in Sources */,
+				7E3B28251A1CAC3600156C84 /* aRotationGui.cpp in Sources */,
 				8F5205AEF8861EF234F0651A /* ofxOscSender.cpp in Sources */,
 				ADE367465D2A8EBAD4C7A8D9 /* IpEndpointName.cpp in Sources */,
 				67FE4C7B15C2F0478C8126C2 /* NetworkingUtils.cpp in Sources */,

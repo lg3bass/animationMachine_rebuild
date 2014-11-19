@@ -11,6 +11,7 @@
 #include "aTrack.h"
 #include "aTrackGui.h"
 #include "aPositionGui.h"
+#include "aRotationGui.h"
 #include "ofxOsc.h"
 #include "util.h"
 
@@ -68,6 +69,7 @@ public:
     //aTrackGui *myTrackGui;
     aTrackGui myTrackGui;
     aPositionGui myPositionGui;
+    aRotationGui myRotationGui;
     //bool useShaders = true;
     
     //CAM
@@ -81,6 +83,7 @@ public:
     bool showLights = false;
     bool showLdr = false;
     bool showPos = false;
+    bool showRot = false;
     
     //MESSAGING-REPORTING
     void drawMessages();

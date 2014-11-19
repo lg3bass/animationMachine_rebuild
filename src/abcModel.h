@@ -40,6 +40,7 @@ public:
     bool finalizeAnimation();
     void setABCPosition();
     void setABCOrientation();
+    void setABCScale();
     void setABCRotate();
     void setABCMove();
     void setClipMarkers(int _currentSegment);
@@ -80,6 +81,7 @@ public:
     
     ofVec3f abcPostion; //global position in WS.
     ofVec3f abcOrientation;
+    float abcScale;
 };
 
 

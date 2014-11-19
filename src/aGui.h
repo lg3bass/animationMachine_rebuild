@@ -63,7 +63,7 @@ public:
     bool showPointSource;
 
     bool wModActive;
-    bool showAxis;
+    bool showAxis = false;
     bool doReset;
 
     float animTime;

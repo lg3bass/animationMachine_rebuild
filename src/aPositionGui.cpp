@@ -72,16 +72,11 @@ void aPositionGui::guiEvent(ofxUIEventArgs &e) {
         } else if (name == ofToString(util::dDigiter(row)+"_tZ")) {
             ofxUINumberDialer *posZ = (ofxUINumberDialer *)Position_gui_1->getWidget(ofToString(util::dDigiter(row)+"_tZ"));
             ((ofApp*)ofGetAppPtr())->abcModels[row].abcPostion.z = posZ->getValue();
-        } else if (name == ofToString(util::dDigiter(row)+"_rX")) {
-            ofxUINumberDialer *oriX = (ofxUINumberDialer *)Position_gui_1->getWidget(ofToString(util::dDigiter(row)+"_rX"));
-            ((ofApp*)ofGetAppPtr())->abcModels[row].abcOrientation.x = oriX->getValue();
-        } else if (name == ofToString(util::dDigiter(row)+"_rY")) {
-            ofxUINumberDialer *oriY = (ofxUINumberDialer *)Position_gui_1->getWidget(ofToString(util::dDigiter(row)+"_rY"));
-            ((ofApp*)ofGetAppPtr())->abcModels[row].abcOrientation.y = oriY->getValue();
-        } else if (name == ofToString(util::dDigiter(row)+"_rZ")) {
-            ofxUINumberDialer *oriZ = (ofxUINumberDialer *)Position_gui_1->getWidget(ofToString(util::dDigiter(row)+"_rZ"));
-            ((ofApp*)ofGetAppPtr())->abcModels[row].abcOrientation.z = oriZ->getValue();
+        } else if (name == ofToString(util::dDigiter(row)+"_S")) {
+            ofxUINumberDialer *scale = (ofxUINumberDialer *)Position_gui_1->getWidget(ofToString(util::dDigiter(row)+"_S"));
+            ((ofApp*)ofGetAppPtr())->abcModels[row].abcScale = scale->getValue();
         }
+
 
 
 
@@ -110,7 +105,7 @@ void aPositionGui::setGUI_2(int numOfLoaders) {
     Position_gui_1->setFont("GUI/HelveticaNeueLTStd-Bd.otf");
     Position_gui_1->setFontSize(OFX_UI_FONT_SMALL, 5);
     
-    Position_gui_1->addWidgetDown(new ofxUILabel("Positioning", OFX_UI_FONT_MEDIUM));
+    Position_gui_1->addWidgetDown(new ofxUILabel("Position", OFX_UI_FONT_MEDIUM));
     
     Position_gui_1->addWidgetRight(new ofxUILabelButton(70,false,"CLEAR ALL",OFX_UI_FONT_SMALL));
     
@@ -124,17 +119,11 @@ void aPositionGui::setGUI_2(int numOfLoaders) {
         Position_gui_1->addWidgetRight(new ofxUINumberDialer(-720,720,0.0,0,util::dDigiter(i)+"_tX",OFX_UI_FONT_SMALL));
         Position_gui_1->addWidgetRight(new ofxUINumberDialer(-720,720,0.0,0,util::dDigiter(i)+"_tY",OFX_UI_FONT_SMALL));
         Position_gui_1->addWidgetRight(new ofxUINumberDialer(-720,720,0.0,0,util::dDigiter(i)+"_tZ",OFX_UI_FONT_SMALL));
-        Position_gui_1->addWidgetRight(new ofxUINumberDialer(-360,360,0.0,0,util::dDigiter(i)+"_rX",OFX_UI_FONT_SMALL));
-        Position_gui_1->addWidgetRight(new ofxUINumberDialer(-360,360,0.0,0,util::dDigiter(i)+"_rY",OFX_UI_FONT_SMALL));
-        Position_gui_1->addWidgetRight(new ofxUINumberDialer(-360,360,0.0,0,util::dDigiter(i)+"_rZ",OFX_UI_FONT_SMALL));
-        Position_gui_1->addWidgetRight(new ofxUINumberDialer(-25,25,0.0,0,util::dDigiter(i)+"_S",OFX_UI_FONT_SMALL));
+        Position_gui_1->addWidgetRight(new ofxUINumberDialer(-100,100,25.0,0,util::dDigiter(i)+"_S",OFX_UI_FONT_SMALL));
     }
     Position_gui_1->addWidgetNorthOf(new ofxUILabel("PosX", OFX_UI_FONT_SMALL), "00_tX");
     Position_gui_1->addWidgetNorthOf(new ofxUILabel("PosY", OFX_UI_FONT_SMALL), "00_tY");
     Position_gui_1->addWidgetNorthOf(new ofxUILabel("PosZ", OFX_UI_FONT_SMALL), "00_tZ");
-    Position_gui_1->addWidgetNorthOf(new ofxUILabel("RotX", OFX_UI_FONT_SMALL), "00_rX");
-    Position_gui_1->addWidgetNorthOf(new ofxUILabel("RotY", OFX_UI_FONT_SMALL), "00_rY");
-    Position_gui_1->addWidgetNorthOf(new ofxUILabel("RotZ", OFX_UI_FONT_SMALL), "00_rZ");
     Position_gui_1->addWidgetNorthOf(new ofxUILabel("Scale", OFX_UI_FONT_SMALL), "00_S");
     
     
@@ -167,17 +156,9 @@ void aPositionGui::resetGUI(int numOfLoaders, int selectLdr, bool allLdrs){
         ofxUINumberDialer *posZ = (ofxUINumberDialer *)Position_gui_1->getWidget(ofToString(util::dDigiter(i)+"_tZ"));
         posZ->setValue(0.0);
         ((ofApp*)ofGetAppPtr())->abcModels[i].abcPostion.z = posZ->getValue();
-        
-        //Orientation
-        ofxUINumberDialer *oriX = (ofxUINumberDialer *)Position_gui_1->getWidget(ofToString(util::dDigiter(i)+"_rX"));
-        ((ofApp*)ofGetAppPtr())->abcModels[i].abcOrientation.x = oriX->getValue();
-        oriX->setValue(0.0);
-        ofxUINumberDialer *oriY = (ofxUINumberDialer *)Position_gui_1->getWidget(ofToString(util::dDigiter(i)+"_rY"));
-        ((ofApp*)ofGetAppPtr())->abcModels[i].abcOrientation.y = oriY->getValue();
-        oriY->setValue(0.0);
-        ofxUINumberDialer *oriZ = (ofxUINumberDialer *)Position_gui_1->getWidget(ofToString(util::dDigiter(i)+"_rZ"));
-        ((ofApp*)ofGetAppPtr())->abcModels[i].abcOrientation.z = oriZ->getValue();
-        oriZ->setValue(0.0);
+        ofxUINumberDialer *scale = (ofxUINumberDialer *)Position_gui_1->getWidget(ofToString(util::dDigiter(i)+"_S"));
+        scale->setValue(25.0);
+        ((ofApp*)ofGetAppPtr())->abcModels[i].abcScale = scale->getValue();
         
     }
  }

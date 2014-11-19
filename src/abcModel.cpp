@@ -269,6 +269,11 @@ void abcModel::setABCOrientation(){
 }
 
 //--------------------------------------------------------------
+void abcModel::setABCScale(){
+    setScale(abcScale);
+}
+
+//--------------------------------------------------------------
 void abcModel::setABCRotate(){
     rotate(0.5,0,0,1);
 }

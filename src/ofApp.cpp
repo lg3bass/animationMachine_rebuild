@@ -86,7 +86,7 @@ void ofApp::setup(){
     myTrackGui.setup();
     
     myPositionGui.setup();
-    //myPositionGui.setGUI_2(numOfABC);
+    myRotationGui.setup();
     
     gui_loader_Alloc = false;
     
@@ -130,7 +130,10 @@ void ofApp::reset()
     //GUI > Position
     myPositionGui.reset();
     myPositionGui.toggleVisibility(false);
-    
+
+    //GUI > Rotation
+    myRotationGui.reset();
+    myRotationGui.toggleVisibility(false);
 }
 
 void ofApp::loadScene(int sceneIndex){
@@ -201,6 +204,7 @@ void ofApp::update(){
     //pass update to my singletons
     myTrackGui.update();
     myPositionGui.update();
+    myRotationGui.update();
     
     //Messaging(OSC,MIDI)
     eraseMessages();
@@ -213,6 +217,7 @@ void ofApp::update(){
         
         abcModels[i].setABCPosition();//sets the position.
         abcModels[i].setABCOrientation();//sets the orientation.
+        abcModels[i].setABCScale();
 
         //abcModels[i].setABCRotate();
         //abcModels[i].setABCMove();
@@ -408,6 +413,7 @@ void ofApp::exit() {
 	myGui->exit();//save the gui XML
     myTrackGui.exit();
     myPositionGui.exit();
+    myRotationGui.exit();
     
 	delete gui_loader;
     
@@ -1399,7 +1405,7 @@ void ofApp::keyPressed(int key){
                 break;
             case 'a':
                 if(modkey) {
-                    myGui->showAxis = true;
+                    myGui->showAxis = !myGui->showAxis;
                 } else {
                     myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material11.frag");
                 }
@@ -1448,6 +1454,10 @@ void ofApp::keyPressed(int key){
                         myPositionGui.toggleVisibility();
                         showPos = false;
                     }
+                    if(showRot) {
+                        myRotationGui.toggleVisibility();
+                        showRot = false;
+                    }
                 }
                 break;
             case 'g':
@@ -1468,6 +1478,10 @@ void ofApp::keyPressed(int key){
                     if(showPos) {
                         myPositionGui.toggleVisibility();
                         showPos = false;
+                    }
+                    if(showRot) {
+                        myRotationGui.toggleVisibility();
+                        showRot = false;
                     }
                 } else {
                     myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material15.frag");
@@ -1495,6 +1509,10 @@ void ofApp::keyPressed(int key){
                     if(showPos) {
                         myPositionGui.toggleVisibility();
                         showPos = false;
+                    }
+                    if(showRot) {
+                        myRotationGui.toggleVisibility();
+                        showRot = false;
                     }
                 } else {
                      myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material4.frag");
@@ -1581,12 +1599,39 @@ void ofApp::keyPressed(int key){
                         myTrackGui.toggleVisibility();
                         showTrack = false;
                     }
+                    if(showRot) {
+                        myRotationGui.toggleVisibility();
+                        showRot = false;
+                    }
                 } else {
                     myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material1.frag");
                 }
                 break;
             case 'e':
-                myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material2.frag");
+                //gui screens
+                if(modkey){
+                    myRotationGui.toggleVisibility();
+                    showRot = !showRot;
+                    if(showLdr) {
+                        gui_loader->toggleVisible();
+                        showLdr = false;
+                    }
+                    if(showLights) {
+                        myGui->gui->toggleVisible();
+                        myGui->gui2->toggleVisible();
+                        showLights = false;
+                    }
+                    if(showTrack) {
+                        myTrackGui.toggleVisibility();
+                        showTrack = false;
+                    }
+                    if(showPos) {
+                        myPositionGui.toggleVisibility();
+                        showPos = false;
+                    }
+                } else {
+                    myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material2.frag");
+                }
                 break;
             case 'r':
                 myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material3.frag");
@@ -1639,9 +1684,7 @@ void ofApp::keyReleased(int key){
             myGui->wModActive = false;
             myTrackGui.wModActive = false;
         }
-        if (key == 'a'){
-            myGui->showAxis = false;
-        }
+
     }
     
     
@@ -1677,7 +1720,9 @@ void ofApp::mousePressed(int x, int y, int button){
     if (myPositionGui.Position_gui_1->isHit(x,y)){
         cam.disableMouseInput();
     }
-    
+    if (myRotationGui.Rotation_gui_1->isHit(x,y)){
+        cam.disableMouseInput();
+    }
 }
 
 //--------------------------------------------------------------
