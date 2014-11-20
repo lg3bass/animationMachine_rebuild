@@ -103,7 +103,7 @@ void aRotationGui::setGUI_Rot(int numOfLoaders) {
     
     Rotation_gui_1->addWidgetDown(new ofxUILabel("Rotation", OFX_UI_FONT_MEDIUM));
     
-    Rotation_gui_1->addWidgetRight(new ofxUILabelButton(70,false,"CLEAR ALL",OFX_UI_FONT_SMALL));
+    Rotation_gui_1->addWidgetDown(new ofxUILabelButton(70,false,"CLEAR ALL",OFX_UI_FONT_SMALL));
     
     Rotation_gui_1->addSpacer(300,5);
     Rotation_gui_1->addSpacer(10);

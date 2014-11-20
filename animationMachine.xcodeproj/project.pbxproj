@@ -28,7 +28,9 @@
 		6B14C8EB193E1E460A736C71 /* ofxCameraMove.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F85AA6DD0C84D2A79EBFBE1 /* ofxCameraMove.cpp */; };
 		6F7F2BBDC3266D263C42FB90 /* ofxAlembicUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE7D9F5B188B6FD8CBBA9B98 /* ofxAlembicUtil.cpp */; };
 		72A929D3561B8232A182ABFC /* ofxOscBundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65EEFA3DA3526E9CDD9C21F9 /* ofxOscBundle.cpp */; };
+		7E060FDE1A1E1A4F001019E4 /* aOSC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E060FDC1A1E1A4F001019E4 /* aOSC.cpp */; };
 		7E3B28251A1CAC3600156C84 /* aRotationGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B28231A1CAC3600156C84 /* aRotationGui.cpp */; };
+		7E5328911A1DFCBB00A1F9E1 /* aScaleGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E53288F1A1DFCBB00A1F9E1 /* aScaleGui.cpp */; };
 		7E5D3FAB19363BBB00026C80 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E5D3FA919363BBA00026C80 /* util.cpp */; };
 		7ED71B3F1929090900BAC72B /* Syphon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED71B2E1929090900BAC72B /* Syphon.framework */; };
 		7ED71B401929090900BAC72B /* SyphonNameboundClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED71B311929090900BAC72B /* SyphonNameboundClient.m */; };
@@ -277,8 +279,12 @@
 		7B8D7C3EF7DCCC49D7873F74 /* Exception.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Exception.h; path = ../../../addons/ofxAlembic/libs/alembic/include/Alembic/Util/Exception.h; sourceTree = SOURCE_ROOT; };
 		7B8DFF2DE221E55FDB10E9BA /* ArchiveBounds.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ArchiveBounds.h; path = ../../../addons/ofxAlembic/libs/alembic/include/Alembic/AbcGeom/ArchiveBounds.h; sourceTree = SOURCE_ROOT; };
 		7BC6846FD0788ECDE70FAA8C /* ISchemaObject.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ISchemaObject.h; path = ../../../addons/ofxAlembic/libs/alembic/include/Alembic/Abc/ISchemaObject.h; sourceTree = SOURCE_ROOT; };
+		7E060FDC1A1E1A4F001019E4 /* aOSC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aOSC.cpp; sourceTree = "<group>"; };
+		7E060FDD1A1E1A4F001019E4 /* aOSC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aOSC.h; sourceTree = "<group>"; };
 		7E3B28231A1CAC3600156C84 /* aRotationGui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aRotationGui.cpp; sourceTree = "<group>"; };
 		7E3B28241A1CAC3600156C84 /* aRotationGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aRotationGui.h; sourceTree = "<group>"; };
+		7E53288F1A1DFCBB00A1F9E1 /* aScaleGui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aScaleGui.cpp; sourceTree = "<group>"; };
+		7E5328901A1DFCBB00A1F9E1 /* aScaleGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aScaleGui.h; sourceTree = "<group>"; };
 		7E5D3FA919363BBA00026C80 /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util.cpp; sourceTree = "<group>"; };
 		7E5D3FAA19363BBB00026C80 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
 		7ED71B2E1929090900BAC72B /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Syphon.framework; sourceTree = "<group>"; };
@@ -1313,6 +1319,10 @@
 				7EF7DA0D1A17EE3600EBC04C /* aPositionGui.h */,
 				7E3B28231A1CAC3600156C84 /* aRotationGui.cpp */,
 				7E3B28241A1CAC3600156C84 /* aRotationGui.h */,
+				7E53288F1A1DFCBB00A1F9E1 /* aScaleGui.cpp */,
+				7E5328901A1DFCBB00A1F9E1 /* aScaleGui.h */,
+				7E060FDC1A1E1A4F001019E4 /* aOSC.cpp */,
+				7E060FDD1A1E1A4F001019E4 /* aOSC.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -1521,6 +1531,7 @@
 				0546D1A38E13BD319CC9755B /* OscReceivedElements.cpp in Sources */,
 				879A251454401BC0B6E4F238 /* OscTypes.cpp in Sources */,
 				63B57AC5BF4EF088491E0317 /* ofxXmlSettings.cpp in Sources */,
+				7E060FDE1A1E1A4F001019E4 /* aOSC.cpp in Sources */,
 				933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */,
 				7ED71B401929090900BAC72B /* SyphonNameboundClient.m in Sources */,
 				7ED71B6819290A2200BAC72B /* aTrackGui.cpp in Sources */,
@@ -1529,6 +1540,7 @@
 				5A4349E9754D6FA14C0F2A3A /* tinyxmlparser.cpp in Sources */,
 				D17988540C5C1823DDFD48B7 /* ofxAlembicReader.cpp in Sources */,
 				17F86ECD30824BDEBC82D836 /* ofxAlembicType.cpp in Sources */,
+				7E5328911A1DFCBB00A1F9E1 /* aScaleGui.cpp in Sources */,
 				7ED71B6719290A2200BAC72B /* aTrack.cpp in Sources */,
 				6F7F2BBDC3266D263C42FB90 /* ofxAlembicUtil.cpp in Sources */,
 				F8958EEA9D38C800E68DA60E /* ofxAlembicWriter.cpp in Sources */,

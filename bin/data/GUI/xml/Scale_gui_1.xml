@@ -1,0 +1,420 @@
+<Widget>
+    <Kind>8</Kind>
+    <Name>00_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>00_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>00_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>01_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>01_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>01_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>02_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>02_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>02_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>03_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>03_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>03_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>04_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>04_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>04_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>05_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>05_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>05_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>06_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>06_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>06_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>07_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>07_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>07_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>08_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>08_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>08_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>09_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>09_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>09_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>10_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>10_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>10_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>11_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>11_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>11_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>12_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>12_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>12_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>13_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>13_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>13_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>14_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>14_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>14_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>15_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>15_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>15_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>16_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>16_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>16_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>17_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>17_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>17_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>18_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>18_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>18_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>19_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>19_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>19_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>20_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>20_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>20_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>21_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>21_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>21_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>22_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>22_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>22_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>23_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>23_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>23_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>24_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>24_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>24_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>25_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>25_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>25_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>26_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>26_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>26_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>27_sX</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>27_sY</Name>
+    <Value>25.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>8</Kind>
+    <Name>27_sZ</Name>
+    <Value>25.000000000</Value>
+</Widget>

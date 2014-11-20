@@ -15,11 +15,6 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
-    <Name>00_S</Name>
-    <Value>25.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
     <Name>01_tX</Name>
     <Value>0.000000000</Value>
 </Widget>
@@ -32,11 +27,6 @@
     <Kind>8</Kind>
     <Name>01_tZ</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>01_S</Name>
-    <Value>25.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -55,11 +45,6 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
-    <Name>02_S</Name>
-    <Value>25.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
     <Name>03_tX</Name>
     <Value>0.000000000</Value>
 </Widget>
@@ -72,11 +57,6 @@
     <Kind>8</Kind>
     <Name>03_tZ</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>03_S</Name>
-    <Value>25.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -95,11 +75,6 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
-    <Name>04_S</Name>
-    <Value>25.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
     <Name>05_tX</Name>
     <Value>0.000000000</Value>
 </Widget>
@@ -112,11 +87,6 @@
     <Kind>8</Kind>
     <Name>05_tZ</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>05_S</Name>
-    <Value>25.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -135,11 +105,6 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
-    <Name>06_S</Name>
-    <Value>25.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
     <Name>07_tX</Name>
     <Value>0.000000000</Value>
 </Widget>
@@ -152,11 +117,6 @@
     <Kind>8</Kind>
     <Name>07_tZ</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>07_S</Name>
-    <Value>25.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -175,11 +135,6 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
-    <Name>08_S</Name>
-    <Value>25.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
     <Name>09_tX</Name>
     <Value>0.000000000</Value>
 </Widget>
@@ -192,11 +147,6 @@
     <Kind>8</Kind>
     <Name>09_tZ</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>09_S</Name>
-    <Value>25.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -215,11 +165,6 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
-    <Name>10_S</Name>
-    <Value>25.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
     <Name>11_tX</Name>
     <Value>0.000000000</Value>
 </Widget>
@@ -232,11 +177,6 @@
     <Kind>8</Kind>
     <Name>11_tZ</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>11_S</Name>
-    <Value>25.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -255,11 +195,6 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
-    <Name>12_S</Name>
-    <Value>25.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
     <Name>13_tX</Name>
     <Value>0.000000000</Value>
 </Widget>
@@ -272,11 +207,6 @@
     <Kind>8</Kind>
     <Name>13_tZ</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>13_S</Name>
-    <Value>25.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -295,11 +225,6 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
-    <Name>14_S</Name>
-    <Value>25.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
     <Name>15_tX</Name>
     <Value>0.000000000</Value>
 </Widget>
@@ -312,11 +237,6 @@
     <Kind>8</Kind>
     <Name>15_tZ</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>15_S</Name>
-    <Value>25.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -335,11 +255,6 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
-    <Name>16_S</Name>
-    <Value>25.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
     <Name>17_tX</Name>
     <Value>0.000000000</Value>
 </Widget>
@@ -352,11 +267,6 @@
     <Kind>8</Kind>
     <Name>17_tZ</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>17_S</Name>
-    <Value>25.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -375,11 +285,6 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
-    <Name>18_S</Name>
-    <Value>25.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
     <Name>19_tX</Name>
     <Value>0.000000000</Value>
 </Widget>
@@ -392,11 +297,6 @@
     <Kind>8</Kind>
     <Name>19_tZ</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>19_S</Name>
-    <Value>25.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -415,11 +315,6 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
-    <Name>20_S</Name>
-    <Value>25.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
     <Name>21_tX</Name>
     <Value>0.000000000</Value>
 </Widget>
@@ -432,11 +327,6 @@
     <Kind>8</Kind>
     <Name>21_tZ</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>21_S</Name>
-    <Value>25.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -455,11 +345,6 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
-    <Name>22_S</Name>
-    <Value>25.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
     <Name>23_tX</Name>
     <Value>0.000000000</Value>
 </Widget>
@@ -472,11 +357,6 @@
     <Kind>8</Kind>
     <Name>23_tZ</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>23_S</Name>
-    <Value>25.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -495,11 +375,6 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
-    <Name>24_S</Name>
-    <Value>25.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
     <Name>25_tX</Name>
     <Value>0.000000000</Value>
 </Widget>
@@ -512,11 +387,6 @@
     <Kind>8</Kind>
     <Name>25_tZ</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>25_S</Name>
-    <Value>25.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -535,11 +405,6 @@
 </Widget>
 <Widget>
     <Kind>8</Kind>
-    <Name>26_S</Name>
-    <Value>25.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
     <Name>27_tX</Name>
     <Value>0.000000000</Value>
 </Widget>
@@ -552,9 +417,4 @@
     <Kind>8</Kind>
     <Name>27_tZ</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>27_S</Name>
-    <Value>25.000000000</Value>
 </Widget>

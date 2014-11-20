@@ -81,7 +81,7 @@ public:
     
     ofVec3f abcPostion; //global position in WS.
     ofVec3f abcOrientation;
-    float abcScale;
+    ofVec3f abcScale = ofVec3f(25, 25, 25);
 };
 
 

@@ -87,6 +87,7 @@ void ofApp::setup(){
     
     myPositionGui.setup();
     myRotationGui.setup();
+    myScaleGui.setup();
     
     gui_loader_Alloc = false;
     
@@ -134,6 +135,10 @@ void ofApp::reset()
     //GUI > Rotation
     myRotationGui.reset();
     myRotationGui.toggleVisibility(false);
+
+    //GUI > Scale
+    myScaleGui.reset();
+    myScaleGui.toggleVisibility(false);
 }
 
 void ofApp::loadScene(int sceneIndex){
@@ -171,6 +176,10 @@ void ofApp::loadScene(int sceneIndex){
         }
     }
     
+    //set the banks button bar
+    ofxUIToggleMatrix *tbanks = (ofxUIToggleMatrix *)gui_loader->getWidget("BANKS");
+    vector<ofxUIToggle*> saveTog = tbanks->getToggles();
+    saveTog[sceneIndex-1]->setValue(true);
 
     
 }
@@ -205,6 +214,7 @@ void ofApp::update(){
     myTrackGui.update();
     myPositionGui.update();
     myRotationGui.update();
+    myScaleGui.update();
     
     //Messaging(OSC,MIDI)
     eraseMessages();
@@ -414,6 +424,7 @@ void ofApp::exit() {
     myTrackGui.exit();
     myPositionGui.exit();
     myRotationGui.exit();
+    myScaleGui.exit();
     
 	delete gui_loader;
     
@@ -1069,6 +1080,7 @@ void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
                 if(saveTog[i]->getValue() == 1){
                     //ofxUISetColor(ofColor::red);
                     currentScene = i+1;
+                    
                     cout << "currentScene:" << currentScene << endl;
                     
                 }
@@ -1102,24 +1114,8 @@ void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
             //set the text dialer.
             float sldr_val = ofMap(trackSlider->getValue(), 0.0, 1.0, 0.00, 0.12);
             abcModels[row].clipSpeedMod = sldr_val;//abcModel.cpp
-            
-            
-            
-            //ofxUINumberDialer *trackDialer = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_SPEED");
-            //trackDialer->setValue(sldr_val);
-            
             cout << util::dDigiter(row) << "_TRK_SPD" << ":ofxUISlider (Clip speed modifier) >" << ofToString(sldr_val) << endl;
          
-        /*
-        } else if (ofIsStringInString(name, "TRK_SPEED")){
-            ofxUINumberDialer *trackDialer = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_SPEED");
-            abcModels[row].clipSpeedMod = trackDialer->getValue();//abcModel.cpp
-            //set the slider too
-            ofxUISlider *trackSlider = (ofxUISlider *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_SPD");
-            trackSlider->setValue(trackDialer->getValue());
-            
-            cout << util::dDigiter(row) << "_TRK_SPEED" << ":ofxUINumberDialer (Clip speed modifier) >" << trackDialer->getValue() << endl;
-        */
         } else if (ofIsStringInString(name, "TRK_MIDI")){
             ofxUINumberDialer *midiDialer = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_MIDI");
             abcModels[row].midiChannel = midiDialer->getValue();
@@ -1136,38 +1132,6 @@ void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
             
             cout << util::dDigiter(row) << "_TRK_NOTE" << ":ofxUINumberDialer (Midi Note Number) >" << noteDialer->getValue() << endl;
             
-        /*
-        } else if (ofIsStringInString(name, "random")){
-            ofxUIRadio *butType = (ofxUIRadio *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_TYPE");
-            vector<ofxUIToggle*> toggles = butType->getToggles();
-            cout << util::dDigiter(row) << "_TRK_TYPE" << ":UIRadio (Random On) >" << "[";
-            for(int i = 0; i < toggles.size(); i++) {
-                cout << toggles[i]->getValue() << (i<toggles.size()-1?",":"]");
-                if(toggles[i]->getValue()) {
-                    //cout << "RANDOM - pass 0 to abcModel::abcModel" << endl;
-                    //pass ldrType to the loader
-                    abcModels[row].ldrType = 0;
-                    tracks[abcModels[row].midiChannel-1].behavior = "random";
-                }
-            }
-            cout << endl;
-            //cout << "Random Button : " << result[0] << "-" << butRandom->getValue() << endl;
-        } else if (ofIsStringInString(name, "seq")){
-            ofxUIRadio *butType = (ofxUIRadio *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_TYPE");
-            vector<ofxUIToggle*> toggles = butType->getToggles();
-            cout << util::dDigiter(row) << "_TRK_TYPE" << ":UIRadio (Sequence On) >"  << "[";
-            for(int i = 0; i < toggles.size(); i++) {
-                cout << toggles[i]->getValue() << (i<toggles.size()-1?",":"]");
-                if(toggles[i]->getValue()) {
-                    //cout << "LINEAR - pass 1 to abcModel::abcModel" << endl;
-                    //pass ldrType to the loader
-                    abcModels[row].ldrType = 1;
-                    tracks[abcModels[row].midiChannel-1].behavior = "linear";
-                }
-            }
-            cout << endl;
-        */
-            
         } else if (ofIsStringInString(name, "random")){
             ofxUIToggle *randseq = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(row)+"_random");
             cout << util::dDigiter(row) << "_random" << ":ofxUIToggle (random/sequence) >" << randseq->getValue() << endl;
@@ -1179,62 +1143,12 @@ void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
                 tracks[abcModels[row].midiChannel-1].behavior = "linear";
             }
             
-        /*
-            
-        } else if (ofIsStringInString(name, "ON")){
-            ofxUIRadio *butMode = (ofxUIRadio *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_MODE");
-            vector<ofxUIToggle*> toggles = butMode->getToggles();
-            cout << util::dDigiter(row) << "_TRK_MODE" << ":UIRadio (Trigger on Note On) >" << "[";
-            for(int i = 0; i < toggles.size(); i++) {
-                cout << toggles[i]->getValue() << (i<toggles.size()-1?",":"]");
-                if(toggles[i]->getValue()) {
-                    abcModels[row].trackMode = 0;
-                }
-            }
-            cout << endl;
-        } else if (ofIsStringInString(name, "OFF")){
-            ofxUIRadio *butMode = (ofxUIRadio *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_MODE");
-            vector<ofxUIToggle*> toggles = butMode->getToggles();
-            cout << util::dDigiter(row) << "_TRK_MODE" << ":UIRadio (Trigger on Note On & Note Off) >"  << "[";
-            for(int i = 0; i < toggles.size(); i++) {
-                cout << toggles[i]->getValue() << (i<toggles.size()-1?",":"]");
-                if(toggles[i]->getValue()) {
-                    abcModels[row].trackMode = 2;
-                }
-            }
-            cout << endl;
-        */
         // New Midi
         
         } else if (ofIsStringInString(name, "ON")){
-            
-            
-            
-//            ofxUIToggle *midiOn = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(row)+"_ON");
-//            ofxUIToggle *midiOff = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(row)+"_OFF");
-//            cout << util::dDigiter(row) << "_ON" << ":ofxUIToggle (Note On) >" << midiOn->getValue() << endl;
-//            if(midiOn->getValue()) {
-//                if(midiOff->getValue()){
-//                    abcModels[row].trackMode = 2;
-//                } else {
-//                    abcModels[row].trackMode = 0;
-//                }
-//            }
             setNoteInTrigger(row,"ON");
             cout << "trackMode is now " << ofToString(abcModels[row].trackMode) << endl;
         } else if (ofIsStringInString(name, "OFF")){
-
-//            ofxUIToggle *midiOn = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(row)+"_ON");
-//            ofxUIToggle *midiOff = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(row)+"_OFF");
-//            cout << util::dDigiter(row) << "_OFF" << ":ofxUIToggle (Note Off) >" << midiOff->getValue() << endl;
-//            if(midiOff->getValue()) {
-//                if(midiOn->getValue()){
-//                    abcModels[row].trackMode = 2;
-//                } else {
-//                    abcModels[row].trackMode = 1;
-//                }
-//            }
-
             setNoteInTrigger(row,"OFF");
             cout << "trackMode is now " << ofToString(abcModels[row].trackMode) << endl;
         } else if (ofIsStringInString(name, "TRK_SEGMENTS")){
@@ -1242,7 +1156,6 @@ void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
             abcModels[row].segments = segDialer->getValue();
             tracks[abcModels[row].midiChannel-1].segments = segDialer->getValue();
             cout << util::dDigiter(row) << "_TRK_NOTE" << ":ofxUINumberDialer (ABC sections) >" << segDialer->getValue() << endl;
-            
         } else if (ofIsStringInString(name, "TRK_SEGLN")){
             ofxUINumberDialer *segLnDialer = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_SEGLN");
             abcModels[row].segLength = segLnDialer->getValue();
@@ -1252,13 +1165,7 @@ void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
             cout << "DEMO MODE:" << demoMode->getValue() << endl;
             toggleDemoMode(demoMode->getValue(), row);
         }
-
-
-        
-        
     }
-    
-    
 }
 
 void ofApp::setGUI_loader(int num){
@@ -1298,37 +1205,25 @@ void ofApp::setGUI_loader(int num){
         
         gui_loader->addWidgetRight(new ofxUISlider(util::dDigiter(i)+"_TRK_SPD", 0.00f, 0.12f, 0.05, 100, 18));
         
-        //gui_loader->addWidgetRight(new ofxUINumberDialer(0, 0.12, 0.0, 3, util::dDigiter(i)+"_TRK_SPEED", OFX_UI_FONT_SMALL));
         gui_loader->addWidgetRight(new ofxUINumberDialer(1, 10, 1, 0, util::dDigiter(i)+"_TRK_MIDI", OFX_UI_FONT_SMALL));
         gui_loader->addWidgetRight(new ofxUINumberDialer(0, 88, 63-i, 0, util::dDigiter(i)+"_TRK_NOTE", OFX_UI_FONT_SMALL));
-        
-        //radio Buttons
-        //vector<string> htype;
-        //htype.push_back(util::dDigiter(i)+"_random");
-        //htype.push_back(util::dDigiter(i)+"_seq");
-        //gui_loader->addWidgetRight(new ofxUIRadio(util::dDigiter(i)+"_TRK_TYPE", htype,OFX_UI_ORIENTATION_HORIZONTAL,20,20));
+    
         
         //Play mode (random/sequence)
         gui_loader->addWidgetRight(new ofxUIToggle(util::dDigiter(i)+"_random",false,20,20));
         
-        //midi trigger behavior (Note On, Off, Both)
-//        vector<string> hmode;
-//        hmode.push_back(util::dDigiter(i)+"_ON");
-//        hmode.push_back(util::dDigiter(i)+"_OFF");
-//        gui_loader->addWidgetRight(new ofxUIRadio(util::dDigiter(i)+"_TRK_MODE", hmode,OFX_UI_ORIENTATION_HORIZONTAL,20,20));
-        
+        //Midi Trigger
         gui_loader->addWidgetRight(new ofxUIToggle(util::dDigiter(i)+"_ON",true,20,20));
         gui_loader->addWidgetRight(new ofxUIToggle(util::dDigiter(i)+"_OFF",true,20,20));
         
-        
+        //File segments
         gui_loader->addWidgetRight(new ofxUINumberDialer(1, 50, 1.0, 0,util::dDigiter(i)+"_TRK_SEGMENTS", OFX_UI_FONT_SMALL));
         gui_loader->addWidgetRight(new ofxUINumberDialer(0, 600, 30, 0,util::dDigiter(i)+"_TRK_SEGLN", OFX_UI_FONT_SMALL));
         
         
     }
-    
+    // show all the active loaders
     gui_loader->addWidgetDown(new ofxUILabelToggle(50,false,"DEMO",OFX_UI_FONT_SMALL));
-    //gui_loader->addWidgetDown(new ofxUILabelToggle(50,false,"CLEAR DEMO",OFX_UI_FONT_SMALL));
     
     // set the labels over the top row
     gui_loader->addWidgetNorthOf(new ofxUISpacer(55,2,"speed_spacer"),"00_TRK_SPEED");
@@ -1352,8 +1247,6 @@ void ofApp::setGUI_loader(int num){
     gui_loader->addWidgetNorthOf(new ofxUISpacer(30,2,"segln_spacer"),"00_TRK_SEGLN");
     gui_loader->addWidgetNorthOf(new ofxUILabel("FRM",OFX_UI_FONT_SMALL),"segln_spacer");
     
-    
-    //gui_loader->setColorBack(ofColor(255,100));
     gui_loader->setWidgetColor(OFX_UI_WIDGET_COLOR_BACK, ofColor(120,200));
     
     ofAddListener(gui_loader->newGUIEvent, this, &ofApp::LoaderGuiEvent);
@@ -1454,9 +1347,9 @@ void ofApp::keyPressed(int key){
                         myPositionGui.toggleVisibility();
                         showPos = false;
                     }
-                    if(showRot) {
-                        myRotationGui.toggleVisibility();
-                        showRot = false;
+                    if(showScale) {
+                        myScaleGui.toggleVisibility();
+                        showScale = false;
                     }
                 }
                 break;
@@ -1482,6 +1375,10 @@ void ofApp::keyPressed(int key){
                     if(showRot) {
                         myRotationGui.toggleVisibility();
                         showRot = false;
+                    }
+                    if(showScale) {
+                        myScaleGui.toggleVisibility();
+                        showScale = false;
                     }
                 } else {
                     myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material15.frag");
@@ -1513,6 +1410,10 @@ void ofApp::keyPressed(int key){
                     if(showRot) {
                         myRotationGui.toggleVisibility();
                         showRot = false;
+                    }
+                    if(showScale) {
+                        myScaleGui.toggleVisibility();
+                        showScale = false;
                     }
                 } else {
                      myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material4.frag");
@@ -1559,10 +1460,14 @@ void ofApp::keyPressed(int key){
                 addMessage("+===========HELP===========+");
                 addMessage("SPACE - resetAnimation()");
                 addMessage("CTRL+a - show axis");
-                addMessage("CTRL+l - loader menu");
-                addMessage("CTRL+g - material/lights");
+                addMessage("CTRL+l - loader GUI");
+                addMessage("CTRL+g - Lights GUI");
+                addMessage("CTRL+w - Position GUI");
+                addMessage("CTRL+e - Scale GUI");
+                addMessage("CTRL+r - Rotate GUI");
+                addMessage("CTRL+t - Mat/Shader GUI");
+                
                 addMessage("m - cycle MIDI port");
-                addMessage("CTRL+t - track menu(TOCOME)");
                 addMessage("CTRL+o - cycle load scene");
                 addMessage("CTRL+1-6 - load select scene");
                 addMessage("CTRL+[] - prev/next camera");
@@ -1582,7 +1487,7 @@ void ofApp::keyPressed(int key){
                 myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material.frag");
                 break;           
             case 'w':
-                //gui screens
+                //TRANSLATE
                 if(modkey){
                     myPositionGui.toggleVisibility();
                     showPos = !showPos;
@@ -1603,12 +1508,16 @@ void ofApp::keyPressed(int key){
                         myRotationGui.toggleVisibility();
                         showRot = false;
                     }
+                    if(showScale) {
+                        myScaleGui.toggleVisibility();
+                        showScale = false;
+                    }
                 } else {
                     myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material1.frag");
                 }
                 break;
-            case 'e':
-                //gui screens
+            case 'r':
+                //ROTATE
                 if(modkey){
                     myRotationGui.toggleVisibility();
                     showRot = !showRot;
@@ -1629,12 +1538,43 @@ void ofApp::keyPressed(int key){
                         myPositionGui.toggleVisibility();
                         showPos = false;
                     }
+                    if(showScale) {
+                        myScaleGui.toggleVisibility();
+                        showScale = false;
+                    }
                 } else {
                     myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material2.frag");
                 }
                 break;
-            case 'r':
-                myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material3.frag");
+            case 'e':
+                //SCALE
+                if(modkey){
+                    myScaleGui.toggleVisibility();
+                    showScale = !showScale;
+                    if(showLdr) {
+                        gui_loader->toggleVisible();
+                        showLdr = false;
+                    }
+                    if(showLights) {
+                        myGui->gui->toggleVisible();
+                        myGui->gui2->toggleVisible();
+                        showLights = false;
+                    }
+                    if(showTrack) {
+                        myTrackGui.toggleVisibility();
+                        showTrack = false;
+                    }
+                    if(showPos) {
+                        myPositionGui.toggleVisibility();
+                        showPos = false;
+                    }
+                    if(showRot) {
+                        myRotationGui.toggleVisibility();
+                        showRot = false;
+                    }
+                } else {
+                    myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material3.frag");
+                }
                 break;
             case 'y':
                 myTrackGui.shader_0.load("shaders/kashimAstro/aterial.vert","shaders/kashimAstro/material6.frag");
@@ -1721,6 +1661,9 @@ void ofApp::mousePressed(int x, int y, int button){
         cam.disableMouseInput();
     }
     if (myRotationGui.Rotation_gui_1->isHit(x,y)){
+        cam.disableMouseInput();
+    }
+    if (myScaleGui.Scale_gui_1->isHit(x,y)){
         cam.disableMouseInput();
     }
 }

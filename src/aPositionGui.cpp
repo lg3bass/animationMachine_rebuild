@@ -72,9 +72,6 @@ void aPositionGui::guiEvent(ofxUIEventArgs &e) {
         } else if (name == ofToString(util::dDigiter(row)+"_tZ")) {
             ofxUINumberDialer *posZ = (ofxUINumberDialer *)Position_gui_1->getWidget(ofToString(util::dDigiter(row)+"_tZ"));
             ((ofApp*)ofGetAppPtr())->abcModels[row].abcPostion.z = posZ->getValue();
-        } else if (name == ofToString(util::dDigiter(row)+"_S")) {
-            ofxUINumberDialer *scale = (ofxUINumberDialer *)Position_gui_1->getWidget(ofToString(util::dDigiter(row)+"_S"));
-            ((ofApp*)ofGetAppPtr())->abcModels[row].abcScale = scale->getValue();
         }
 
 
@@ -107,7 +104,7 @@ void aPositionGui::setGUI_2(int numOfLoaders) {
     
     Position_gui_1->addWidgetDown(new ofxUILabel("Position", OFX_UI_FONT_MEDIUM));
     
-    Position_gui_1->addWidgetRight(new ofxUILabelButton(70,false,"CLEAR ALL",OFX_UI_FONT_SMALL));
+    Position_gui_1->addWidgetDown(new ofxUILabelButton(70,false,"CLEAR ALL",OFX_UI_FONT_SMALL));
     
     Position_gui_1->addSpacer(300,5);
     Position_gui_1->addSpacer(10);
@@ -119,12 +116,10 @@ void aPositionGui::setGUI_2(int numOfLoaders) {
         Position_gui_1->addWidgetRight(new ofxUINumberDialer(-720,720,0.0,0,util::dDigiter(i)+"_tX",OFX_UI_FONT_SMALL));
         Position_gui_1->addWidgetRight(new ofxUINumberDialer(-720,720,0.0,0,util::dDigiter(i)+"_tY",OFX_UI_FONT_SMALL));
         Position_gui_1->addWidgetRight(new ofxUINumberDialer(-720,720,0.0,0,util::dDigiter(i)+"_tZ",OFX_UI_FONT_SMALL));
-        Position_gui_1->addWidgetRight(new ofxUINumberDialer(-100,100,25.0,0,util::dDigiter(i)+"_S",OFX_UI_FONT_SMALL));
     }
     Position_gui_1->addWidgetNorthOf(new ofxUILabel("PosX", OFX_UI_FONT_SMALL), "00_tX");
     Position_gui_1->addWidgetNorthOf(new ofxUILabel("PosY", OFX_UI_FONT_SMALL), "00_tY");
     Position_gui_1->addWidgetNorthOf(new ofxUILabel("PosZ", OFX_UI_FONT_SMALL), "00_tZ");
-    Position_gui_1->addWidgetNorthOf(new ofxUILabel("Scale", OFX_UI_FONT_SMALL), "00_S");
     
     
     Position_gui_1->setWidgetColor(OFX_UI_WIDGET_COLOR_BACK, ofColor(120,200));
@@ -156,9 +151,7 @@ void aPositionGui::resetGUI(int numOfLoaders, int selectLdr, bool allLdrs){
         ofxUINumberDialer *posZ = (ofxUINumberDialer *)Position_gui_1->getWidget(ofToString(util::dDigiter(i)+"_tZ"));
         posZ->setValue(0.0);
         ((ofApp*)ofGetAppPtr())->abcModels[i].abcPostion.z = posZ->getValue();
-        ofxUINumberDialer *scale = (ofxUINumberDialer *)Position_gui_1->getWidget(ofToString(util::dDigiter(i)+"_S"));
-        scale->setValue(25.0);
-        ((ofApp*)ofGetAppPtr())->abcModels[i].abcScale = scale->getValue();
+
         
     }
  }
