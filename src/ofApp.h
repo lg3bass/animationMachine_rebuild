@@ -13,11 +13,10 @@
 #include "aPositionGui.h"
 #include "aRotationGui.h"
 #include "aScaleGui.h"
-#include "ofxOsc.h"
+#include "aOSC.h"
 #include "util.h"
 
-// listen on port 12345
-#define PORT 12345
+
 #define NUM_MSG_STRINGS 20
 
 class ofApp : public ofBaseApp, public ofxMidiListener {
@@ -44,13 +43,15 @@ public:
     void toggleMidiPort();
     
     //OSC
-    ofxOscReceiver receiver;
+    aOSC myOSC;
+    //ofxOscReceiver receiver;
+    
+    //ON-SCREEN MESSAGING
     int current_msg_string;
     string msg_strings[NUM_MSG_STRINGS];
     float timers[NUM_MSG_STRINGS];
-    void newOscMessage();
-    
-    
+
+        
     //SCENES
     bool appStart;
     int currentScene;
@@ -95,6 +96,7 @@ public:
     void trackReport();
     
     //GUI LOADER
+    const int numOfABC = 28;
     ofPoint dragPt;//drag and drop
     bool gui_loader_Alloc;
     bool doneBuilding;

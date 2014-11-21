@@ -10,10 +10,6 @@
 
 #include "ofxAlembic.h"
 
-
-//TO-DO: I think I want to do 20 per screen.
-const int numOfABC = 28;
-
 //--------------------------------------------------------------
 void ofApp::setup(){
     appStart = true;
@@ -37,12 +33,10 @@ void ofApp::setup(){
     setupMidi(0);
     
     //OSC
-    // listen on the given port
-	cout << "listening for osc messages on port " << PORT << "\n";
-	receiver.setup(PORT);
+    myOSC.setup();
+
+    //ON-SCREEN MESSAGING
     current_msg_string = 0;
-    
-    
     
     //SYPHON
     //much nicer than processing's vs.:)
@@ -109,7 +103,6 @@ void ofApp::reset()
     myGui->reset();
     //myTrackGui->reset();
     myTrackGui.reset();
-    
     
     cam.reset();
     
@@ -216,9 +209,12 @@ void ofApp::update(){
     myRotationGui.update();
     myScaleGui.update();
     
-    //Messaging(OSC,MIDI)
+    //ON-SCREEN MESSAGING
     eraseMessages();
-    newOscMessage();
+    
+    //OSC
+    myOSC.newOscMessage();
+    //newOscMessage();
     
     //loop through all the abc files and calculate the time in each.
     for(int i = 0; i < abcModels.size(); i++){
@@ -405,11 +401,8 @@ void ofApp::draw(){
     
     //saveCam.information();
     
-    //OSC
-    //This just draws the osc messages to the screen. Totally unnecessary.
-    string buf;
-	buf = "osc port: " + ofToString(PORT);
-	ofDrawBitmapString(buf, 1100, 10);
+    //Display OSC PORT
+    myOSC.draw();
     
     //Display Midi notes, OSC, etc.
     drawMessages();
@@ -932,88 +925,6 @@ void ofApp::noteIn() {
     
 }
 
-//OSC
-//input OSC handler
-//-------------------------------------------------------------
-void ofApp::newOscMessage(){
-    
-    
-    
-    // check for waiting messages
-	while(receiver.hasWaitingMessages()){
-        // get the next message
-		ofxOscMessage m;
-		receiver.getNextMessage(&m);
-        // check for mouse moved message
-		if(m.getAddress() == "/nextscene"){
-            saveCam.nextView(4.0);
-            addMessage(">saveCam.nextView(4.0)");
-		}
-        if(m.getAddress() == "/zeroview"){
-            saveCam.zeroView(4.0);
-            addMessage(">saveCam.zeroView(4.0)");
-        }
-		// Reset animation.
-		else if(m.getAddress() == "/resetOF"){
-            resetAnimation(numOfABC);
-            addMessage(">resetAnimation()");
-		}
-		else if(m.getAddress() == "/scene1"){
-            loadScene(1);
-            addMessage(">loadScene(1);");
-		}
-		else if(m.getAddress() == "/scene2"){
-            loadScene(2);
-            addMessage(">loadScene(2);");
-		}
-		else if(m.getAddress() == "/scene3"){
-            loadScene(3);
-            addMessage(">loadScene(3);");
-		}
-		else if(m.getAddress() == "/scene4"){
-            loadScene(4);
-            addMessage(">loadScene(4);");
-		}
-		else if(m.getAddress() == "/scene5"){
-            loadScene(5);
-            addMessage(">loadScene(5);");
-		}
-		else{
-            // unrecognized message: display on the bottom of the screen
-            string msg_string;
-            msg_string = m.getAddress();
-            msg_string += ": ";
-            for(int i = 0; i < m.getNumArgs(); i++){
-                // get the argument type
-                msg_string += m.getArgTypeName(i);
-                msg_string += ":";
-                // display the argument - make sure we get the right type
-                if(m.getArgType(i) == OFXOSC_TYPE_INT32){
-                    msg_string += ofToString(m.getArgAsInt32(i));
-                }
-                else if(m.getArgType(i) == OFXOSC_TYPE_FLOAT){
-                    msg_string += ofToString(m.getArgAsFloat(i));
-                }
-                else if(m.getArgType(i) == OFXOSC_TYPE_STRING){
-                    msg_string += m.getArgAsString(i);
-                }
-                else{
-                    msg_string += "unknown";
-                }
-            }
-            // add to the list of strings to display
-            addMessage(msg_string);
-            
-            
-            
-            
-        }//end else
-    }//end while
-    
-}
-
-
-
 //-------------------------------------------------------------
 int ofApp::pickRandomLoader(int ch){
     
@@ -1346,6 +1257,10 @@ void ofApp::keyPressed(int key){
                     if(showPos) {
                         myPositionGui.toggleVisibility();
                         showPos = false;
+                    }
+                    if(showRot) {
+                        myRotationGui.toggleVisibility();
+                        showRot = false;
                     }
                     if(showScale) {
                         myScaleGui.toggleVisibility();

@@ -1310,17 +1310,7 @@ void aTrackGui::guiEvent_1(ofxUIEventArgs &e) {
         }
     }//END IF
     
-    // GUI 2
-    
-    if (name == "00_X") {
-        ofxUINumberDialer *posX = (ofxUINumberDialer *)TRK_gui_2->getWidget("00_X");
-        //abcModels[row].abcPostion.x = posX->getValue();
-        //cout << util::dDigiter(row) << "_X" << ":ofxUINumberDialer (Position X) >" << posX->getValue() << endl;
-        //ofApp::abcModels[0].abcPostion.x = posX->getValue();
-        
-        //((ofApp*)ofGetAppPtr())->abcModels[0].abcPostion.x = posX->getValue();
-    }
-    
+
     
     
     

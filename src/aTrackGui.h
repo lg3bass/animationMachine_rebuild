@@ -31,10 +31,10 @@ class aTrackGui{
 
         //setting up multiple gui's.  Right now I got one.
         ofxUIScrollableCanvas *TRK_gui_1;//Materials/Shaders
-        ofxUIScrollableCanvas *TRK_gui_2;//Positioning/Rotate/Scale
-        ofxUICanvas *TRK_gui_3;
-        ofxUICanvas *TRK_gui_4;
-        ofxUICanvas *TRK_gui_5;
+        //ofxUIScrollableCanvas *TRK_gui_2;//Positioning/Rotate/Scale
+        //ofxUICanvas *TRK_gui_3;
+        //ofxUICanvas *TRK_gui_4;
+        //ofxUICanvas *TRK_gui_5;
     
         //GUI methods
         void guiEvent_1(ofxUIEventArgs &);
@@ -75,8 +75,6 @@ class aTrackGui{
         //additional shaders
         ofImage img;
     
-    
-        //Positioning
     
     
     protected:

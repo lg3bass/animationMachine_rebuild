@@ -81,12 +81,12 @@
 <Widget>
     <Kind>8</Kind>
     <Name>05_tY</Name>
-    <Value>0.000000000</Value>
+    <Value>-50.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>05_tZ</Name>
-    <Value>0.000000000</Value>
+    <Value>220.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -96,12 +96,12 @@
 <Widget>
     <Kind>8</Kind>
     <Name>06_tY</Name>
-    <Value>0.000000000</Value>
+    <Value>-50.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>06_tZ</Name>
-    <Value>0.000000000</Value>
+    <Value>220.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
