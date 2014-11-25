@@ -1306,7 +1306,7 @@ void aTrackGui::guiEvent_1(ofxUIEventArgs &e) {
     } else if (name == "ShaderStats") {
         ofxUIButton *but = (ofxUIButton *)e.widget;
         if(but->getValue()==1){
-            materialStats();
+            shaderStats();
         }
     }//END IF
     
@@ -1760,7 +1760,8 @@ void aTrackGui::setGUI_1() {
 
 
 
-
+//NOT NEEDED ANYMORE>  DELETE AND DELETE COMMENTED CODE IN GUI EVENT
+//
 //--------------------------------------------------------------
 void aTrackGui::setWSlider(vector<ofxUISlider *>sliders, ofColor &c, float v){
     if (wModActive) {

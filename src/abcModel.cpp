@@ -139,7 +139,7 @@ void abcModel::playSegment(int _type){
     
     
     //finally output what is slated to play. Uncomment to see what is playing
-    INFOlaunchingToPlay();
+    //INFOlaunchingToPlay();
 }
 
 //-----------------------------------------------------

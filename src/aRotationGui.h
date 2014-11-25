@@ -21,6 +21,8 @@ class aRotationGui {
         
         void setup();
         void reset();
+        void loadGUI(int sceneIndex);
+        void saveGUI(int sceneIndex);
         void update();
         void draw();
         void exit();

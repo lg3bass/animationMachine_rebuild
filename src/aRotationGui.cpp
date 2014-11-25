@@ -22,11 +22,24 @@ void aRotationGui::setup(){
 //--------------------------------------------------------------
 void aRotationGui::reset(){
     setGUI_Rot(28);//feed in this number
-    Rotation_gui_1->loadSettings("GUI/xml/Rotation_gui_1.xml");
+    //Rotation_gui_1->loadSettings("GUI/xml/Rotation_gui_1.xml");
     Rotation_gui_1->setVisible(false);
     guiAlloc = true;
     doReset = false;
 }
+
+//--------------------------------------------------------------
+void aRotationGui::loadGUI(int sceneIndex){
+    Rotation_gui_1->loadSettings("GUI/xml/Rotation_gui_"+ofToString(sceneIndex)+".xml");
+    
+}
+
+//--------------------------------------------------------------
+void aRotationGui::saveGUI(int sceneIndex){
+    Rotation_gui_1->saveSettings("GUI/xml/Rotation_gui_"+ofToString(sceneIndex)+".xml");
+    
+}
+
 
 //--------------------------------------------------------------
 void aRotationGui::update(){
@@ -40,7 +53,8 @@ void aRotationGui::draw(){
 
 //--------------------------------------------------------------
 void aRotationGui::exit(){
-    Rotation_gui_1->saveSettings("GUI/xml/Rotation_gui_1.xml");
+    //Rotation_gui_1->saveSettings("GUI/xml/Rotation_gui_1.xml");
+    //saveGUI(1);
     delete Rotation_gui_1;
 }
 

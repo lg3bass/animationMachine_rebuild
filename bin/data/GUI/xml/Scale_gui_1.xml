@@ -6,7 +6,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>00_sY</Name>
-    <Value>25.000000000</Value>
+    <Value>-25.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -31,32 +31,32 @@
 <Widget>
     <Kind>8</Kind>
     <Name>02_sX</Name>
-    <Value>25.000000000</Value>
+    <Value>16.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>02_sY</Name>
-    <Value>25.000000000</Value>
+    <Value>16.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>02_sZ</Name>
-    <Value>25.000000000</Value>
+    <Value>16.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>03_sX</Name>
-    <Value>25.000000000</Value>
+    <Value>19.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>03_sY</Name>
-    <Value>25.000000000</Value>
+    <Value>-19.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>03_sZ</Name>
-    <Value>25.000000000</Value>
+    <Value>19.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>

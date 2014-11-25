@@ -36,12 +36,12 @@
 <Widget>
     <Kind>12</Kind>
     <Name>00_TRK_READER</Name>
-    <Value>abc/oddity-scalop_19/scalop3_sn0_1_30_NEW_dual.abc</Value>
+    <Value>abc/lightningBolts_9/loftedSurface06b_sn0_6-180.abc</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>00_TRK_SPD</Name>
-    <Value>0.028800000</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -66,17 +66,17 @@
 <Widget>
     <Kind>2</Kind>
     <Name>00_OFF</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>00_TRK_SEGMENTS</Name>
-    <Value>1.000000000</Value>
+    <Value>6.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>00_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>180.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -86,12 +86,12 @@
 <Widget>
     <Kind>12</Kind>
     <Name>01_TRK_READER</Name>
-    <Value>abc/oddity-scalop_19/scalop5_sn0_1_30_NEW_dual.abc</Value>
+    <Value>abc/lightningBolts_9/loftedSurface08b_sn0_10-300.abc</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>01_TRK_SPD</Name>
-    <Value>0.025199998</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -116,17 +116,17 @@
 <Widget>
     <Kind>2</Kind>
     <Name>01_OFF</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>01_TRK_SEGMENTS</Name>
-    <Value>1.000000000</Value>
+    <Value>10.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>01_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>300.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -136,12 +136,12 @@
 <Widget>
     <Kind>12</Kind>
     <Name>02_TRK_READER</Name>
-    <Value>abc/oddity-scalop_19/scalop6_sn0_1_30_NEW_dual.abc</Value>
+    <Value>abc/oddity-scalop_19/scalop06b_sn2_1-30.abc</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>02_TRK_SPD</Name>
-    <Value>0.027600000</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -186,12 +186,12 @@
 <Widget>
     <Kind>12</Kind>
     <Name>03_TRK_READER</Name>
-    <Value>abc/oddity-scalop_19/scalop7_sn0_1_30_NEW_dual.abc</Value>
+    <Value>abc/oddity-scalop_19/scalop08b_sn2_1-30.abc</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>03_TRK_SPD</Name>
-    <Value>0.031199997</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -236,12 +236,12 @@
 <Widget>
     <Kind>12</Kind>
     <Name>04_TRK_READER</Name>
-    <Value>abc/oddity-scalop_19/scalop8_sn0_1_30_NEW_dual.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>04_TRK_SPD</Name>
-    <Value>0.027600000</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -276,7 +276,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>04_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -286,12 +286,12 @@
 <Widget>
     <Kind>12</Kind>
     <Name>05_TRK_READER</Name>
-    <Value>abc/blockular/block_1_sn0_1_30.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>05_TRK_SPD</Name>
-    <Value>0.029999999</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -326,7 +326,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>05_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -336,12 +336,12 @@
 <Widget>
     <Kind>12</Kind>
     <Name>06_TRK_READER</Name>
-    <Value>abc/blockular/block_2_sn0_1_30.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>06_TRK_SPD</Name>
-    <Value>0.032400001</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -376,7 +376,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>06_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -386,12 +386,12 @@
 <Widget>
     <Kind>12</Kind>
     <Name>07_TRK_READER</Name>
-    <Value>abc/blockular/block_3_sn0_1_30.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>07_TRK_SPD</Name>
-    <Value>0.029999999</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -426,7 +426,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>07_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -436,12 +436,12 @@
 <Widget>
     <Kind>12</Kind>
     <Name>08_TRK_READER</Name>
-    <Value>abc/blockular/block_4_sn0_1_30.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>08_TRK_SPD</Name>
-    <Value>0.032400001</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -476,7 +476,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>08_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -486,12 +486,12 @@
 <Widget>
     <Kind>12</Kind>
     <Name>09_TRK_READER</Name>
-    <Value>abc/blockular/block_5_sn0_1_30.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>09_TRK_SPD</Name>
-    <Value>0.027600000</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -526,7 +526,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>09_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -536,12 +536,12 @@
 <Widget>
     <Kind>12</Kind>
     <Name>10_TRK_READER</Name>
-    <Value>abc/blockular/block_6_sn0_1_30.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>10_TRK_SPD</Name>
-    <Value>0.026400000</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -576,7 +576,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>10_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -586,12 +586,12 @@
 <Widget>
     <Kind>12</Kind>
     <Name>11_TRK_READER</Name>
-    <Value>abc/blockular/block_7_sn0_1_30.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>11_TRK_SPD</Name>
-    <Value>0.025199998</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -626,7 +626,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>11_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -636,12 +636,12 @@
 <Widget>
     <Kind>12</Kind>
     <Name>12_TRK_READER</Name>
-    <Value>abc/blockular/block_8_sn0_1_30.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>12_TRK_SPD</Name>
-    <Value>0.025199998</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -676,7 +676,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>12_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -686,12 +686,12 @@
 <Widget>
     <Kind>12</Kind>
     <Name>13_TRK_READER</Name>
-    <Value>abc/blockular/block_9_sn0_1_30.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>13_TRK_SPD</Name>
-    <Value>0.026400000</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -726,7 +726,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>13_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -736,12 +736,12 @@
 <Widget>
     <Kind>12</Kind>
     <Name>14_TRK_READER</Name>
-    <Value>abc/blockular/block_10_sn0_1_30.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>14_TRK_SPD</Name>
-    <Value>0.027600000</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -776,7 +776,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>14_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -786,12 +786,12 @@
 <Widget>
     <Kind>12</Kind>
     <Name>15_TRK_READER</Name>
-    <Value>abc/blockular/block_11_sn0_1_30.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>15_TRK_SPD</Name>
-    <Value>0.027600000</Value>
+    <Value>0.050000001</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -826,7 +826,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>15_TRK_SEGLN</Name>
-    <Value>30.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>

@@ -79,21 +79,6 @@
     <Value>0.000000000</Value>
 </Widget>
 <Widget>
-    <Kind>8</Kind>
-    <Name>00_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>00_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>00_Z</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
     <Kind>20</Kind>
     <Name>01_TRK_PLAY</Name>
     <Value>0</Value>
@@ -142,21 +127,6 @@
     <Kind>8</Kind>
     <Name>01_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>01_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>01_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>01_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -209,21 +179,6 @@
     <Value>0.000000000</Value>
 </Widget>
 <Widget>
-    <Kind>8</Kind>
-    <Name>02_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>02_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>02_Z</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
     <Kind>20</Kind>
     <Name>03_TRK_PLAY</Name>
     <Value>0</Value>
@@ -272,21 +227,6 @@
     <Kind>8</Kind>
     <Name>03_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>03_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>03_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>03_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -339,21 +279,6 @@
     <Value>0.000000000</Value>
 </Widget>
 <Widget>
-    <Kind>8</Kind>
-    <Name>04_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>04_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>04_Z</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
     <Kind>20</Kind>
     <Name>05_TRK_PLAY</Name>
     <Value>0</Value>
@@ -402,21 +327,6 @@
     <Kind>8</Kind>
     <Name>05_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>05_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>05_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>05_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -469,21 +379,6 @@
     <Value>0.000000000</Value>
 </Widget>
 <Widget>
-    <Kind>8</Kind>
-    <Name>06_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>06_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>06_Z</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
     <Kind>20</Kind>
     <Name>07_TRK_PLAY</Name>
     <Value>0</Value>
@@ -532,21 +427,6 @@
     <Kind>8</Kind>
     <Name>07_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>07_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>07_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>07_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -599,21 +479,6 @@
     <Value>0.000000000</Value>
 </Widget>
 <Widget>
-    <Kind>8</Kind>
-    <Name>08_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>08_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>08_Z</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
     <Kind>20</Kind>
     <Name>09_TRK_PLAY</Name>
     <Value>0</Value>
@@ -662,21 +527,6 @@
     <Kind>8</Kind>
     <Name>09_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>09_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>09_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>09_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -729,21 +579,6 @@
     <Value>0.000000000</Value>
 </Widget>
 <Widget>
-    <Kind>8</Kind>
-    <Name>10_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>10_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>10_Z</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
     <Kind>20</Kind>
     <Name>11_TRK_PLAY</Name>
     <Value>0</Value>
@@ -792,21 +627,6 @@
     <Kind>8</Kind>
     <Name>11_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>11_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>11_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>11_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -859,21 +679,6 @@
     <Value>0.000000000</Value>
 </Widget>
 <Widget>
-    <Kind>8</Kind>
-    <Name>12_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>12_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>12_Z</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
     <Kind>20</Kind>
     <Name>13_TRK_PLAY</Name>
     <Value>0</Value>
@@ -922,21 +727,6 @@
     <Kind>8</Kind>
     <Name>13_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>13_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>13_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>13_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -989,21 +779,6 @@
     <Value>0.000000000</Value>
 </Widget>
 <Widget>
-    <Kind>8</Kind>
-    <Name>14_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>14_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>14_Z</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
     <Kind>20</Kind>
     <Name>15_TRK_PLAY</Name>
     <Value>0</Value>
@@ -1052,21 +827,6 @@
     <Kind>8</Kind>
     <Name>15_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>15_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>15_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>15_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1119,21 +879,6 @@
     <Value>0.000000000</Value>
 </Widget>
 <Widget>
-    <Kind>8</Kind>
-    <Name>16_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>16_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>16_Z</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
     <Kind>20</Kind>
     <Name>17_TRK_PLAY</Name>
     <Value>0</Value>
@@ -1182,21 +927,6 @@
     <Kind>8</Kind>
     <Name>17_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>17_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>17_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>17_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1249,21 +979,6 @@
     <Value>0.000000000</Value>
 </Widget>
 <Widget>
-    <Kind>8</Kind>
-    <Name>18_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>18_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>18_Z</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
     <Kind>20</Kind>
     <Name>19_TRK_PLAY</Name>
     <Value>0</Value>
@@ -1312,21 +1027,6 @@
     <Kind>8</Kind>
     <Name>19_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>19_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>19_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>19_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1379,21 +1079,6 @@
     <Value>0.000000000</Value>
 </Widget>
 <Widget>
-    <Kind>8</Kind>
-    <Name>20_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>20_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>20_Z</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
     <Kind>20</Kind>
     <Name>21_TRK_PLAY</Name>
     <Value>0</Value>
@@ -1442,21 +1127,6 @@
     <Kind>8</Kind>
     <Name>21_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>21_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>21_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>21_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1509,21 +1179,6 @@
     <Value>0.000000000</Value>
 </Widget>
 <Widget>
-    <Kind>8</Kind>
-    <Name>22_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>22_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>22_Z</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
     <Kind>20</Kind>
     <Name>23_TRK_PLAY</Name>
     <Value>0</Value>
@@ -1572,21 +1227,6 @@
     <Kind>8</Kind>
     <Name>23_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>23_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>23_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>23_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1639,21 +1279,6 @@
     <Value>0.000000000</Value>
 </Widget>
 <Widget>
-    <Kind>8</Kind>
-    <Name>24_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>24_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>24_Z</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
     <Kind>20</Kind>
     <Name>25_TRK_PLAY</Name>
     <Value>0</Value>
@@ -1702,21 +1327,6 @@
     <Kind>8</Kind>
     <Name>25_TRK_SEGLN</Name>
     <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>25_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>25_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>25_Z</Name>
-    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -1769,21 +1379,6 @@
     <Value>0.000000000</Value>
 </Widget>
 <Widget>
-    <Kind>8</Kind>
-    <Name>26_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>26_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>26_Z</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
     <Kind>20</Kind>
     <Name>27_TRK_PLAY</Name>
     <Value>0</Value>
@@ -1834,17 +1429,7 @@
     <Value>0.000000000</Value>
 </Widget>
 <Widget>
-    <Kind>8</Kind>
-    <Name>27_X</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>27_Y</Name>
-    <Value>1.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>8</Kind>
-    <Name>27_Z</Name>
-    <Value>1.000000000</Value>
+    <Kind>17</Kind>
+    <Name>DEMO</Name>
+    <Value>1</Value>
 </Widget>

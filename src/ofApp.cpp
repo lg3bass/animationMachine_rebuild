@@ -104,6 +104,17 @@ void ofApp::reset()
     //myTrackGui->reset();
     myTrackGui.reset();
     
+    //GUI > Position
+    myPositionGui.reset();
+    myPositionGui.toggleVisibility(false);
+    
+    //GUI > Rotation
+    myRotationGui.reset();
+    myRotationGui.toggleVisibility(false);
+    
+    //GUI > Scale
+    myScaleGui.reset();
+    myScaleGui.toggleVisibility(false);
     cam.reset();
     
     //set up the default gui_loader
@@ -120,18 +131,9 @@ void ofApp::reset()
     //GUI > materials/shaders
     //myTrackGui->toggleVisibility(false);
     myTrackGui.toggleVisibility(false);
+
     
-    //GUI > Position
-    myPositionGui.reset();
-    myPositionGui.toggleVisibility(false);
 
-    //GUI > Rotation
-    myRotationGui.reset();
-    myRotationGui.toggleVisibility(false);
-
-    //GUI > Scale
-    myScaleGui.reset();
-    myScaleGui.toggleVisibility(false);
 }
 
 void ofApp::loadScene(int sceneIndex){
@@ -154,6 +156,10 @@ void ofApp::loadScene(int sceneIndex){
         //Load Alembic Models. gather data from gui_loader and load the models.
         setupABCLoaders(numOfABC);
         
+        myPositionGui.loadGUI(sceneIndex);
+        myScaleGui.loadGUI(sceneIndex);
+        myRotationGui.loadGUI(sceneIndex);
+        
         doneBuilding = true;
         
     
@@ -164,21 +170,33 @@ void ofApp::loadScene(int sceneIndex){
             gui_loader->loadSettings(filename);
             gui_loader_Alloc = true;
             setupABCLoaders(numOfABC);
+            
+            myPositionGui.loadGUI(sceneIndex);
+            myScaleGui.loadGUI(sceneIndex);
+            myRotationGui.loadGUI(sceneIndex);
+            
             doneBuilding = true;
             appStart = false;
         }
     }
+    
+    
     
     //set the banks button bar
     ofxUIToggleMatrix *tbanks = (ofxUIToggleMatrix *)gui_loader->getWidget("BANKS");
     vector<ofxUIToggle*> saveTog = tbanks->getToggles();
     saveTog[sceneIndex-1]->setValue(true);
 
+    ofxUILabelToggle *demoMode = (ofxUILabelToggle *)gui_loader->getWidget("DEMO");
+    demoMode->setValue(false);
     
 }
 
 void ofApp::clearScene(int sceneIndex){
     clearParamsInABCloaders(0,numOfABC);
+    myPositionGui.resetGUI(numOfABC, 0,true);
+    myScaleGui.resetGUI(numOfABC, 0,true);
+    myRotationGui.resetGUI(numOfABC, 0,true);
 }
 
 
@@ -191,6 +209,11 @@ void ofApp::saveScene(int sceneIndex){
     gui_loader->saveSettings(filename);
     
     gui_loader_Alloc = true;
+    
+    myPositionGui.saveGUI(sceneIndex);
+    myScaleGui.saveGUI(sceneIndex);
+    myRotationGui.saveGUI(sceneIndex);
+    
     
     //re-setup loaders and commit changes.
     setupABCLoaders(numOfABC);
@@ -318,17 +341,17 @@ void ofApp::draw(){
                 if(myTrackGui.useShaders[t]){
                     myTrackGui.shader_0.begin();
                     
-                    
-                    //myTrackGui->shader_0.setUniform4f("diffuseColor", myTrackGui->v4Diffuse[t].x,myTrackGui->v4Diffuse[t].y,myTrackGui->v4Diffuse[t].z,1);
-                    //myTrackGui->shader_0.setUniform4f("specularColor", myTrackGui->v4Specular[t].x,myTrackGui->v4Specular[t].y,myTrackGui->v4Specular[t].z,1);
+                    //This is how you pass variables into the shader.
+                    myTrackGui.shader_0.setUniform4f("diffuseColor", myTrackGui.v4Diffuse[t].x,myTrackGui.v4Diffuse[t].y,myTrackGui.v4Diffuse[t].z,1);
+                    myTrackGui.shader_0.setUniform4f("specularColor", myTrackGui.v4Specular[t].x,myTrackGui.v4Specular[t].y,myTrackGui.v4Specular[t].z,1);
                     
                 } else {
                     myTrackGui.materials[t].begin();
                 }
                 
                 //shaders only - pass Light direction and ambient color.  same for all.
-                //myTrackGui->shader_0.setUniform3f("lightDir", 1,1,1);
-                //myTrackGui->shader_0.setUniform3f("ambientColor", 0.5, 0.5, 0.5);
+                myTrackGui.shader_0.setUniform3f("lightDir", 1,1,1);
+                myTrackGui.shader_0.setUniform3f("ambientColor", 0.5, 0.5, 0.5);
                 
                 
                 //more shader fun
@@ -467,6 +490,7 @@ void ofApp::setupABCLoaders(int num) {
     
     //Set the attributes in the loaders based on what is currently loaded in the GUI.
     setParamsInABCloaders(num);
+    //myPositionGui.setupGUI(numOfABC);
     
     trackReport();
 
@@ -1505,10 +1529,25 @@ void ofApp::keyPressed(int key){
                 myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material10.frag");
                 break;
             case 'd':
-                myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material13.frag");
+                if(modkey){
+                    ofxUILabelToggle *demoMode = (ofxUILabelToggle *)gui_loader->getWidget("DEMO");
+                    if(demoMode->getValue()){
+                        demoMode->setValue(false);
+                        
+                    } else {
+                        demoMode->setValue(true);
+                    }
+                    cout << "DEMO MODE NOW:" << demoMode->getValue() << endl;
+                    toggleDemoMode(demoMode->getValue(), 0);
+                } else {
+                    myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material13.frag");
+                }
                 break;
             case 'f':
                 myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material14.frag");
+                break;
+            case 'j':
+                myTrackGui.shader_0.load("shaders/phong/shader.vert","shaders/kashimAstro/shader.frag");
                 break;
             default:
                 break;
@@ -1650,58 +1689,154 @@ void ofApp::trackReport() {
 //--------------------------------------------------------------
 void ofApp::dragEvent(ofDragInfo info){
 	if( info.files.size() > 0 ){
-		
-        string abcFile = "";
-        bool isABC = false;
         
+        string abcFile = "";
         dragPt = info.position;
 		
-        vector<string> paths = ofSplitString(info.files[0], "/");
-        for(int i=0; i<paths.size()-1;i++){
-            //get the position of the "abc" directory
-            if(paths[i] == "abc") {
-                isABC = true;
+        //pass in the path of the drag object
+        ofDirectory dir(info.files[0]);
+
+        if(dir.isDirectory()){
+            dir.allowExt("abc");
+            dir.listDir();
+            
+            //go through and print out all the paths
+            for(int i = 0; i < dir.numFiles(); i++){
+                abcFile = processAbcPath(dir.getPath(i),i);
+                cout << "DIRECTORY>processing:" << abcFile << endl;
+            }
+        } else {
+            for(int i = 0; i < info.files.size(); i++){
+                abcFile = processAbcPath(info.files[i], i);
+                cout << "FILE>processing:" << abcFile << endl;
+            }
+            
+        }//end dragEvent|if|if
+	}// end dragEvent|if
+}//end dragEvent()
+
+
+//--------------------------------------------------------------
+string ofApp::processAbcPath(string _filename, int _index){
+
+    vector<string> paths = ofSplitString(_filename, "/");
+    bool isABC = false;
+    string abcFile;
+    
+    //loop through the path items till the file.
+    for(int i=0; i<paths.size()-1;i++){
+        //if "abc" is in the filepath
+        if(paths[i] == "abc") {
+            isABC = true;
+            abcFile += paths[i] + "/";
+        } else {
+            if(isABC){
                 abcFile += paths[i] + "/";
             } else {
-                if(isABC){
-                    abcFile += paths[i] + "/";
-                } else {
-                    //cout << "select an alembic file within the data/abc/ directory." << endl;
-                }
+                //cout << "select an alembic file within the data/abc/ directory." << endl;
             }
         }
-        if(isABC){
-            abcFile += paths[paths.size()-1];
-        }
+    } //  end for
+    //add file at the end.
+    if(isABC){
+        abcFile += paths[paths.size()-1];
+    }
+
+    //Which loader text field did you drop on
+    for(int i = 0; i < numOfABC; i++){
         
+        //get an temporary pointer to the text field
+        ofxUITextInput *text1 = (ofxUITextInput *)gui_loader->getWidget(util::dDigiter(i)+"_TRK_READER");
+        ofxUIRectangle *rect2 = text1->getRect();
         
-        //loop through the loader text fields, check if drop is over one of them.
-        for(int i = 0; i < numOfABC; i++){
-            
-            //get an temporary pointer to the text field
-            ofxUITextInput *text1 = (ofxUITextInput *)gui_loader->getWidget(util::dDigiter(i)+"_TRK_READER");
-            ofxUIRectangle *rect2 = text1->getRect();
-            
-            // is the drop point within the text field
-            if(rect2->inside(dragPt)){
+        // is the drop point within the text field
+        if(rect2->inside(dragPt)){
+            if(i+_index < numOfABC){
+                text1 = (ofxUITextInput *)gui_loader->getWidget(util::dDigiter(i+_index)+"_TRK_READER");
                 
                 if(isABC){
                     cout << "dropped inside " << util::dDigiter(i) << "_TRK_READER" << endl;
                     text1->setTextString(abcFile);
+                    
+                    //process the audio filename
+                    processAbcFileName(paths[paths.size()-1], i+_index);
+                    
                 } else {
                     //cout << "watch where you're dropping!" << endl;
                 }
             }
-            
-        }//end for
+        }
         
-        
-	}
+    }//end dragEvent|if|for
     
-    
-    
-    
+    return abcFile;
 }
 
+
+
+//--------------------------------------------------------------
+void ofApp::processAbcFileName(string _filename, int _index){
+    cout << "filename:" << _filename << endl;
+    vector<string> fileNoExt = ofSplitString(_filename, ".");
+    vector<string> fileParts = ofSplitString(fileNoExt[0], "_");
+    
+    
+    cout << "frames: " << fileParts[fileParts.size()-1] << endl;
+    cout << "segments: " << fileParts[fileParts.size()-2] << endl;
+    cout << "prefix:" << fileParts[fileParts.size()-3] << endl;
+    
+    string abcLength = fileParts[fileParts.size()-1];
+    string abcMode = fileParts[fileParts.size()-2];
+    string abcPrefix = fileParts[fileParts.size()-3];
+    
+    //segments and frames
+    vector<string> abcLength_split = ofSplitString(abcLength, "-");
+    float _segLength = ofToFloat(abcLength_split[1]);
+    float _segments = ofToFloat(abcLength_split[0]);
+    
+    //segments
+    ofxUINumberDialer *segDialer = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(_index)+"_TRK_SEGMENTS");
+    segDialer->setValue(_segments);
+    abcModels[_index].segLength = _segments;
+    
+    //seg len
+    ofxUINumberDialer *segLnDialer = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(_index)+"_TRK_SEGLN");
+    segLnDialer->setValue(_segLength);
+    abcModels[_index].segments = _segLength;
+    
+    if(ofIsStringInString(abcMode, "s")){
+        //sequence
+        ofxUIToggle *togType = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(_index)+"_random");
+        togType->setValue(false);
+        abcModels[_index].ldrType = 1;
+    } else if (ofIsStringInString(abcMode, "r")){
+        //random
+        ofxUIToggle *togType = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(_index)+"_random");
+        togType->setValue(true);
+        abcModels[_index].ldrType = 0;
+    }
+    
+    if (ofIsStringInString(abcMode, "n0")){
+        ofxUIToggle *midiOn = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(_index)+"_ON");
+        midiOn->setValue(true);
+        ofxUIToggle *midiOff = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(_index)+"_OFF");
+        midiOff->setValue(false);
+        abcModels[_index].trackMode = 0;
+    } else if (ofIsStringInString(abcMode, "n1")){
+        ofxUIToggle *midiOn = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(_index)+"_ON");
+        midiOn->setValue(false);
+        ofxUIToggle *midiOff = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(_index)+"_OFF");
+        midiOff->setValue(true);
+        abcModels[_index].trackMode = 1;
+    } else if (ofIsStringInString(abcMode, "n2")){
+        ofxUIToggle *midiOn = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(_index)+"_ON");
+        midiOn->setValue(true);
+        ofxUIToggle *midiOff = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(_index)+"_OFF");
+        midiOff->setValue(true);
+        abcModels[_index].trackMode = 2;
+    }
+    
+    
+} // end processAbcFileName()
 
 

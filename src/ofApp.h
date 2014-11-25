@@ -35,6 +35,8 @@ public:
     void mouseReleased(int x, int y, int button);
     void windowResized(int w, int h);
     void dragEvent(ofDragInfo dragInfo);
+    string processAbcPath(string _filename, int _index);
+    void processAbcFileName(string _filename, int _index);
     void gotMessage(ofMessage msg);
     void reset();
     

@@ -1,17 +1,17 @@
 <Widget>
     <Kind>8</Kind>
     <Name>00_tX</Name>
-    <Value>0.000000000</Value>
+    <Value>-5.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>00_tY</Name>
-    <Value>0.000000000</Value>
+    <Value>107.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>00_tZ</Name>
-    <Value>0.000000000</Value>
+    <Value>-11.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -21,12 +21,12 @@
 <Widget>
     <Kind>8</Kind>
     <Name>01_tY</Name>
-    <Value>0.000000000</Value>
+    <Value>-27.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>01_tZ</Name>
-    <Value>0.000000000</Value>
+    <Value>53.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -36,12 +36,12 @@
 <Widget>
     <Kind>8</Kind>
     <Name>02_tY</Name>
-    <Value>0.000000000</Value>
+    <Value>59.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>02_tZ</Name>
-    <Value>0.000000000</Value>
+    <Value>16.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -51,12 +51,12 @@
 <Widget>
     <Kind>8</Kind>
     <Name>03_tY</Name>
-    <Value>0.000000000</Value>
+    <Value>71.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>03_tZ</Name>
-    <Value>0.000000000</Value>
+    <Value>-91.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -81,12 +81,12 @@
 <Widget>
     <Kind>8</Kind>
     <Name>05_tY</Name>
-    <Value>-50.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>05_tZ</Name>
-    <Value>220.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -96,12 +96,12 @@
 <Widget>
     <Kind>8</Kind>
     <Name>06_tY</Name>
-    <Value>-50.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>06_tZ</Name>
-    <Value>220.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>

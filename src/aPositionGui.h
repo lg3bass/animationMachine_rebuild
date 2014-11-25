@@ -21,6 +21,8 @@ class aPositionGui {
     
         void setup();
         void reset();
+        void loadGUI(int sceneIndex);
+        void saveGUI(int sceneIndex);
         void update();
         void draw();
         void exit();
@@ -29,6 +31,7 @@ class aPositionGui {
         void setGUI_2(int numOfLoaders);//positioning/rotate/scale
         void toggleVisibility(bool _view = true);
         void resetGUI(int numOfLoaders, int selectLdr, bool allLdrs = true);
+        void setupGUI(int numOfLoaders);
     
         ofxUIScrollableCanvas *Position_gui_1;
         bool guiAlloc;

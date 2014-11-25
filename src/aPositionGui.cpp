@@ -22,10 +22,23 @@ void aPositionGui::setup(){
 //--------------------------------------------------------------
 void aPositionGui::reset(){
     setGUI_2(28);//feed in this number
-    Position_gui_1->loadSettings("GUI/xml/Position_gui_1.xml");
+    //Position_gui_1->loadSettings("GUI/xml/Position_gui_1.xml");
+    //loadGUI(1);
     Position_gui_1->setVisible(false);
     guiAlloc = true;
     doReset = false;
+}
+
+//--------------------------------------------------------------
+void aPositionGui::loadGUI(int sceneIndex){
+    Position_gui_1->loadSettings("GUI/xml/Position_gui_"+ofToString(sceneIndex)+".xml");
+    
+}
+
+//--------------------------------------------------------------
+void aPositionGui::saveGUI(int sceneIndex){
+    Position_gui_1->saveSettings("GUI/xml/Position_gui_"+ofToString(sceneIndex)+".xml");
+    
 }
 
 //--------------------------------------------------------------
@@ -40,7 +53,7 @@ void aPositionGui::draw(){
 
 //--------------------------------------------------------------
 void aPositionGui::exit(){
-    Position_gui_1->saveSettings("GUI/xml/Position_gui_1.xml");
+    //saveGUI(1);
     delete Position_gui_1;
 }
 
@@ -135,6 +148,7 @@ void aPositionGui::resetGUI(int numOfLoaders, int selectLdr, bool allLdrs){
     int startRange = 0;
     int endRange = numOfLoaders;
     
+    //if False do only a range of one. reset a single loader
     if(!allLdrs){
         startRange = selectLdr;
         endRange = selectLdr+1;
@@ -156,6 +170,22 @@ void aPositionGui::resetGUI(int numOfLoaders, int selectLdr, bool allLdrs){
     }
  }
 
+//--------------------------------------------------------------
+void aPositionGui::setupGUI(int numOfLoaders){
+    int startRange = 0;
+    int endRange = numOfLoaders;
+
+    for(int i=startRange;i<endRange;i++){
+        //Global positioning
+        ofxUINumberDialer *posX = (ofxUINumberDialer *)Position_gui_1->getWidget(ofToString(util::dDigiter(i)+"_tX"));
+        ((ofApp*)ofGetAppPtr())->abcModels[i].abcPostion.x = posX->getValue();
+        ofxUINumberDialer *posY = (ofxUINumberDialer *)Position_gui_1->getWidget(ofToString(util::dDigiter(i)+"_tY"));
+        ((ofApp*)ofGetAppPtr())->abcModels[i].abcPostion.y = posY->getValue();
+        ofxUINumberDialer *posZ = (ofxUINumberDialer *)Position_gui_1->getWidget(ofToString(util::dDigiter(i)+"_tZ"));
+        ((ofApp*)ofGetAppPtr())->abcModels[i].abcPostion.z = posZ->getValue();
+        
+    }
+}
 
 //--------------------------------------------------------------
 void aPositionGui::toggleVisibility(bool _view){

@@ -22,11 +22,24 @@ void aScaleGui::setup(){
 //--------------------------------------------------------------
 void aScaleGui::reset(){
     setGUI_Scale(28);//feed in this number
-    Scale_gui_1->loadSettings("GUI/xml/Scale_gui_1.xml");
+    //Scale_gui_1->loadSettings("GUI/xml/Scale_gui_1.xml");
     Scale_gui_1->setVisible(false);
     guiAlloc = true;
     doReset = false;
 }
+
+//--------------------------------------------------------------
+void aScaleGui::loadGUI(int sceneIndex){
+    Scale_gui_1->loadSettings("GUI/xml/Scale_gui_"+ofToString(sceneIndex)+".xml");
+    
+}
+
+//--------------------------------------------------------------
+void aScaleGui::saveGUI(int sceneIndex){
+    Scale_gui_1->saveSettings("GUI/xml/Scale_gui_"+ofToString(sceneIndex)+".xml");
+    
+}
+
 
 //--------------------------------------------------------------
 void aScaleGui::update(){
@@ -40,7 +53,8 @@ void aScaleGui::draw(){
 
 //--------------------------------------------------------------
 void aScaleGui::exit(){
-    Scale_gui_1->saveSettings("GUI/xml/Scale_gui_1.xml");
+    //Scale_gui_1->saveSettings("GUI/xml/Scale_gui_1.xml");
+    //saveGUI(1);
     delete Scale_gui_1;
 }
 
