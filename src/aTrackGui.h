@@ -48,6 +48,7 @@ class aTrackGui{
     
         //Materials/Shaders Variables
         void resetMaterials();
+        void lookForShaders();
     
         ofMaterial materials[TRACKS];
     
@@ -83,6 +84,17 @@ class aTrackGui{
     
     private:
     
+        //may need to move this to public
+        struct extShader {
+            ofFile vert;
+            ofFile frag;
+            ofFile geo;
+            ofFile img;
+            string path;
+            string name;
+        };
+    
+        vector<extShader> externalShaders;
         //static aTrackGui* _instance;
     
     

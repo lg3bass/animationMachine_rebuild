@@ -1,22 +1,22 @@
 <Widget>
     <Kind>2</Kind>
     <Name>Shader0</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>Shininess0</Name>
-    <Value>110.747825623</Value>
+    <Value>121.878257751</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>dr0</Name>
-    <Value>127.500000000</Value>
+    <Value>140.250000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>dg0</Name>
-    <Value>0.000000000</Value>
+    <Value>114.750000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
@@ -61,12 +61,12 @@
 <Widget>
     <Kind>5</Kind>
     <Name>sdg0</Name>
-    <Value>255.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>sdb0</Name>
-    <Value>255.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
@@ -86,32 +86,32 @@
 <Widget>
     <Kind>2</Kind>
     <Name>Shader1</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>Shininess1</Name>
-    <Value>128.000000000</Value>
+    <Value>121.321739197</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>dr1</Name>
-    <Value>255.000000000</Value>
+    <Value>70.124992371</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>dg1</Name>
-    <Value>0.000000000</Value>
+    <Value>108.375000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>db1</Name>
-    <Value>0.000000000</Value>
+    <Value>76.500000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>er1</Name>
-    <Value>101.999992371</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
@@ -126,17 +126,17 @@
 <Widget>
     <Kind>5</Kind>
     <Name>sr1</Name>
-    <Value>255.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>sg1</Name>
-    <Value>0.000000000</Value>
+    <Value>255.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>sb1</Name>
-    <Value>0.000000000</Value>
+    <Value>255.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
@@ -171,17 +171,17 @@
 <Widget>
     <Kind>2</Kind>
     <Name>Shader2</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>Shininess2</Name>
-    <Value>0.556521714</Value>
+    <Value>110.191307068</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>dr2</Name>
-    <Value>114.750000000</Value>
+    <Value>95.625000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
@@ -191,7 +191,7 @@
 <Widget>
     <Kind>5</Kind>
     <Name>db2</Name>
-    <Value>255.000000000</Value>
+    <Value>12.750002861</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
@@ -206,27 +206,27 @@
 <Widget>
     <Kind>5</Kind>
     <Name>eb2</Name>
-    <Value>121.125007629</Value>
+    <Value>6.374993801</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>sr2</Name>
-    <Value>172.125000000</Value>
+    <Value>255.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>sg2</Name>
-    <Value>153.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>sb2</Name>
-    <Value>0.000000000</Value>
+    <Value>255.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>sdr2</Name>
-    <Value>0.000000000</Value>
+    <Value>255.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
@@ -266,22 +266,22 @@
 <Widget>
     <Kind>5</Kind>
     <Name>dr3</Name>
-    <Value>95.625000000</Value>
+    <Value>178.500000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>dg3</Name>
-    <Value>255.000000000</Value>
+    <Value>165.750000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>db3</Name>
-    <Value>255.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>er3</Name>
-    <Value>95.625000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
@@ -306,22 +306,22 @@
 <Widget>
     <Kind>5</Kind>
     <Name>sb3</Name>
-    <Value>255.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>sdr3</Name>
-    <Value>255.000000000</Value>
+    <Value>248.625000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>sdg3</Name>
-    <Value>255.000000000</Value>
+    <Value>184.875000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>sdb3</Name>
-    <Value>255.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
@@ -341,7 +341,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>Shader4</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>

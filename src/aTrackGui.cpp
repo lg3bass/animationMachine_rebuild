@@ -18,6 +18,10 @@
 //    return _instance;
 //}
 
+
+
+
+
 //--------------------------------------------------------------
 aTrackGui::aTrackGui() {
     doReset = guiAlloc = false;
@@ -28,6 +32,8 @@ void aTrackGui::setup(){
     //pull in my shaders
     //this is the default shader.
     shader_0.load("shaders/phong/shader.vert", "shaders/phong/shader.frag");
+    
+    lookForShaders();
 }
 
 //--------------------------------------------------------------
@@ -75,6 +81,162 @@ void aTrackGui::guiEvent_1(ofxUIEventArgs &e) {
     //--setup all the listeners for the matierial sliders.
     //--need to set this up in a loop. too many.
 
+    for(int i=0;i<TRACKS;i++){
+        if (name == "Shader"+ofToString(i)) {
+            ofxUIToggle *toggle = (ofxUIToggle *) e.widget;
+            useShaders[i] = toggle->getValue();
+        }
+        if (name == "Shininess"+ofToString(i)) {
+            ofxUISlider *slider = (ofxUISlider *)e.widget;
+            materials[i].setShininess(slider->getScaledValue());
+        }
+        //material>diffuse.red
+        if (name == "dr"+ofToString(i)) {
+            c = materials[i].getDiffuseColor();
+            ofxUISlider *slider = (ofxUISlider *)e.widget;
+            c.r = slider->getScaledValue();
+            if(!useShaders[i]){
+                //setWSlider(matDiffSlider, c, slider->getScaledValue());
+                materials[i].setDiffuseColor(c);
+                //materials[i].setAmbientColor(c);
+            }
+        }
+        //material>diffuse.green
+        if (name == "dg"+ofToString(i)) {
+            c = materials[i].getDiffuseColor();
+            ofxUISlider *slider = (ofxUISlider *)e.widget;
+            c.g = slider->getScaledValue();
+            if(!useShaders[i]){
+                //setWSlider(matDiffSlider, c, slider->getScaledValue());
+                materials[i].setDiffuseColor(c);
+                //materials[i].setAmbientColor(c);
+            }
+        }
+        //material>diffues.blue
+        if (name == "db"+ofToString(i)) {
+            c = materials[i].getDiffuseColor();
+            ofxUISlider *slider = (ofxUISlider *)e.widget;
+            c.b = slider->getScaledValue();
+            if(!useShaders[i]){
+                //setWSlider(matDiffSlider, c, slider->getScaledValue());
+                materials[i].setDiffuseColor(c);
+                //materials[i].setAmbientColor(c);
+            }
+        }
+        //material>emissive.red
+        if (name == "er"+ofToString(i)) {
+            c = materials[i].getEmissiveColor();
+            ofxUISlider *slider = (ofxUISlider *)e.widget;
+            c.r = slider->getScaledValue();
+            materials[i].setEmissiveColor(c);
+        }
+        //materials>emissive.green
+        if (name == "eg"+ofToString(i)) {
+            c = materials[i].getEmissiveColor();
+            ofxUISlider *slider = (ofxUISlider *)e.widget;
+            c.g = slider->getScaledValue();
+            materials[i].setEmissiveColor(c);
+        }
+        //materials>emissive.blue
+        if (name == "eb"+ofToString(i)) {
+            c = materials[i].getEmissiveColor();
+            ofxUISlider *slider = (ofxUISlider *)e.widget;
+            c.b = slider->getScaledValue();
+            materials[i].setEmissiveColor(c);
+        }
+        //materials>specular.red
+        if (name == "sr"+ofToString(i)) {
+            c = materials[i].getSpecularColor();
+            ofxUISlider *slider = (ofxUISlider *)e.widget;
+            c.r = slider->getScaledValue();
+            if(!useShaders[i]){
+                //setWSlider(matDiffSlider, c, slider->getScaledValue());
+                materials[i].setSpecularColor(c);
+                
+            }
+        }
+        //materials>specular.green
+        if (name == "sg"+ofToString(i)) {
+            c = materials[i].getSpecularColor();
+            ofxUISlider *slider = (ofxUISlider *)e.widget;
+            c.g = slider->getScaledValue();
+            if(!useShaders[i]){
+                //setWSlider(matDiffSlider, c, slider->getScaledValue());
+                materials[i].setSpecularColor(c);
+                
+            }
+        }
+        //materials>specular.blue
+        if (name == "sb"+ofToString(i)) {
+            c = materials[i].getSpecularColor();
+            ofxUISlider *slider = (ofxUISlider *)e.widget;
+            c.b = slider->getScaledValue();
+            if(!useShaders[i]){
+                //setWSlider(matDiffSlider, c, slider->getScaledValue());
+                materials[i].setSpecularColor(c);
+                
+            }
+        }
+        //shader>diffuse.red
+        if (name == "sdr"+ofToString(i)) {
+            c = materials[i].getDiffuseColor();
+            ofxUISlider *slider = (ofxUISlider *)e.widget;
+            c.r = slider->getScaledValue();
+            if(useShaders[i]){
+                v4Diffuse[i].x = slider->getValue();
+            }
+        }
+        //shader>diffuse.green
+        if (name == "sdg"+ofToString(i)) {
+            c = materials[i].getDiffuseColor();
+            ofxUISlider *slider = (ofxUISlider *)e.widget;
+            c.g = slider->getScaledValue();
+            if(useShaders[i]){
+                v4Diffuse[i].y = slider->getValue();
+            }
+        }
+        //shader>diffuse.blue
+        if (name == "sdb"+ofToString(i)) {
+            c = materials[i].getDiffuseColor();
+            ofxUISlider *slider = (ofxUISlider *)e.widget;
+            c.b = slider->getScaledValue();
+            if(useShaders[i]){
+                v4Diffuse[i].z = slider->getValue();
+            }
+        }
+        //shader>specular.red
+        if (name == "ssr"+ofToString(i)) {
+            c = materials[i].getSpecularColor();
+            ofxUISlider *slider = (ofxUISlider *)e.widget;
+            c.r = slider->getScaledValue();
+            if(useShaders[i]){
+                v4Specular[i].x = slider->getValue();
+            }
+        }
+        //shader>specular.green
+        if (name == "ssg"+ofToString(i)) {
+            c = materials[i].getSpecularColor();
+            ofxUISlider *slider = (ofxUISlider *)e.widget;
+            c.g = slider->getScaledValue();
+            if(useShaders[i]){
+                v4Specular[i].y = slider->getValue();
+            }
+        }
+        //shader>specular.blue
+        if (name == "ssb"+ofToString(i)) {
+            c = materials[i].getSpecularColor();
+            ofxUISlider *slider = (ofxUISlider *)e.widget;
+            c.b = slider->getScaledValue();
+            if(useShaders[i]){
+                v4Specular[i].z = slider->getValue();
+            }
+        }
+    }//end for loop
+    
+    
+    
+    
+    /*
     if (name == "Shader0") {
         ofxUIToggle *toggle = (ofxUIToggle *) e.widget;
         useShaders[0] = toggle->getValue();
@@ -106,8 +268,10 @@ void aTrackGui::guiEvent_1(ofxUIEventArgs &e) {
         ofxUIToggle *toggle = (ofxUIToggle *) e.widget;
         useShaders[9] = toggle->getValue();
     
+     
+     
     //material shininess
-    } else if (name == "Shininess0") {
+    if (name == "Shininess0") {
         ofxUISlider *slider = (ofxUISlider *)e.widget;
         materials[0].setShininess(slider->getScaledValue());
     } else if (name == "Shininess1") {
@@ -1296,8 +1460,11 @@ void aTrackGui::guiEvent_1(ofxUIEventArgs &e) {
         if(useShaders[9]){
             v4Specular[9].z = slider->getValue();
         }
-        
-    } else if (name == "MatStats") {
+     */
+    
+    
+    
+    if (name == "MatStats") {
         ofxUIButton *but = (ofxUIButton *)e.widget;
         if(but->getValue()==1){
             materialStats();
@@ -1339,6 +1506,63 @@ void aTrackGui::setGUI_1() {
     TRK_gui_1->setFontSize(OFX_UI_FONT_SMALL, 5);
 
     TRK_gui_1->addWidgetDown(new ofxUILabel("Materials/Shaders", OFX_UI_FONT_MEDIUM));
+    
+    for(int i=0; i<TRACKS; i++){
+    
+        //START MATERIAL
+        TRK_gui_1->setWidgetPosition(OFX_UI_WIDGET_POSITION_DOWN);
+        
+        TRK_gui_1->addSpacer(230,2);
+        
+        
+        
+        TRK_gui_1->addWidgetDown(new ofxUILabel("Material "+ofToString(i), OFX_UI_FONT_SMALL));
+        TRK_gui_1->addWidgetRight(new ofxUIToggle("Shader"+ofToString(i), useShaders[i], 10, 10));
+        TRK_gui_1->addSlider("Shininess"+ofToString(i), 0, 128, 255, 230, 10);
+        
+        TRK_gui_1->addWidgetDown(new ofxUILabel(70,"Diffuse",OFX_UI_FONT_SMALL));
+        TRK_gui_1->addWidgetRight(new ofxUILabel(70,"Emissive",OFX_UI_FONT_SMALL));
+        TRK_gui_1->addWidgetRight(new ofxUILabel(70,"Specular",OFX_UI_FONT_SMALL));
+        
+        matDiffSlider.push_back(TRK_gui_1->addSlider("dr"+ofToString(i), 0, 255, 100, h, vertH));
+        TRK_gui_1->setWidgetPosition(OFX_UI_WIDGET_POSITION_RIGHT);
+        matDiffSlider.push_back(TRK_gui_1->addSlider("dg"+ofToString(i), 0, 255, 100, h, vertH));
+        matDiffSlider.push_back(TRK_gui_1->addSlider("db"+ofToString(i), 0, 255, 100, h, vertH));
+        
+        TRK_gui_1->addSpacer(2, vertH+10);
+        
+        matEmSlider.push_back(TRK_gui_1->addSlider("er"+ofToString(i), 0, 255, 100, h, vertH));
+        matEmSlider.push_back(TRK_gui_1->addSlider("eg"+ofToString(i), 0, 255, 100, h, vertH));
+        matEmSlider.push_back(TRK_gui_1->addSlider("eb"+ofToString(i), 0, 255, 100, h, vertH));
+        
+        TRK_gui_1->addSpacer(2, vertH+10);
+        
+        matSpecSlider.push_back(TRK_gui_1->addSlider("sr"+ofToString(i), 0, 255, 100, h, vertH));
+        matSpecSlider.push_back(TRK_gui_1->addSlider("sg"+ofToString(i), 0, 255, 100, h, vertH));
+        matSpecSlider.push_back(TRK_gui_1->addSlider("sb"+ofToString(i), 0, 255, 100, h, vertH));
+        
+        TRK_gui_1->setWidgetPosition(OFX_UI_WIDGET_POSITION_DOWN);
+        //shader sliders
+        matSpecSlider.push_back(TRK_gui_1->addSlider("sdr"+ofToString(i), 0, 255, 100, h, vertH));
+        TRK_gui_1->setWidgetPosition(OFX_UI_WIDGET_POSITION_RIGHT);
+        matSpecSlider.push_back(TRK_gui_1->addSlider("sdg"+ofToString(i), 0, 255, 100, h, vertH));
+        matSpecSlider.push_back(TRK_gui_1->addSlider("sdb"+ofToString(i), 0, 255, 100, h, vertH));
+        
+        TRK_gui_1->addSpacer(2, vertH+10);
+        
+        matSpecSlider.push_back(TRK_gui_1->addSlider("ssr"+ofToString(i), 0, 255, 100, h, vertH));
+        matSpecSlider.push_back(TRK_gui_1->addSlider("ssg"+ofToString(i), 0, 255, 100, h, vertH));
+        matSpecSlider.push_back(TRK_gui_1->addSlider("ssb"+ofToString(i), 0, 255, 100, h, vertH));
+        
+        //END MATERIAL
+    
+    
+    
+    }
+    
+    
+    
+    /*
     
     TRK_gui_1->addWidgetDown(new ofxUILabel("Material 0", OFX_UI_FONT_SMALL));
     TRK_gui_1->addWidgetRight(new ofxUIToggle("Shader0", useShaders[0], 10, 10));
@@ -1736,22 +1960,19 @@ void aTrackGui::setGUI_1() {
     matSpecSlider.push_back(TRK_gui_1->addSlider("ssg9", 0, 255, 100, h, vertH));
     matSpecSlider.push_back(TRK_gui_1->addSlider("ssb9", 0, 255, 100, h, vertH));
     //END MATERIAL SET 9
+
+    */
+    
     
     //stats
     TRK_gui_1->setWidgetPosition(OFX_UI_WIDGET_POSITION_DOWN);
     TRK_gui_1->addButton("MatStats", false, 10, 10);
     TRK_gui_1->addButton("ShaderStats", false, 10, 10);
     
-    // after you build the gui top to bottom. Last thing -- add the headers.
-    TRK_gui_1->addWidgetNorthOf(new ofxUILabel("Diffuse",OFX_UI_FONT_SMALL),"dr0");
-    TRK_gui_1->addWidgetNorthOf(new ofxUILabel("Emissive",OFX_UI_FONT_SMALL),"er0");
-    TRK_gui_1->addWidgetNorthOf(new ofxUILabel("Specular",OFX_UI_FONT_SMALL),"sr0");
-    
     TRK_gui_1->setWidgetColor(OFX_UI_WIDGET_COLOR_BACK, ofColor(120,200));
 
     TRK_gui_1->autoSizeToFitWidgets();
     TRK_gui_1->getRect()->setWidth(ofGetWidth());
-    
     
     ofAddListener(TRK_gui_1->newGUIEvent, this, &aTrackGui::guiEvent_1);
     
@@ -1811,6 +2032,60 @@ void aTrackGui::resetMaterials(){
     }
 }
 
+//--------------------------------------------------------------
+void aTrackGui::lookForShaders(){
+    string path = "myshaders";
+    ofDirectory dir(path);
+    dir.listDir();
+
+    for(int j=0;j<dir.numFiles();j++){
+        //every directory you find add another extShader struct.
+        externalShaders.push_back(extShader());
+        
+        externalShaders[j].name = dir.getName(j);
+        externalShaders[j].path = path+"/"+dir.getName(j)+"/";
+        
+        //get the files in the subdirectories
+        ofDirectory shader(dir.getPath(j));
+        shader.allowExt("frag");
+        shader.allowExt("vert");
+        shader.listDir();
+        
+        //create a list of the files within.
+        vector<ofFile> shaders = shader.getFiles();
+        
+        //pick out the frag,vert,geo,and img files
+        for(int k=0;k<shaders.size();k++){
+            if (shaders[k].getExtension() == "frag"){
+
+                externalShaders[j].frag = ofFile(shaders[k]);
+            }
+            if (shaders[k].getExtension() == "vert"){
+
+                externalShaders[j].vert = ofFile(shaders[k]);
+            }
+            if (shaders[k].getExtension() == "img"){
+
+                externalShaders[j].img = ofFile(shaders[k]);
+            }
+        }
+        
+    }
+    
+    //go through and print out all the paths
+    for(int i = 0; i < dir.numFiles(); i++){
+        //cout << externalShaders[i].frag.getBaseName() << endl;
+        //cout << externalShaders[i].frag.getFileName() << endl;
+        //cout << externalShaders[i].frag.getAbsolutePath() << endl;
+        //cout << externalShaders[i].vert.getBaseName() << endl;
+        //cout << externalShaders[i].vert.getFileName() << endl;
+        //cout << externalShaders[i].vert.getAbsolutePath() << endl;
+        
+        cout << externalShaders[i].name << "[" << externalShaders[i].path << externalShaders[i].vert.getFileName() << "," << externalShaders[i].path << externalShaders[i].frag.getFileName() << "]" << endl;
+
+    }
+    
+}
 
 //--------------------------------------------------------------
 void aTrackGui::materialStats(){

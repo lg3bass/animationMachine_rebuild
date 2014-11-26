@@ -75,7 +75,7 @@ public:
     aPositionGui myPositionGui;
     aRotationGui myRotationGui;
     aScaleGui myScaleGui;
-    //bool useShaders = true;
+
     
     //CAM
     ofEasyCam cam;
