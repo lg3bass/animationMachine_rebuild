@@ -62,6 +62,8 @@ class aTrackGui{
         ofShader shader_1;
         ofShader shader_2;
     
+        int shaderIndex = 0;
+    
         bool useShaders[TRACKS] = {true}; //start off with the shaders activated.
     
         ofVec4f v4Diffuse[TRACKS] = {ofVec4f(1.0,1.0,1.0,1.0)};
@@ -69,6 +71,8 @@ class aTrackGui{
         ofVec4f v4Specular[TRACKS] = {ofVec4f(1.0,1.0,1.0,1.0)};
     
         void cycleShaders();
+        void loadExtShader(int i);
+    
         void materialStats();
         void shaderStats();
 

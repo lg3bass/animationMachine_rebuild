@@ -456,7 +456,7 @@ void ofApp::setupABCLoaders(int num) {
     myABCs.clear();
     abcModels.clear();
     
-    cout << "setupABCLoaders()" << endl;
+    //cout << "setupABCLoaders()" << endl;
     
     //Set up all the ABCLoaders.
     for(int i = 0; i < num; i++){
@@ -492,7 +492,7 @@ void ofApp::setupABCLoaders(int num) {
     setParamsInABCloaders(num);
     //myPositionGui.setupGUI(numOfABC);
     
-    trackReport();
+    //trackReport();
 
     
     
@@ -1016,7 +1016,7 @@ void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
                     //ofxUISetColor(ofColor::red);
                     currentScene = i+1;
                     
-                    cout << "currentScene:" << currentScene << endl;
+                    //cout << "currentScene:" << currentScene << endl;
                     
                 }
                 
@@ -1031,12 +1031,12 @@ void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
                 abcModels[row].isDemo = false;
             }
             
-            cout << util::dDigiter(row) << "_TRK_PLAY" << ":ofxUIImageToggle (Play Button Toggle) >" << playBut->getValue() << endl;
+            //cout << util::dDigiter(row) << "_TRK_PLAY" << ":ofxUIImageToggle (Play Button Toggle) >" << playBut->getValue() << endl;
         } else if (ofIsStringInString(name, "TRK_CLR")){
            
             ofxUIImageButton *clearBut = (ofxUIImageButton *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_CLR");
             if(clearBut->getValue()){
-                cout << util::dDigiter(row) << "_TRK_CLR" << clearBut->getValue() << endl;
+                //cout << util::dDigiter(row) << "_TRK_CLR" << clearBut->getValue() << endl;
                 clearParamsInABCloaders(row,row+1);
             
             }
@@ -1049,12 +1049,12 @@ void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
             //set the text dialer.
             float sldr_val = ofMap(trackSlider->getValue(), 0.0, 1.0, 0.00, 0.12);
             abcModels[row].clipSpeedMod = sldr_val;//abcModel.cpp
-            cout << util::dDigiter(row) << "_TRK_SPD" << ":ofxUISlider (Clip speed modifier) >" << ofToString(sldr_val) << endl;
+            //cout << util::dDigiter(row) << "_TRK_SPD" << ":ofxUISlider (Clip speed modifier) >" << ofToString(sldr_val) << endl;
          
         } else if (ofIsStringInString(name, "TRK_MIDI")){
             ofxUINumberDialer *midiDialer = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_MIDI");
             abcModels[row].midiChannel = midiDialer->getValue();
-            cout << util::dDigiter(row) << "_TRK_MIDI" << ":ofxUINumberDialer (Midi Channel/Track) >" << midiDialer->getValue() << endl;
+            //cout << util::dDigiter(row) << "_TRK_MIDI" << ":ofxUINumberDialer (Midi Channel/Track) >" << midiDialer->getValue() << endl;
             
         } else if (ofIsStringInString(name, "TRK_NOTE")){
             ofxUINumberDialer *noteDialer = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_NOTE");
@@ -1065,11 +1065,11 @@ void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
                 tracks[abcModels[row].midiChannel-1].playNote = false;
             }
             
-            cout << util::dDigiter(row) << "_TRK_NOTE" << ":ofxUINumberDialer (Midi Note Number) >" << noteDialer->getValue() << endl;
+            //cout << util::dDigiter(row) << "_TRK_NOTE" << ":ofxUINumberDialer (Midi Note Number) >" << noteDialer->getValue() << endl;
             
         } else if (ofIsStringInString(name, "random")){
             ofxUIToggle *randseq = (ofxUIToggle *)gui_loader->getWidget(util::dDigiter(row)+"_random");
-            cout << util::dDigiter(row) << "_random" << ":ofxUIToggle (random/sequence) >" << randseq->getValue() << endl;
+            //cout << util::dDigiter(row) << "_random" << ":ofxUIToggle (random/sequence) >" << randseq->getValue() << endl;
             if(randseq->getValue()) {
                 abcModels[row].ldrType = 0;
                 tracks[abcModels[row].midiChannel-1].behavior = "random";
@@ -1082,22 +1082,22 @@ void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
         
         } else if (ofIsStringInString(name, "ON")){
             setNoteInTrigger(row,"ON");
-            cout << "trackMode is now " << ofToString(abcModels[row].trackMode) << endl;
+            //cout << "trackMode is now " << ofToString(abcModels[row].trackMode) << endl;
         } else if (ofIsStringInString(name, "OFF")){
             setNoteInTrigger(row,"OFF");
-            cout << "trackMode is now " << ofToString(abcModels[row].trackMode) << endl;
+            //cout << "trackMode is now " << ofToString(abcModels[row].trackMode) << endl;
         } else if (ofIsStringInString(name, "TRK_SEGMENTS")){
             ofxUINumberDialer *segDialer = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_SEGMENTS");
             abcModels[row].segments = segDialer->getValue();
             tracks[abcModels[row].midiChannel-1].segments = segDialer->getValue();
-            cout << util::dDigiter(row) << "_TRK_NOTE" << ":ofxUINumberDialer (ABC sections) >" << segDialer->getValue() << endl;
+            //cout << util::dDigiter(row) << "_TRK_NOTE" << ":ofxUINumberDialer (ABC sections) >" << segDialer->getValue() << endl;
         } else if (ofIsStringInString(name, "TRK_SEGLN")){
             ofxUINumberDialer *segLnDialer = (ofxUINumberDialer *)gui_loader->getWidget(util::dDigiter(row)+"_TRK_SEGLN");
             abcModels[row].segLength = segLnDialer->getValue();
-            cout << util::dDigiter(row) << "_TRK_SEGLN" << ":ofxUINumberDialer (ABC segment length[time]) >" << segLnDialer->getValue() << endl;
+            //cout << util::dDigiter(row) << "_TRK_SEGLN" << ":ofxUINumberDialer (ABC segment length[time]) >" << segLnDialer->getValue() << endl;
         } else if (ofIsStringInString(name, "DEMO")){
             ofxUILabelToggle *demoMode = (ofxUILabelToggle *)gui_loader->getWidget("DEMO");
-            cout << "DEMO MODE:" << demoMode->getValue() << endl;
+            //cout << "DEMO MODE:" << demoMode->getValue() << endl;
             toggleDemoMode(demoMode->getValue(), row);
         }
     }
@@ -1209,74 +1209,199 @@ void ofApp::keyPressed(int key){
     
 	if(key & OF_KEY_MODIFIER){
 		if(key >= OF_KEY_F1 && key <= OF_KEY_F12){
-            cout << "F KEY:" << key << endl;
+            //cout << "F KEY:" << key << endl;
         }else{
             
             switch(key){
                 case OF_KEY_LEFT_SUPER:
-                    cout << "Left Apple Pressed" << endl;
+                    //cout << "Left Apple Pressed" << endl;
                     modkey = true;
                     break;
                 case OF_KEY_RIGHT_SUPER:
-                    cout << "Right Apple Pressed" << endl;
+                    //cout << "Right Apple Pressed" << endl;
                     modkey = true;
+                    break;
+                case OF_KEY_CONTROL:
+                    //cout << "Control Pressed" << endl;
+                    ctrlKey = true;
                     break;
             }
 		}
 	}else{
         switch (key) {
-            case ' ':
-                myGui->wModActive = true;
-                cout << "space out" << endl;
-                //move this somewhere else.
-                resetAnimation(numOfABC);
-                break;
-            case 'a':
-                if(modkey) {
-                    myGui->showAxis = !myGui->showAxis;
-                } else {
-                    myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material11.frag");
-                }
-                break;
             case '1':
                 if(modkey) loadScene(1);
+                if(ctrlKey) {
+                    saveCam.gotoSelectView(0,6.0);
+                    addMessage("GOTO CAM: 0");
+                }
                 break;
             case '2':
                 if(modkey) loadScene(2);
+                if(ctrlKey) {
+                    saveCam.gotoSelectView(1,6.0);
+                    addMessage("GOTO CAM: 1");
+                }
                 break;
             case '3':
                 if(modkey) loadScene(3);
+                if(ctrlKey) {
+                    saveCam.gotoSelectView(2,6.0);
+                    addMessage("GOTO CAM: 2");
+                }
                 break;
             case '4':
                 if(modkey) loadScene(4);
+                if(ctrlKey) {
+                    saveCam.gotoSelectView(3,6.0);
+                    addMessage("GOTO CAM: 3");
+                }
                 break;
             case '5':
                 if(modkey) loadScene(5);
+                if(ctrlKey) {
+                    saveCam.gotoSelectView(4,6.0);
+                    addMessage("GOTO CAM: 4");
+                }
                 break;
             case '6':
                 if(modkey) loadScene(6);
+                if(ctrlKey) {
+                    saveCam.gotoSelectView(5,6.0);
+                    addMessage("GOTO CAM: 5");
+                }
                 break;
             case '7':
+                if(ctrlKey) {
+                    saveCam.gotoSelectView(6,6.0);
+                    addMessage("GOTO CAM: 6");
+                }
                 break;
             case '8':
+                if(ctrlKey) {
+                    saveCam.gotoSelectView(7,6.0);
+                    addMessage("GOTO CAM: 7");
+                }
                 break;
             case '9':
+                if(ctrlKey) {
+                    saveCam.gotoSelectView(8,6.0);
+                    addMessage("GOTO CAM: 8");
+                }
                 break;
-            case 'l':
-                //loader screens
-                if(modkey) {
-                    cout << "l key pressed" << endl;
-                    gui_loader->toggleVisible();
-                    showLdr = !showLdr;
+            case ' ':
+                myGui->wModActive = true;
+                //cout << "space out" << endl;
+                //move this somewhere else.
+                resetAnimation(numOfABC);
+                break;
+            case 'q':
+                
+                break;
+            case 'w':
+                //TRANSLATE
+                if(modkey){
+                    myPositionGui.toggleVisibility();
+                    showPos = !showPos;
+                    if(showLdr) {
+                        gui_loader->toggleVisible();
+                        showLdr = false;
+                    }
                     if(showLights) {
                         myGui->gui->toggleVisible();
                         myGui->gui2->toggleVisible();
                         showLights = false;
                     }
                     if(showTrack) {
-                        //myTrackGui->TRK_gui_1->toggleVisible();
                         myTrackGui.toggleVisibility();
                         showTrack = false;
+                    }
+                    if(showRot) {
+                        myRotationGui.toggleVisibility();
+                        showRot = false;
+                    }
+                    if(showScale) {
+                        myScaleGui.toggleVisibility();
+                        showScale = false;
+                    }
+                } else {
+                    
+                }
+                break;
+            case 'e':
+                //SCALE
+                if(modkey){
+                    myScaleGui.toggleVisibility();
+                    showScale = !showScale;
+                    if(showLdr) {
+                        gui_loader->toggleVisible();
+                        showLdr = false;
+                    }
+                    if(showLights) {
+                        myGui->gui->toggleVisible();
+                        myGui->gui2->toggleVisible();
+                        showLights = false;
+                    }
+                    if(showTrack) {
+                        myTrackGui.toggleVisibility();
+                        showTrack = false;
+                    }
+                    if(showPos) {
+                        myPositionGui.toggleVisibility();
+                        showPos = false;
+                    }
+                    if(showRot) {
+                        myRotationGui.toggleVisibility();
+                        showRot = false;
+                    }
+                } else {
+                    
+                }
+                break;
+            case 'r':
+                //ROTATE
+                if(modkey){
+                    myRotationGui.toggleVisibility();
+                    showRot = !showRot;
+                    if(showLdr) {
+                        gui_loader->toggleVisible();
+                        showLdr = false;
+                    }
+                    if(showLights) {
+                        myGui->gui->toggleVisible();
+                        myGui->gui2->toggleVisible();
+                        showLights = false;
+                    }
+                    if(showTrack) {
+                        myTrackGui.toggleVisibility();
+                        showTrack = false;
+                    }
+                    if(showPos) {
+                        myPositionGui.toggleVisibility();
+                        showPos = false;
+                    }
+                    if(showScale) {
+                        myScaleGui.toggleVisibility();
+                        showScale = false;
+                    }
+                } else {
+                    
+                }
+                break;
+            case 't':
+                //gui screens
+                if(modkey){
+                    //myTrackGui->TRK_gui_1->toggleVisible();
+                    myTrackGui.toggleVisibility();
+                    showTrack = !showTrack;
+                    if(showLdr) {
+                        gui_loader->toggleVisible();
+                        showLdr = false;
+                    }
+                    if(showLights) {
+                        myGui->gui->toggleVisible();
+                        myGui->gui2->toggleVisible();
+                        showLights = false;
                     }
                     if(showPos) {
                         myPositionGui.toggleVisibility();
@@ -1290,6 +1415,77 @@ void ofApp::keyPressed(int key){
                         myScaleGui.toggleVisibility();
                         showScale = false;
                     }
+                } else {
+                    
+                }
+                break;
+            case 'y':
+                
+                break;
+            case 'u':
+                
+                break;
+            case 'i':
+                
+                break;
+            case 'o':
+                if(modkey) {
+                    if(currentScene < 6){
+                        currentScene+=1;
+                    } else {
+                        currentScene = 1;
+                    }
+                    cout << "cycle loadScene: "<< currentScene << endl;
+                    
+                    loadScene(currentScene);
+                } else {
+                    
+                }
+                break;
+            case 'p':
+                
+                break;
+            case '[':
+                if(modkey) saveCam.prevView(4.0);
+                addMessage("GOTO CAM:"+ofToString(saveCam.currentIdx));
+                break;
+            case ']':
+                if(modkey) saveCam.nextView(4.0);
+                addMessage("GOTO CAM:"+ofToString(saveCam.currentIdx));
+                break;
+            case 'a':
+                if(modkey) {
+                    myGui->showAxis = !myGui->showAxis;
+                } else {
+
+                }
+                break;
+            case 's':
+                if(modkey) {
+                    saveCam.updateView(-1);//-1= current view
+                } else {
+                    
+                }
+                break;
+            case 'd':
+                if(modkey){
+                    ofxUILabelToggle *demoMode = (ofxUILabelToggle *)gui_loader->getWidget("DEMO");
+                    if(demoMode->getValue()){
+                        demoMode->setValue(false);
+                        
+                    } else {
+                        demoMode->setValue(true);
+                    }
+                    cout << "DEMO MODE NOW:" << demoMode->getValue() << endl;
+                    toggleDemoMode(demoMode->getValue(), 0);
+                } else {
+                    
+                }
+                break;
+            case 'f':
+                // cycle through the shader list.
+                if(modkey){
+                    myTrackGui.cycleShaders();
                 }
                 break;
             case 'g':
@@ -1320,79 +1516,8 @@ void ofApp::keyPressed(int key){
                         showScale = false;
                     }
                 } else {
-                    myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material15.frag");
-                }
-                break;
-            case 'm'://CTRL+M is minimize
-                //midi port
-                toggleMidiPort();
-                break;
-            case 't':
-                //gui screens
-                if(modkey){
-                    //myTrackGui->TRK_gui_1->toggleVisible();
-                    myTrackGui.toggleVisibility();
-                    showTrack = !showTrack;
-                    if(showLdr) {
-                        gui_loader->toggleVisible();
-                        showLdr = false;
-                    }
-                    if(showLights) {
-                        myGui->gui->toggleVisible();
-                        myGui->gui2->toggleVisible();
-                        showLights = false;
-                    }
-                    if(showPos) {
-                        myPositionGui.toggleVisibility();
-                        showPos = false;
-                    }
-                    if(showRot) {
-                        myRotationGui.toggleVisibility();
-                        showRot = false;
-                    }
-                    if(showScale) {
-                        myScaleGui.toggleVisibility();
-                        showScale = false;
-                    }
-                } else {
-                     myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material4.frag");
-                }
-                break;
-            case 'o':
-                if(modkey) {
-                    if(currentScene < 6){
-                        currentScene+=1;
-                    } else {
-                        currentScene = 1;
-                    }
-                    cout << "cycle loadScene: "<< currentScene << endl;
-                    
-                    loadScene(currentScene);
-                } else {
-                    myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material9.frag");
                     
                 }
-                
-                break;
-            
-            case '[':
-                if(modkey) saveCam.prevView(4.0);
-                break;
-            case ']':
-                if(modkey) saveCam.nextView(4.0);
-                break;
-            case 's':
-                if(modkey) {
-                    saveCam.updateView(-1);//-1= current view
-                } else {
-                    myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material12.frag");
-                }
-                break;
-            case 'n':
-                if(modkey) saveCam.newView();
-                break;
-            case 'z':
-                if(modkey) saveCam.zeroView();
                 break;
             case 'h'://CTRL+h is hide
                 
@@ -1422,133 +1547,61 @@ void ofApp::keyPressed(int key){
                 addMessage("+===========++++===========+");
                 
                 break;
-            case 'q':
-                myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material.frag");
-                break;           
-            case 'w':
-                //TRANSLATE
-                if(modkey){
-                    myPositionGui.toggleVisibility();
-                    showPos = !showPos;
-                    if(showLdr) {
-                        gui_loader->toggleVisible();
-                        showLdr = false;
-                    }
-                    if(showLights) {
-                        myGui->gui->toggleVisible();
-                        myGui->gui2->toggleVisible();
-                        showLights = false;
-                    }
-                    if(showTrack) {
-                        myTrackGui.toggleVisibility();
-                        showTrack = false;
-                    }
-                    if(showRot) {
-                        myRotationGui.toggleVisibility();
-                        showRot = false;
-                    }
-                    if(showScale) {
-                        myScaleGui.toggleVisibility();
-                        showScale = false;
-                    }
-                } else {
-                    myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material1.frag");
-                }
-                break;
-            case 'r':
-                //ROTATE
-                if(modkey){
-                    myRotationGui.toggleVisibility();
-                    showRot = !showRot;
-                    if(showLdr) {
-                        gui_loader->toggleVisible();
-                        showLdr = false;
-                    }
-                    if(showLights) {
-                        myGui->gui->toggleVisible();
-                        myGui->gui2->toggleVisible();
-                        showLights = false;
-                    }
-                    if(showTrack) {
-                        myTrackGui.toggleVisibility();
-                        showTrack = false;
-                    }
-                    if(showPos) {
-                        myPositionGui.toggleVisibility();
-                        showPos = false;
-                    }
-                    if(showScale) {
-                        myScaleGui.toggleVisibility();
-                        showScale = false;
-                    }
-                } else {
-                    myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material2.frag");
-                }
-                break;
-            case 'e':
-                //SCALE
-                if(modkey){
-                    myScaleGui.toggleVisibility();
-                    showScale = !showScale;
-                    if(showLdr) {
-                        gui_loader->toggleVisible();
-                        showLdr = false;
-                    }
-                    if(showLights) {
-                        myGui->gui->toggleVisible();
-                        myGui->gui2->toggleVisible();
-                        showLights = false;
-                    }
-                    if(showTrack) {
-                        myTrackGui.toggleVisibility();
-                        showTrack = false;
-                    }
-                    if(showPos) {
-                        myPositionGui.toggleVisibility();
-                        showPos = false;
-                    }
-                    if(showRot) {
-                        myRotationGui.toggleVisibility();
-                        showRot = false;
-                    }
-                } else {
-                    myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material3.frag");
-                }
-                break;
-            case 'y':
-                myTrackGui.shader_0.load("shaders/kashimAstro/aterial.vert","shaders/kashimAstro/material6.frag");
-                break;
-            case 'u':
-                myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material7.frag");
-                break;
-            case 'i':
-                myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material8.frag");
-                break;
-            case 'p':
-                //positioning
-                myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material10.frag");
-                break;
-            case 'd':
-                if(modkey){
-                    ofxUILabelToggle *demoMode = (ofxUILabelToggle *)gui_loader->getWidget("DEMO");
-                    if(demoMode->getValue()){
-                        demoMode->setValue(false);
-                        
-                    } else {
-                        demoMode->setValue(true);
-                    }
-                    cout << "DEMO MODE NOW:" << demoMode->getValue() << endl;
-                    toggleDemoMode(demoMode->getValue(), 0);
-                } else {
-                    myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material13.frag");
-                }
-                break;
-            case 'f':
-                myTrackGui.shader_0.load("shaders/kashimAstro/material.vert","shaders/kashimAstro/material14.frag");
-                break;
+                
+                
             case 'j':
-                myTrackGui.shader_0.load("shaders/phong/shader.vert","shaders/kashimAstro/shader.frag");
                 break;
+            case 'k':
+                break;
+            case 'l':
+                //loader screens
+                if(modkey) {
+                    //cout << "l key pressed" << endl;
+                    gui_loader->toggleVisible();
+                    showLdr = !showLdr;
+                    if(showLights) {
+                        myGui->gui->toggleVisible();
+                        myGui->gui2->toggleVisible();
+                        showLights = false;
+                    }
+                    if(showTrack) {
+                        //myTrackGui->TRK_gui_1->toggleVisible();
+                        myTrackGui.toggleVisibility();
+                        showTrack = false;
+                    }
+                    if(showPos) {
+                        myPositionGui.toggleVisibility();
+                        showPos = false;
+                    }
+                    if(showRot) {
+                        myRotationGui.toggleVisibility();
+                        showRot = false;
+                    }
+                    if(showScale) {
+                        myScaleGui.toggleVisibility();
+                        showScale = false;
+                    }
+                }
+                break;
+            case 'z':
+                if(modkey) saveCam.zeroView();
+                break;
+            case 'x':
+                break;
+            case 'c':
+                break;
+            case 'v':
+                break;
+            case 'b':
+                break;
+            case 'n':
+                if(modkey) saveCam.newView();
+                break;
+            case 'm'://CTRL+M is minimize
+                //midi port
+                toggleMidiPort();
+                break;
+
             default:
                 break;
         }
@@ -1564,12 +1617,16 @@ void ofApp::keyReleased(int key){
         }else{
             switch(key){
                 case OF_KEY_LEFT_SUPER:
-                    cout << "Left Apple Released" << endl;
+                    //cout << "Left Apple Released" << endl;
                     modkey = false;
                     break;
                 case OF_KEY_RIGHT_SUPER:
-                    cout << "Right Apple Released" << endl;
+                    //cout << "Right Apple Released" << endl;
                     modkey = false;
+                    break;
+                case OF_KEY_CONTROL:
+                    //cout << "Control Released" << endl;
+                    ctrlKey = false;
                     break;
             }
         }
@@ -1703,12 +1760,12 @@ void ofApp::dragEvent(ofDragInfo info){
             //go through and print out all the paths
             for(int i = 0; i < dir.numFiles(); i++){
                 abcFile = processAbcPath(dir.getPath(i),i);
-                cout << "DIRECTORY>processing:" << abcFile << endl;
+                //cout << "DIRECTORY>processing:" << abcFile << endl;
             }
         } else {
             for(int i = 0; i < info.files.size(); i++){
                 abcFile = processAbcPath(info.files[i], i);
-                cout << "FILE>processing:" << abcFile << endl;
+                //cout << "FILE>processing:" << abcFile << endl;
             }
             
         }//end dragEvent|if|if
@@ -1755,7 +1812,7 @@ string ofApp::processAbcPath(string _filename, int _index){
                 text1 = (ofxUITextInput *)gui_loader->getWidget(util::dDigiter(i+_index)+"_TRK_READER");
                 
                 if(isABC){
-                    cout << "dropped inside " << util::dDigiter(i) << "_TRK_READER" << endl;
+                    //cout << "dropped inside " << util::dDigiter(i) << "_TRK_READER" << endl;
                     text1->setTextString(abcFile);
                     
                     //process the audio filename
@@ -1776,14 +1833,14 @@ string ofApp::processAbcPath(string _filename, int _index){
 
 //--------------------------------------------------------------
 void ofApp::processAbcFileName(string _filename, int _index){
-    cout << "filename:" << _filename << endl;
+    //cout << "filename:" << _filename << endl;
     vector<string> fileNoExt = ofSplitString(_filename, ".");
     vector<string> fileParts = ofSplitString(fileNoExt[0], "_");
     
     
-    cout << "frames: " << fileParts[fileParts.size()-1] << endl;
-    cout << "segments: " << fileParts[fileParts.size()-2] << endl;
-    cout << "prefix:" << fileParts[fileParts.size()-3] << endl;
+    //cout << "frames: " << fileParts[fileParts.size()-1] << endl;
+    //cout << "segments: " << fileParts[fileParts.size()-2] << endl;
+    //cout << "prefix:" << fileParts[fileParts.size()-3] << endl;
     
     string abcLength = fileParts[fileParts.size()-1];
     string abcMode = fileParts[fileParts.size()-2];

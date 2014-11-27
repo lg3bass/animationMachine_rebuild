@@ -53,13 +53,19 @@ void aOSC::newOscMessage(){
 		ofxOscMessage m;
 		receiver.getNextMessage(&m);
         
-
+        //cam OSC messages
 		if(m.getAddress() == "/nextscene"){
             ((ofApp*)ofGetAppPtr())->saveCam.nextView(4.0);
             ((ofApp*)ofGetAppPtr())->addMessage(">saveCam.nextView(4.0)");
 		} else if (m.getAddress() == "/zeroview"){
             ((ofApp*)ofGetAppPtr())->saveCam.zeroView(4.0);
             ((ofApp*)ofGetAppPtr())->addMessage(">saveCam.zeroView(4.0)");
+        } else if(ofIsStringInString(m.getAddress(), "/camera")){
+            //looking for "/camera_1, /camera_2, /camera_1000"
+            vector<string> camId = ofSplitString(m.getAddress(), "_");
+            if(m.getArgAsFloat(0) == 1.0){
+                ((ofApp*)ofGetAppPtr())->saveCam.gotoSelectView(ofToInt(camId[1]),4.0);
+            }
         } else if(m.getAddress() == "/resetOF"){
             ((ofApp*)ofGetAppPtr())->resetAnimation(((ofApp*)ofGetAppPtr())->numOfABC);
             ((ofApp*)ofGetAppPtr())->addMessage(">resetAnimation()");

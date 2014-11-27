@@ -16,7 +16,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>01_rX</Name>
-    <Value>-51.000000000</Value>
+    <Value>15.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -31,12 +31,12 @@
 <Widget>
     <Kind>8</Kind>
     <Name>02_rX</Name>
-    <Value>78.000000000</Value>
+    <Value>-22.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>02_rY</Name>
-    <Value>-180.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -46,7 +46,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>03_rX</Name>
-    <Value>-43.000000000</Value>
+    <Value>-15.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
