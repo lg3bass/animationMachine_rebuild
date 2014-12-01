@@ -5,16 +5,18 @@
 
 # .abc files
 /bin/data/abc/_OLD/
-/bin/data/abc/inclined-pedal/
+/bin/data/abc/inclined-medal/
 /bin/data/abc/lightningBolts_9/
 /bin/data/abc/oddity-scalop_19/
+/bin/data/abc/bassStar/
 
 # xml gui files
 /bin/data/GUI/OLD/
+/bin/data/GUI/_OLD/
 
 # xml loader files - on git they're blank
-/bin/data/GUI/gui_loader_Settings_1.xml
-/bin/data/GUI/gui_loader_Settings_2.xml
+#/bin/data/GUI/gui_loader_Settings_1.xml
+#/bin/data/GUI/gui_loader_Settings_2.xml
 /bin/data/GUI/gui_loader_Settings_3.xml
 /bin/data/GUI/gui_loader_Settings_4.xml
 /bin/data/GUI/gui_loader_Settings_5.xml

@@ -429,6 +429,8 @@ void ofApp::draw(){
     
     //Display Midi notes, OSC, etc.
     drawMessages();
+
+    
     
 }// end draw
 
@@ -1225,66 +1227,73 @@ void ofApp::keyPressed(int key){
                     //cout << "Control Pressed" << endl;
                     ctrlKey = true;
                     break;
+                case OF_KEY_SHIFT:
+                    //cout << "Shift Pressed" << endl;
+                    shiftKey = true;
+                    break;
             }
 		}
 	}else{
         switch (key) {
+            
+                
             case '1':
+                //cout << "1 pressed";
                 if(modkey) loadScene(1);
-                if(ctrlKey) {
+                if(shiftKey) {
                     saveCam.gotoSelectView(0,6.0);
                     addMessage("GOTO CAM: 0");
                 }
                 break;
             case '2':
                 if(modkey) loadScene(2);
-                if(ctrlKey) {
+                if(shiftKey) {
                     saveCam.gotoSelectView(1,6.0);
                     addMessage("GOTO CAM: 1");
                 }
                 break;
             case '3':
                 if(modkey) loadScene(3);
-                if(ctrlKey) {
+                if(shiftKey) {
                     saveCam.gotoSelectView(2,6.0);
                     addMessage("GOTO CAM: 2");
                 }
                 break;
             case '4':
                 if(modkey) loadScene(4);
-                if(ctrlKey) {
+                if(shiftKey) {
                     saveCam.gotoSelectView(3,6.0);
                     addMessage("GOTO CAM: 3");
                 }
                 break;
             case '5':
                 if(modkey) loadScene(5);
-                if(ctrlKey) {
+                if(shiftKey) {
                     saveCam.gotoSelectView(4,6.0);
                     addMessage("GOTO CAM: 4");
                 }
                 break;
             case '6':
                 if(modkey) loadScene(6);
-                if(ctrlKey) {
+                if(shiftKey) {
                     saveCam.gotoSelectView(5,6.0);
                     addMessage("GOTO CAM: 5");
                 }
                 break;
             case '7':
-                if(ctrlKey) {
+                if(shiftKey) {
                     saveCam.gotoSelectView(6,6.0);
                     addMessage("GOTO CAM: 6");
                 }
                 break;
             case '8':
-                if(ctrlKey) {
+                if(shiftKey) {
                     saveCam.gotoSelectView(7,6.0);
                     addMessage("GOTO CAM: 7");
                 }
                 break;
             case '9':
-                if(ctrlKey) {
+                if(shiftKey) {
                     saveCam.gotoSelectView(8,6.0);
                     addMessage("GOTO CAM: 8");
                 }
@@ -1627,6 +1636,10 @@ void ofApp::keyReleased(int key){
                 case OF_KEY_CONTROL:
                     //cout << "Control Released" << endl;
                     ctrlKey = false;
+                    break;
+                case OF_KEY_SHIFT:
+                    //cout << "Shift Released" << endl;
+                    shiftKey = false;
                     break;
             }
         }

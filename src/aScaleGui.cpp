@@ -17,6 +17,8 @@ aScaleGui::aScaleGui(){
 //--------------------------------------------------------------
 void aScaleGui::setup(){
     doReset = guiAlloc = false;
+    //when application first starts
+    //isLoadingOrSaving = true;
 }
 
 //--------------------------------------------------------------
@@ -30,14 +32,20 @@ void aScaleGui::reset(){
 
 //--------------------------------------------------------------
 void aScaleGui::loadGUI(int sceneIndex){
+    isLoadingOrSaving = true;
+    
     Scale_gui_1->loadSettings("GUI/xml/Scale_gui_"+ofToString(sceneIndex)+".xml");
     
+    isLoadingOrSaving = false;
 }
 
 //--------------------------------------------------------------
 void aScaleGui::saveGUI(int sceneIndex){
+    isLoadingOrSaving = true;
+    
     Scale_gui_1->saveSettings("GUI/xml/Scale_gui_"+ofToString(sceneIndex)+".xml");
     
+    isLoadingOrSaving = false;
 }
 
 
@@ -48,7 +56,7 @@ void aScaleGui::update(){
 
 //--------------------------------------------------------------
 void aScaleGui::draw(){
-    
+
 }
 
 //--------------------------------------------------------------
@@ -86,6 +94,46 @@ void aScaleGui::guiEvent(ofxUIEventArgs &e) {
     } else if (name == ofToString(util::dDigiter(row)+"_sZ")) {
         ofxUINumberDialer *scaleZ = (ofxUINumberDialer *)Scale_gui_1->getWidget(ofToString(util::dDigiter(row)+"_sZ"));
         ((ofApp*)ofGetAppPtr())->abcModels[row].abcScale.z = scaleZ->getValue();
+    } else if (name == ofToString(util::dDigiter(row)+"_sGlobal")) {
+        ofxUINumberDialer *globalScale = (ofxUINumberDialer *)Scale_gui_1->getWidget(ofToString(util::dDigiter(row)+"_sGlobal"));
+        ofxUINumberDialer *scaleX = (ofxUINumberDialer *)Scale_gui_1->getWidget(ofToString(util::dDigiter(row)+"_sX"));
+        ofxUINumberDialer *scaleY = (ofxUINumberDialer *)Scale_gui_1->getWidget(ofToString(util::dDigiter(row)+"_sY"));
+        ofxUINumberDialer *scaleZ = (ofxUINumberDialer *)Scale_gui_1->getWidget(ofToString(util::dDigiter(row)+"_sZ"));
+        
+        if(!isLoadingOrSaving){
+            ((ofApp*)ofGetAppPtr())->abcModels[row].abcScale.x = globalScale->getValue();
+            ((ofApp*)ofGetAppPtr())->abcModels[row].abcScale.y = globalScale->getValue();
+            ((ofApp*)ofGetAppPtr())->abcModels[row].abcScale.z = globalScale->getValue();
+            
+            scaleX->setValue(globalScale->getValue());
+            scaleY->setValue(globalScale->getValue());
+            scaleZ->setValue(globalScale->getValue());
+        }
+    
+    } else if (name == ofToString(util::dDigiter(row)+"_flipX")) {
+        ofxUIButton *flip = (ofxUIButton *)Scale_gui_1->getWidget(ofToString(util::dDigiter(row)+"_flipX"));
+        if(flip->getValue()){
+            ofxUINumberDialer *scaleX = (ofxUINumberDialer *)Scale_gui_1->getWidget(ofToString(util::dDigiter(row)+"_sX"));
+            float flippedVal = scaleX->getValue() * -1;
+            ((ofApp*)ofGetAppPtr())->abcModels[row].abcScale.x = flippedVal;
+            scaleX->setValue(flippedVal);
+        }
+    } else if (name == ofToString(util::dDigiter(row)+"_flipY")) {
+        ofxUIButton *flip = (ofxUIButton *)Scale_gui_1->getWidget(ofToString(util::dDigiter(row)+"_flipY"));
+        if(flip->getValue()){
+            ofxUINumberDialer *scaleY = (ofxUINumberDialer *)Scale_gui_1->getWidget(ofToString(util::dDigiter(row)+"_sY"));
+            float flippedVal = scaleY->getValue() * -1;
+            ((ofApp*)ofGetAppPtr())->abcModels[row].abcScale.y = flippedVal;
+            scaleY->setValue(flippedVal);
+        }
+    } else if (name == ofToString(util::dDigiter(row)+"_flipZ")) {
+        ofxUIButton *flip = (ofxUIButton *)Scale_gui_1->getWidget(ofToString(util::dDigiter(row)+"_flipZ"));
+        if(flip->getValue()){
+            ofxUINumberDialer *scaleZ = (ofxUINumberDialer *)Scale_gui_1->getWidget(ofToString(util::dDigiter(row)+"_sZ"));
+            float flippedVal = scaleZ->getValue() * -1;
+            ((ofApp*)ofGetAppPtr())->abcModels[row].abcScale.z = flippedVal;
+            scaleZ->setValue(flippedVal);
+        }
     }
     
     
@@ -105,7 +153,7 @@ void aScaleGui::setGUI_Scale(int numOfLoaders) {
     }
     
     Scale_gui_1 = new ofxUIScrollableCanvas(0, 0, w + xInit * 2, ofGetHeight());
-    Scale_gui_1->setScrollArea(0, 0, 300, ofGetHeight());
+    Scale_gui_1->setScrollArea(0, 0, 500, ofGetHeight());
     Scale_gui_1->setScrollableDirections(false,true);
     
     Scale_gui_1->setFont("GUI/HelveticaNeueLTStd-Bd.otf");
@@ -115,7 +163,7 @@ void aScaleGui::setGUI_Scale(int numOfLoaders) {
     
     Scale_gui_1->addWidgetDown(new ofxUILabelButton(70,false,"CLEAR ALL",OFX_UI_FONT_SMALL));
     
-    Scale_gui_1->addSpacer(300,5);
+    Scale_gui_1->addSpacer(500,5);
     Scale_gui_1->addSpacer(10);
     Scale_gui_1->addSpacer();
     for(int i=0; i < numOfLoaders; i++){
@@ -125,11 +173,20 @@ void aScaleGui::setGUI_Scale(int numOfLoaders) {
         Scale_gui_1->addWidgetRight(new ofxUINumberDialer(-100,100,25.0,0,util::dDigiter(i)+"_sX",OFX_UI_FONT_SMALL));
         Scale_gui_1->addWidgetRight(new ofxUINumberDialer(-100,100,25.0,0,util::dDigiter(i)+"_sY",OFX_UI_FONT_SMALL));
         Scale_gui_1->addWidgetRight(new ofxUINumberDialer(-100,100,25.0,0,util::dDigiter(i)+"_sZ",OFX_UI_FONT_SMALL));
+        Scale_gui_1->addWidgetRight(new ofxUINumberDialer(-100,100,25.0,0,util::dDigiter(i)+"_sGlobal",OFX_UI_FONT_SMALL));
+        
+        
+        Scale_gui_1->addWidgetRight(new ofxUIButton(util::dDigiter(i)+"_flipX",false,15,15));
+        Scale_gui_1->addWidgetRight(new ofxUIButton(util::dDigiter(i)+"_flipY",false,15,15));
+        Scale_gui_1->addWidgetRight(new ofxUIButton(util::dDigiter(i)+"_flipZ",false,15,15));
+        
+        
     }
 
     Scale_gui_1->addWidgetNorthOf(new ofxUILabel("ScaleX", OFX_UI_FONT_SMALL), "00_sX");
     Scale_gui_1->addWidgetNorthOf(new ofxUILabel("ScaleY", OFX_UI_FONT_SMALL), "00_sY");
     Scale_gui_1->addWidgetNorthOf(new ofxUILabel("ScaleZ", OFX_UI_FONT_SMALL), "00_sZ");
+    Scale_gui_1->addWidgetNorthOf(new ofxUILabel("Global", OFX_UI_FONT_SMALL), "00_sGlobal");
     
     Scale_gui_1->setWidgetColor(OFX_UI_WIDGET_COLOR_BACK, ofColor(120,200));
     

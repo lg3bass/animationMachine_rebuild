@@ -36,6 +36,7 @@ public:
     bool guiAlloc;
     bool wModActive;
     bool doReset;
+    bool isLoadingOrSaving;
     
 private:
     

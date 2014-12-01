@@ -85,6 +85,7 @@ public:
     aGui *myGui;
     bool modkey = false;
     bool ctrlKey = false;
+    bool shiftKey = false;
     bool showTrack = false;
     bool showLights = false;
     bool showLdr = false;
